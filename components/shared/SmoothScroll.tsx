@@ -22,8 +22,8 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
             if (Math.abs(e.scroll - lastVibrationPos) > 50) {
                 if (typeof navigator !== 'undefined' && navigator.vibrate) {
                     try {
-                        // Short, sharp tick for "mechanical" feel - increased intensity
-                        navigator.vibrate(10);
+                        // Stronger tick
+                        navigator.vibrate(20);
                     } catch (err) {
                         // Ignore blockage
                     }
