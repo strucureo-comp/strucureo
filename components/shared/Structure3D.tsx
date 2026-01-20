@@ -14,33 +14,19 @@ const Geometries = () => {
 
   React.useEffect(() => {
     const handleOrientation = (event: DeviceOrientationEvent) => {
+      // iOS sometimes returns null values
+      if (event.beta === null || event.gamma === null) return;
+
       deviceOrientation.current = {
         alpha: event.alpha || 0,
-        beta: event.beta || 0,
-        gamma: event.gamma || 0,
+        beta: event.beta,
+        gamma: event.gamma,
       };
     };
 
-    // Check for DeviceOrientationEvent support safely
-    if (
-      typeof window !== 'undefined' &&
-      typeof (window as any).DeviceOrientationEvent !== 'undefined' &&
-      typeof ((window as any).DeviceOrientationEvent as any).requestPermission === 'function'
-    ) {
-      // Permission logic (iOS 13+)
-      (window as any).DeviceOrientationEvent.requestPermission()
-        .then((response: string) => {
-          if (response === 'granted') {
-            window.addEventListener('deviceorientation', handleOrientation, true);
-          }
-        })
-        .catch(() => {
-          // Ignore failures (user interaction usually required)
-        });
-    } else {
-      // Standard non-iOS 13+ support
-      window.addEventListener('deviceorientation', handleOrientation, true);
-    }
+    // Just listen. Permission is handled by MobileOptimizer globally.
+    // We add it here to ensure this component catches it if it's already firing.
+    window.addEventListener('deviceorientation', handleOrientation, true);
 
     return () => {
       window.removeEventListener('deviceorientation', handleOrientation);
@@ -66,20 +52,20 @@ const Geometries = () => {
   useFrame((state) => {
     if (!meshRef.current) return;
 
-    // Use pointer if dominant (Desktop), else fallback to Gyro (Mobile) if pointer is static (0,0) or check device capability
-    // Simple blend: Interaction always wins. If pointer is 0,0 assume mobile or idle? 
-    // Actually state.pointer is best. We can add gyro on top.
+    // Gyro Input (Mobile)
+    // Gamma: Left/Right tilt (-90 to 90). Restricted to -45/45.
+    // Beta: Front/Back tilt (-180 to 180). Restricted to -45/45.
+    const gyroX = Math.min(Math.max(deviceOrientation.current.gamma, -45), 45) / 10; // Boost sensitivity
+    const gyroY = Math.min(Math.max(deviceOrientation.current.beta - 45, -45), 45) / 10;
 
-    // Normalize gyro roughly to -1 to 1 range (gamma is usually -90 to 90, beta -180 to 180)
-    // Normalize gyro roughly to -1 to 1 range (gamma is usually -90 to 90, beta -180 to 180)
-    // We boost the sensitivity for a more pronounced effect on mobile
-    const gyroX = Math.min(Math.max(deviceOrientation.current.gamma / 30, -1.5), 1.5);
-    const gyroY = Math.min(Math.max(deviceOrientation.current.beta / 60, -1.5), 1.5);
+    // Mouse Input (Desktop)
+    // state.pointer is -1 to 1
+    const mouseX = state.pointer.x * 2;
+    const mouseY = state.pointer.y * 2;
 
-    // If pointer is at 0,0 (default state on mount/mobile before touch), rely on gyro
-    // Otherwise blend them, but usually they don't happen simultaneously
-    const targetX = (state.pointer.x === 0 && state.pointer.y === 0) ? gyroX * 50 : (state.pointer.x * 50 + gyroX * 20);
-    const targetY = (state.pointer.y === 0 && state.pointer.x === 0) ? gyroY * 50 : (state.pointer.y * 50 + gyroY * 20);
+    // Additive Blend: Ensures smooth transition or combined use
+    const targetX = (mouseX + gyroX) * 30;
+    const targetY = (mouseY + gyroY) * 30;
 
     particles.forEach((particle, i) => {
       let { factor, speed, xFactor, yFactor, zFactor } = particle;
