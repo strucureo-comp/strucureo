@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useRef, useState, useActionState } from 'react';
+import { useParams } from 'next/navigation';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { ArrowRight, X, Loader2 } from 'lucide-react';
+import { ArrowRight, X, Loader2, Linkedin, Github } from 'lucide-react';
 import { EASE_LUXURY } from '@/lib/animations';
 import { sendEmailAction } from '@/app/actions';
 
@@ -13,17 +14,18 @@ const initialState = {
 
 export const Contact = () => {
   const ref = useRef(null);
+  const params = useParams();
+  const locale = params?.locale || 'en'; // Default fallback
   const isInView = useInView(ref, { once: true, margin: '-10%' });
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [state, formAction, isPending] = useActionState(sendEmailAction, initialState);
+
 
   // Close form on success after a delay
   React.useEffect(() => {
     if (state.success) {
       const timer = setTimeout(() => {
         setIsFormOpen(false);
-        // Reset state logic would be needed here if we re-open, 
-        // but for now simple close is fine.
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -31,37 +33,46 @@ export const Contact = () => {
 
   return (
     <footer className="bg-[#ffffff] pt-16 md:pt-32 px-6 md:px-12 lg:px-24 border-t border-[#111111]/10 relative">
-      <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 md:gap-y-16 lg:gap-x-12 mb-12 md:mb-24">
-        <div className="lg:col-span-8">
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-            transition={{ duration: 1.5, ease: EASE_LUXURY }}
-          >
-            <p className="text-xs uppercase tracking-[0.2em] opacity-40 mb-8">The Next Step</p>
-            <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] -ml-1 text-[#111111]">
-              Ready to <br />
-              <span className="text-[#111111]/20">Engineer it?</span>
-            </h2>
-          </motion.div>
+      <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-y-16 md:gap-y-16 lg:gap-x-12 mb-12 md:mb-24">
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="mt-16"
-          >
-            <button
-              onClick={() => setIsFormOpen(true)}
-              className="group inline-flex items-center gap-4 md:gap-6 text-xl md:text-3xl font-light border-b border-[#111111]/20 pb-2 hover:border-[#111111] transition-all cursor-pointer bg-transparent"
+        {/* Left Column: CTA & Testimonials */}
+        <div className="lg:col-span-7 flex flex-col justify-between">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+              transition={{ duration: 1.5, ease: EASE_LUXURY }}
             >
-              <span>Start a Conversation</span>
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
-            </button>
-          </motion.div>
+              <p className="text-xs uppercase tracking-[0.2em] opacity-40 mb-8">The Next Step</p>
+              <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] -ml-1 text-[#111111]">
+                Ready to <br />
+                <span className="text-[#111111]/20">Engineer it?</span>
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="mt-16 flex flex-col items-start gap-8"
+            >
+              <button
+                onClick={() => setIsFormOpen(true)}
+                className="group inline-flex items-center gap-4 md:gap-6 text-xl md:text-3xl font-light border-b border-[#111111]/20 pb-2 hover:border-[#111111] transition-all cursor-pointer bg-transparent"
+              >
+                <span>Start a Conversation</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
+              </button>
+
+
+            </motion.div>
+          </div>
+
+
         </div>
 
-        <div className="lg:col-span-4 flex flex-col justify-end">
+        {/* Right Column: Contact Details */}
+        <div className="lg:col-span-5 flex flex-col justify-end">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
@@ -84,14 +95,36 @@ export const Contact = () => {
               <p className="text-xs uppercase tracking-widest opacity-40 mb-2 group-hover:opacity-100 transition-opacity">
                 Phone
               </p>
-              <p className="text-xl md:text-2xl font-medium">+91 78259 68061</p>
+              <p className="text-xl md:text-2xl font-medium">+91 63853 62719</p>
             </div>
 
-            <div className="group">
+            <div className="flex gap-6">
+              <motion.a
+                href="https://www.linkedin.com/company/strucureo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                className="p-2 border border-[#111111]/10 rounded-full hover:bg-black hover:text-white transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://github.com/strucureo-comp"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                className="p-2 border border-[#111111]/10 rounded-full hover:bg-black hover:text-white transition-colors"
+              >
+                <Github className="w-5 h-5" />
+              </motion.a>
+            </div>
+
+            <div className="group pt-8">
               <p className="text-xs uppercase tracking-widest opacity-40 mb-2">Studio</p>
               <p className="text-lg text-[#6E6E6E] leading-relaxed">
                 Elite Engineering Studio. <br />
-                Built for Scale.
+                Built for Scale. <br />
+                Clarity against complexity.
               </p>
             </div>
           </motion.div>
@@ -111,10 +144,10 @@ export const Contact = () => {
         </div>
         <div className="flex gap-8 text-xs font-mono uppercase tracking-widest pb-2 md:pb-0 text-[#111111]">
           <span className="opacity-40">© {new Date().getFullYear()}</span>
-          <a href="#" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+          <a href={`/${locale}/privacy`} className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
             Privacy
           </a>
-          <a href="#" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+          <a href={`/${locale}/legal`} className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
             Legal
           </a>
         </div>

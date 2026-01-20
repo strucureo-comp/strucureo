@@ -1,49 +1,85 @@
 'use client';
 
-import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useMemo } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Float } from '@react-three/drei';
+import * as THREE from 'three';
 
-const CubeFace = ({ transform, className = '' }: { transform: string; className?: string }) => (
-  <div
-    className={`absolute w-full h-full border border-[#111111]/20 backface-hidden ${className}`}
-    style={{ transform }}
-  />
-);
+const Geometries = () => {
+  const count = 20;
+  const meshRef = useRef<THREE.InstancedMesh>(null);
 
-export const Structure3D = () => {
-  const { scrollY } = useScroll();
-  const rotate = useTransform(scrollY, [0, 800], [0, 90]);
-  const y = useTransform(scrollY, [0, 800], [0, 200]);
+  const particles = useMemo(() => {
+    const temp = [];
+    for (let i = 0; i < count; i++) {
+      const t = Math.random() * 100;
+      const factor = 20 + Math.random() * 100;
+      const speed = 0.01 + Math.random() / 200;
+      const xFactor = -50 + Math.random() * 100;
+      const yFactor = -50 + Math.random() * 100;
+      const zFactor = -50 + Math.random() * 100;
+      temp.push({ t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 });
+    }
+    return temp;
+  }, [count]);
+
+  const dummy = useMemo(() => new THREE.Object3D(), []);
+
+  useFrame((state) => {
+    if (!meshRef.current) return;
+
+    particles.forEach((particle, i) => {
+      let { factor, speed, xFactor, yFactor, zFactor } = particle;
+      // update t
+      particle.t += speed / 2;
+      const t = particle.t;
+
+      // Update mouse influence with lerp
+      particle.mx += (state.pointer.x * 50 - particle.mx) * 0.05;
+      particle.my += (state.pointer.y * 50 - particle.my) * 0.05;
+
+      const a = Math.cos(t) + Math.sin(t * 1) / 10;
+      const b = Math.sin(t) + Math.cos(t * 2) / 10;
+      const s = Math.cos(t);
+
+      dummy.position.set(
+        (particle.mx / 10) * a + xFactor + Math.cos((t / 10) * factor) + (Math.sin(t * 1) * factor) / 10,
+        (particle.my / 10) * b + yFactor + Math.sin((t / 10) * factor) + (Math.cos(t * 2) * factor) / 10,
+        (particle.my / 10) * b + zFactor + Math.cos((t / 10) * factor) + (Math.sin(t * 3) * factor) / 10
+      );
+      dummy.scale.setScalar(s * 1.5 + 2);
+      dummy.rotation.set(s * 5, s * 5, s * 5);
+      dummy.updateMatrix();
+      meshRef.current?.setMatrixAt(i, dummy.matrix);
+    });
+    meshRef.current.instanceMatrix.needsUpdate = true;
+  });
 
   return (
-    <div className="absolute right-[-10%] md:right-[5%] top-[20%] w-[250px] h-[250px] md:w-[500px] md:h-[500px] opacity-40 pointer-events-none perspective-[1000px] z-0 block">
-      <motion.div
-        className="relative w-full h-full"
-        style={{ transformStyle: 'preserve-3d', rotate: rotate, y: y }}
-        animate={{ rotateX: [0, 360], rotateY: [0, 360] }}
-        transition={{ duration: 40, ease: 'linear', repeat: Infinity }}
-      >
-        <CubeFace transform="translateZ(250px)" />
-        <CubeFace transform="rotateY(180deg) translateZ(250px)" />
-        <CubeFace transform="rotateY(90deg) translateZ(250px)" />
-        <CubeFace transform="rotateY(-90deg) translateZ(250px)" />
-        <CubeFace transform="rotateX(90deg) translateZ(250px)" />
-        <CubeFace transform="rotateX(-90deg) translateZ(250px)" />
+    <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
+      <icosahedronGeometry args={[1, 0]} />
+      <meshBasicMaterial color="#111111" wireframe transparent opacity={0.1} />
+    </instancedMesh>
+  );
+};
 
-        <motion.div
-          className="absolute top-1/2 left-1/2 w-[60%] h-[60%] -translate-x-1/2 -translate-y-1/2"
-          style={{ transformStyle: 'preserve-3d' }}
-          animate={{ rotateX: [360, 0], rotateY: [360, 0] }}
-          transition={{ duration: 30, ease: 'linear', repeat: Infinity }}
-        >
-          <CubeFace transform="translateZ(150px)" className="border-[#111111]/40" />
-          <CubeFace transform="rotateY(180deg) translateZ(150px)" className="border-[#111111]/40" />
-          <CubeFace transform="rotateY(90deg) translateZ(150px)" className="border-[#111111]/40" />
-          <CubeFace transform="rotateY(-90deg) translateZ(150px)" className="border-[#111111]/40" />
-          <CubeFace transform="rotateX(90deg) translateZ(150px)" className="border-[#111111]/40" />
-          <CubeFace transform="rotateX(-90deg) translateZ(150px)" className="border-[#111111]/40" />
-        </motion.div>
-      </motion.div>
+export const Structure3D = () => {
+  return (
+    <div className="absolute inset-0 z-0 opacity-60">
+      <Canvas camera={{ position: [0, 0, 80], fov: 75 }}>
+        <fog attach="fog" args={['#ffffff', 50, 150]} />
+        <ambientLight intensity={0.5} />
+        <Geometries />
+        <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+          {/* Center Object */}
+          <mesh position={[20, 0, -20]} rotation={[0, 0, 0]}>
+            <boxGeometry args={[15, 15, 15]} />
+            <meshStandardMaterial color="#eeeeee" wireframe transparent opacity={0.15} />
+          </mesh>
+        </Float>
+      </Canvas>
+      {/* Soft gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
     </div>
   );
 };
