@@ -1,16 +1,35 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
-import { ArrowUpRight, Microscope, Zap, CircuitBoard, Users } from 'lucide-react';
-import { EASE_LUXURY } from '@/lib/animations';
+import { ArrowUpRight, Microscope, Zap, CircuitBoard, Users, LifeBuoy } from 'lucide-react';
+
+const ScrollItem = ({ item, index }: { item: any, index: number }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-40% 0px -40% 0px" });
+
+  return (
+    <div
+      ref={ref}
+      className={`py-24 border-t border-[#111111]/10 first:border-t-0 flex flex-col md:flex-row gap-8 md:gap-16 items-start transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-20 blur-sm translate-x-4'}`}
+    >
+      <div className="flex-shrink-0 mt-2">
+        <span className="text-sm font-mono tracking-widest text-[#111111]">0{index + 1}</span>
+      </div>
+      <div>
+        <div className="mb-6">
+          <item.icon className="w-12 h-12 text-[#111111]" />
+        </div>
+        <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-none">{item.title}</h3>
+        <p className="text-xl leading-relaxed text-[#6E6E6E] max-w-lg">{item.desc}</p>
+      </div>
+    </div>
+  );
+}
 
 export const Uniqueness = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-10%' });
-
   const items = [
     {
       title: 'Root-cause Problem Analysis',
@@ -40,53 +59,31 @@ export const Uniqueness = () => {
     {
       title: 'Ongoing Support',
       desc: 'We don’t just launch and leave. We provide ongoing support, optimization, and scaling as you grow.',
-      icon: Users
+      icon: LifeBuoy
     }
   ];
 
   return (
-    <Section className="min-h-[60vh] flex flex-col justify-center">
-      <AnimatedText text="Why Clients Choose Strucureo" className="text-xs uppercase tracking-[0.2em] mb-8 md:mb-16 block opacity-50" />
+    <Section className="relative bg-white pb-0">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+        <div className="lg:w-1/3">
+          <div className="lg:sticky lg:top-32">
+            <AnimatedText text="Why Clients Choose Strucureo" className="text-xs uppercase tracking-[0.2em] mb-8 block opacity-50" />
+            <h2 className="text-4xl md:text-6xl font-bold leading-[0.9] tracking-tighter mb-8">
+              Engineering <br />
+              <span className="text-[#111111]/20">Standard.</span>
+            </h2>
+            <p className="text-lg text-[#6E6E6E] max-w-sm leading-relaxed">
+              We bring a disciplined, transparent, and high-velocity approach to IT services.
+            </p>
+          </div>
+        </div>
 
-      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-0 border-t border-[#111111]/10">
-        {items.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              transition={{ delay: index * 0.2, duration: 1.5, ease: EASE_LUXURY }}
-              className={`
-                pt-8 pb-8 pr-8 pl-8
-                border border-transparent
-                hover:bg-[#f9f9f9] hover:border-[#111111]/5 hover:shadow-2xl hover:shadow-black/5
-                transition-all duration-300 rounded-xl
-                ${index % 2 === 0 ? 'md:border-r border-[#111111]/10' : ''}
-                ${index >= 2 ? 'md:border-t-0 border-[#111111]/10 md:pt-12' : 'md:border-b border-[#111111]/10'}
-                ${index !== 0 && index !== 1 ? 'border-t md:border-t-0 border-[#111111]/10 pt-12' : ''}
-                hover:z-10 bg-transparent group relative overflow-hidden
-              `}
-            >
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-20 transition-opacity duration-500 transform translate-x-4 group-hover:translate-x-0">
-                <ArrowUpRight className="w-8 h-8" />
-              </div>
-
-              <div className="w-12 h-12 bg-[#f0f0f0] rounded-lg flex items-center justify-center mb-6 text-[#111111] group-hover:bg-[#111111] group-hover:text-white transition-colors duration-500">
-                <motion.div
-                  whileHover={{ rotate: 360, scale: 1.2 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                >
-                  <Icon className="w-6 h-6" />
-                </motion.div>
-              </div>
-
-              <h3 className="text-2xl md:text-3xl font-semibold mb-6">{item.title}</h3>
-              <p className="text-lg text-[#6E6E6E] leading-relaxed max-w-sm">{item.desc}</p>
-            </motion.div>
-          );
-        })}
+        <div className="lg:w-2/3 pb-24">
+          {items.map((item, index) => (
+            <ScrollItem key={index} item={item} index={index} />
+          ))}
+        </div>
       </div>
     </Section>
   );
