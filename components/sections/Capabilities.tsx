@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
-import { Cloud, Code2, Bot, Database } from 'lucide-react';
+import { Cloud, Code2, Bot, Database, Layout, Rocket } from 'lucide-react';
 import { useHaptic } from '@/hooks/useHaptic';
 
 const TiltCard = ({ children, className }: { children: React.ReactNode; className?: string }) => {
@@ -59,24 +59,29 @@ const TiltCard = ({ children, className }: { children: React.ReactNode; classNam
 export const Capabilities = () => {
   const capabilities = [
     {
-      title: 'Full-Stack Product Engineering',
-      desc: 'From R&D to MVP in about 6 weeks. We build robust React/Next.js frontends and Node/Go backends with real‑time features, designed for scale from day one.',
-      icon: Code2
+      title: 'Website Development',
+      desc: 'High-performance, beautiful websites that convert. We use modern frameworks to ensure speed and SEO ranking.',
+      icon: Layout
     },
     {
-      title: 'Cloud Architecture & Migration',
-      desc: 'We design and migrate cloud infrastructure on AWS/GCP, cutting infrastructure costs by 30–50% and enabling Kubernetes scaling for high‑load systems.',
-      icon: Cloud
-    },
-    {
-      title: 'AI & Automation Solutions',
-      desc: 'Implement custom LLMs, RAG pipelines, and n8n workflows that reduce manual operations by 40%+. We automate business logic for efficiency.',
+      title: 'AI Chatbot Development',
+      desc: 'Custom AI chatbots trained on your data. Reduce support costs and engage customers 24/7.',
       icon: Bot
     },
     {
-      title: 'IoT & Enterprise Data',
-      desc: 'Secure IoT implementation and enterprise data pipelines with high‑throughput ingestion and real‑time analytics dashboards.',
+      title: 'ERP Systems',
+      desc: 'Streamline your operations with custom ERP solutions tailored exactly to your business workflows.',
       icon: Database
+    },
+    {
+      title: 'Custom Software',
+      desc: 'Solve unique business problems with bespoke software solutions built from the ground up.',
+      icon: Code2
+    },
+    {
+      title: 'Startup MVP Development',
+      desc: 'Get your idea to market fast. Specific MVP development packages designed for speed and iteration.',
+      icon: Rocket
     }
   ];
 
@@ -85,11 +90,11 @@ export const Capabilities = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-4">
           <AnimatedText
-            text="Engineering Capabilities"
+            text="What We Do"
             className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight"
           />
           <AnimatedText
-            text="Practical engineering with proven technologies."
+            text="Websites. AI. Custom Software."
             className="mt-8 text-sm uppercase tracking-widest opacity-40 max-w-xs"
             delay={0.2}
           />

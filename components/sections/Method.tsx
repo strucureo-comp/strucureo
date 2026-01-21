@@ -12,32 +12,32 @@ export const Method = () => {
     {
       num: '01',
       title: 'Research',
-      desc: 'First‑principles thinking before code.',
+      desc: 'We analyze the business problem deeply.',
       icon: Search
     },
     {
       num: '02',
       title: 'Architecture',
-      desc: 'Systems designed for infinite scale.',
+      desc: 'We design multiple solution approaches.',
       icon: Layers
     },
     {
       num: '03',
       title: 'Engineering',
-      desc: 'Clean, high‑performance output.',
+      desc: 'You choose the best approach; we build fast.',
       icon: CodeIcon
     },
     {
       num: '04',
       title: 'Optimization',
-      desc: 'Rigorous stress‑testing & refinement.',
+      desc: 'We test, refine, and optimize for real usage.',
       icon: Zap
     }
   ];
 
   return (
     <Section className="overflow-hidden">
-      <AnimatedText text="The Process" className="text-xs uppercase tracking-[0.2em] mb-16 block opacity-50 text-center" />
+      <AnimatedText text="Our Structured Development Process" className="text-xs uppercase tracking-[0.2em] mb-16 block opacity-50 text-center" />
 
       <div className="max-w-7xl mx-auto relative px-4">
         {/* Mobile Vertical Line */}

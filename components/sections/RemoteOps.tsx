@@ -10,19 +10,19 @@ import { EASE_LUXURY } from '@/lib/animations';
 export const RemoteOps = () => {
     const features = [
         {
-            icon: Globe,
-            title: 'Global Talent Network',
-            desc: 'We hire the top 1% of engineering talent globally to ensure continuous 24/7 development cycles.'
-        },
-        {
-            icon: Code,
-            title: 'Modern Stack & Tooling',
-            desc: 'Collaborative development via GitHub, Vercel, and Linear. Real-time transparency on every commit.'
-        },
-        {
             icon: Users,
-            title: 'Hybrid Engagement',
-            desc: 'Remote-first efficiency with on-site availability for kick-offs, workshops, and critical launches globally.'
+            title: 'Dedicated Contact',
+            desc: 'You get one dedicated point of contact who manages everything. No playing tennis with different departments.'
+        },
+        {
+            icon: Globe,
+            title: 'Transparent Portal',
+            desc: 'Full team collaboration is managed through our internal system (bridgebreak.strucureo.com). You see what we see.'
+        },
+        {
+            icon: Zap,
+            title: 'Ongoing Support',
+            desc: 'We maintain transparent communication, frequent updates, and provide ongoing support after delivery.'
         }
     ];
 
@@ -47,11 +47,11 @@ export const RemoteOps = () => {
 
                     <div className="relative z-10">
                         <AnimatedText
-                            text="Remote-First Operations"
+                            text="How We Work"
                             className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6"
                         />
                         <AnimatedText
-                            text="Geography is not a constraint. It's an advantage."
+                            text="Transparent communication. Dedicated support. Real results."
                             className="text-xl md:text-2xl font-light text-[#6E6E6E] leading-relaxed mb-8 max-w-md"
                             delay={0.2}
                         />
@@ -63,16 +63,16 @@ export const RemoteOps = () => {
                             className="flex flex-wrap gap-4"
                         >
                             <div className="flex items-center gap-2 px-4 py-2 bg-white border border-black/5 rounded-full text-sm font-medium shadow-sm">
-                                <Video className="w-4 h-4 opacity-50" />
-                                <span>Zoom / Meet</span>
+                                <Users className="w-4 h-4 opacity-50" />
+                                <span>Dedicated Team</span>
                             </div>
                             <div className="flex items-center gap-2 px-4 py-2 bg-white border border-black/5 rounded-full text-sm font-medium shadow-sm">
-                                <Briefcase className="w-4 h-4 opacity-50" />
-                                <span>Slack / Discord</span>
+                                <Globe className="w-4 h-4 opacity-50" />
+                                <span>Bridge Portal</span>
                             </div>
                             <div className="flex items-center gap-2 px-4 py-2 bg-white border border-black/5 rounded-full text-sm font-medium shadow-sm">
                                 <Zap className="w-4 h-4 opacity-50" />
-                                <span>Linear / Jira</span>
+                                <span>Fast Delivery</span>
                             </div>
                         </motion.div>
                     </div>

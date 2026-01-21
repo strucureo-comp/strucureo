@@ -13,30 +13,40 @@ export const Uniqueness = () => {
 
   const items = [
     {
-      title: 'R&D-Driven Engineering',
-      desc: "Every solution is engineered from first principles—designed, tested, and validated instead of copy-pasting templates.",
+      title: 'Root-cause Problem Analysis',
+      desc: "We don't just patch symptoms. We identify and solve the underlying business and technical problems.",
       icon: Microscope
     },
     {
-      title: 'Speed Without Sacrifice',
-      desc: 'We focus on speed without sacrificing quality by getting the architecture right at the beginning, preventing technical debt.',
-      icon: Zap
-    },
-    {
-      title: 'Embedded Performance',
-      desc: 'Performance and security are built into the system core, not added later as optional extras.',
+      title: 'Multiple Solutions',
+      desc: 'We propose multiple approaches for every problem, allowing you to choose the best trade-off for your needs.',
       icon: CircuitBoard
     },
     {
-      title: 'Multidisciplinary Team',
-      desc: 'An IST-anchored team of full-stack engineers, cloud architects, and AI specialists with shared ownership of outcomes.',
+      title: 'Fast Delivery',
+      desc: 'Delivered in days, not months. We use modern stacks and pre-built modules to accelerate development.',
+      icon: Zap
+    },
+    {
+      title: 'Dedicated Contact',
+      desc: 'You get a single dedicated point of contact who understands your business and manages the entire project.',
+      icon: Users
+    },
+    {
+      title: 'Structured Process',
+      desc: 'A predictable, engineering-grade process that ensures quality, reliability, and no surprises.',
+      icon: ArrowUpRight
+    },
+    {
+      title: 'Ongoing Support',
+      desc: 'We don’t just launch and leave. We provide ongoing support, optimization, and scaling as you grow.',
       icon: Users
     }
   ];
 
   return (
     <Section className="min-h-[60vh] flex flex-col justify-center">
-      <AnimatedText text="What Makes Strucureo Different" className="text-xs uppercase tracking-[0.2em] mb-8 md:mb-16 block opacity-50" />
+      <AnimatedText text="Why Clients Choose Strucureo" className="text-xs uppercase tracking-[0.2em] mb-8 md:mb-16 block opacity-50" />
 
       <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-0 border-t border-[#111111]/10">
         {items.map((item, index) => {

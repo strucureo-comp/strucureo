@@ -32,7 +32,7 @@ export const Contact = () => {
   }, [state.success]);
 
   return (
-    <footer className="bg-[#ffffff] pt-16 md:pt-32 px-6 md:px-12 lg:px-24 border-t border-[#111111]/10 relative">
+    <footer id="contact" className="bg-[#ffffff] pt-16 md:pt-32 px-6 md:px-12 lg:px-24 border-t border-[#111111]/10 relative">
       <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-y-16 md:gap-y-16 lg:gap-x-12 mb-12 md:mb-24">
 
         {/* Left Column: CTA & Testimonials */}
@@ -60,7 +60,7 @@ export const Contact = () => {
                 onClick={() => setIsFormOpen(true)}
                 className="group inline-flex items-center gap-4 md:gap-6 text-xl md:text-3xl font-light border-b border-[#111111]/20 pb-2 hover:border-[#111111] transition-all cursor-pointer bg-transparent"
               >
-                <span>Start a Conversation</span>
+                <span>Free Consultation</span>
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
               </button>
 

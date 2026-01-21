@@ -84,28 +84,28 @@ export const VisualIntro = () => {
     <Section className="min-h-[50vh] md:min-h-[80vh] flex flex-col justify-center">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
         <div className="lg:col-span-4">
-          <AnimatedText text="The Foundation" className="text-xs uppercase tracking-[0.2em] mb-4 block opacity-50" />
+          <AnimatedText text="Who We Work With" className="text-xs uppercase tracking-[0.2em] mb-4 block opacity-50" />
         </div>
         <div className="lg:col-span-8">
           <BlueprintItem
             number="1"
-            title="RESEARCH"
-            sub="First Principles Thinking"
-            image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+            title="STARTUPS"
+            sub="MVP to Scale"
+            image="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop"
             delay={0}
           />
           <BlueprintItem
             number="2"
-            title="SYSTEMS"
-            sub="Architectural Precision"
-            image="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop"
+            title="SMALL BUSINESSES"
+            sub="Digital Transformation"
+            image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop"
             delay={0.2}
           />
           <BlueprintItem
             number="3"
-            title="FUTURE"
-            sub="Scalable By Design"
-            image="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=2074&auto=format&fit=crop"
+            title="WORLDWIDE"
+            sub="Servicing Global Clients"
+            image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
             delay={0.4}
           />
         </div>
