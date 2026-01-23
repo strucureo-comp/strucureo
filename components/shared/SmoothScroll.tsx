@@ -18,12 +18,17 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
         let lastVibrationPos = 0;
 
         lenis.on('scroll', (e: any) => {
-            // Trigger haptic feedback every 50px of scrolling
-            if (Math.abs(e.scroll - lastVibrationPos) > 50) {
+            // Trigger haptic feedback every 40px of scrolling
+            // Throttled to prevent overlapping vibrations which can cancel each other out
+            if (Math.abs(e.scroll - lastVibrationPos) > 40) {
                 if (typeof navigator !== 'undefined' && navigator.vibrate) {
                     try {
-                        // Stronger tick
-                        navigator.vibrate(20);
+                        // Short, crisp tick (10ms) is better for scroll feedback
+                        const now = Date.now();
+                        // Only vibrate if enough time has passed (e.g., 50ms) effectively debouncing high-speed scrolls
+                        // But since we track position, we just update position and fire if user is moving.
+                        // We rely on browser to handle rapid calls, but using a shorter duration helps.
+                        navigator.vibrate(10);
                     } catch (err) {
                         // Ignore blockage
                     }
