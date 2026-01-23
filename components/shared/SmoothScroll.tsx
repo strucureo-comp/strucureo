@@ -16,24 +16,29 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
         });
 
         let lastVibrationPos = 0;
+        let lastVibrationTime = 0;
 
         lenis.on('scroll', (e: any) => {
-            // Trigger haptic feedback every 40px of scrolling
-            // Throttled to prevent overlapping vibrations which can cancel each other out
-            if (Math.abs(e.scroll - lastVibrationPos) > 40) {
-                if (typeof navigator !== 'undefined' && navigator.vibrate) {
-                    try {
-                        // Short, crisp tick (10ms) is better for scroll feedback
-                        const now = Date.now();
-                        // Only vibrate if enough time has passed (e.g., 50ms) effectively debouncing high-speed scrolls
-                        // But since we track position, we just update position and fire if user is moving.
-                        // We rely on browser to handle rapid calls, but using a shorter duration helps.
-                        navigator.vibrate(10);
-                    } catch (err) {
-                        // Ignore blockage
+            const now = Date.now();
+            // Trigger haptic feedback every 30px of scrolling
+            // AND ensure at least 40ms has passed between vibrations to create distinct "ticks"
+            // rather than a continuous buzz.
+            if (Math.abs(e.scroll - lastVibrationPos) > 30) {
+                if (now - lastVibrationTime > 40) {
+                    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+                        try {
+                            // 10ms tick
+                            navigator.vibrate(10);
+                        } catch (err) {
+                            // Ignore blockage
+                        }
                     }
+                    lastVibrationTime = now;
+                    // Update position only when we actually vibrate to maintain grid-like feel?
+                    // Or always update? If we always update, we might miss distance accum.
+                    // Let's update `lastVibrationPos` to current.
+                    lastVibrationPos = e.scroll;
                 }
-                lastVibrationPos = e.scroll;
             }
         });
 
