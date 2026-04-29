@@ -1,11 +1,22 @@
 'use client';
 
 import React from 'react';
+import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Structure3D } from '@/components/shared/Structure3D';
 import { staggerContainer, EASE_LUXURY } from '@/lib/animations';
+import { Magnetic } from '@/components/shared/Magnetic';
+import { useSound } from '@/hooks/useSound';
 
 export const Hero = () => {
+  const { playTick } = useSound();
+  const params = useParams();
+  const locale = typeof params?.locale === 'string' ? params.locale : 'en-US';
+  const navLinks = [
+    { label: 'Services', href: `/${locale}/services` },
+    { label: 'Work', href: `/${locale}/work` },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-24 py-8 md:py-12 bg-[#ffffff] text-[#111111] relative overflow-hidden">
       <Structure3D />
@@ -20,8 +31,23 @@ export const Hero = () => {
           <span>Strucureo</span>
           <span className="opacity-50">IT Services & Product Company</span>
         </div>
-        <div className="hidden md:block text-right opacity-80">
-          <p>Serving clients worldwide</p>
+        <div className="hidden md:flex items-center gap-8 text-right opacity-80">
+          {navLinks.map((link) => (
+            <Magnetic key={link.href} strength={0.2}>
+              <a href={link.href} className="transition-opacity hover:opacity-50">
+                {link.label}
+              </a>
+            </Magnetic>
+          ))}
+          <Magnetic strength={0.2}>
+            <a 
+              href="#contact" 
+              onClick={() => playTick()}
+              className="transition-opacity hover:opacity-50"
+            >
+              Contact
+            </a>
+          </Magnetic>
         </div>
       </motion.nav>
 
@@ -58,9 +84,15 @@ export const Hero = () => {
                 Strucureo is an IT services and product company helping startups and small businesses worldwide build websites, AI chatbots, ERP systems, and custom software — delivered in days, not months.
               </p>
               <div className="flex flex-col md:flex-row gap-4 items-start">
-                <a href="#contact" className="px-8 py-4 bg-[#111111] text-white font-bold tracking-widest text-sm hover:bg-black/80 transition-colors uppercase">
-                  Free Consultation
-                </a>
+                <Magnetic strength={0.15}>
+                  <a 
+                    href="#contact" 
+                    onClick={() => playTick()}
+                    className="px-8 py-4 bg-[#111111] text-white font-bold tracking-widest text-sm hover:bg-black/80 transition-colors uppercase"
+                  >
+                    Free Consultation
+                  </a>
+                </Magnetic>
               </div>
             </div>
           </motion.div>

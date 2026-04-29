@@ -6,6 +6,9 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, Loader2, Linkedin, Github } from 'lucide-react';
 import { EASE_LUXURY } from '@/lib/animations';
 import { sendEmailAction } from '@/app/actions';
+import { Magnetic } from '@/components/shared/Magnetic';
+import { useSound } from '@/hooks/useSound';
+import { useHaptic } from '@/hooks/useHaptic';
 
 const initialState = {
   success: false,
@@ -19,6 +22,8 @@ export const Contact = () => {
   const isInView = useInView(ref, { once: true, margin: '-10%' });
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [state, formAction, isPending] = useActionState(sendEmailAction, initialState);
+  const { playTick } = useSound();
+  const { triggerHaptic } = useHaptic();
 
 
   // Close form on success after a delay
@@ -56,15 +61,19 @@ export const Contact = () => {
               transition={{ delay: 0.5, duration: 1 }}
               className="mt-16 flex flex-col items-start gap-8"
             >
-              <button
-                onClick={() => setIsFormOpen(true)}
-                className="group inline-flex items-center gap-4 md:gap-6 text-xl md:text-3xl font-light border-b border-[#111111]/20 pb-2 hover:border-[#111111] transition-all cursor-pointer bg-transparent"
-              >
-                <span>Free Consultation</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
-              </button>
-
-
+              <Magnetic strength={0.1}>
+                <button
+                  onClick={() => {
+                    setIsFormOpen(true);
+                    playTick();
+                    triggerHaptic([60, 40, 60]);
+                  }}
+                  className="group inline-flex items-center gap-4 md:gap-6 text-xl md:text-3xl font-light border-b border-[#111111]/20 pb-2 hover:border-[#111111] transition-all cursor-pointer bg-transparent"
+                >
+                  <span>Free Consultation</span>
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
+                </button>
+              </Magnetic>
             </motion.div>
           </div>
 
@@ -99,24 +108,28 @@ export const Contact = () => {
             </div>
 
             <div className="flex gap-6">
-              <motion.a
-                href="https://www.linkedin.com/company/strucureo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                className="p-2 border border-[#111111]/10 rounded-full hover:bg-black hover:text-white transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </motion.a>
-              <motion.a
-                href="https://github.com/strucureo-comp"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                className="p-2 border border-[#111111]/10 rounded-full hover:bg-black hover:text-white transition-colors"
-              >
-                <Github className="w-5 h-5" />
-              </motion.a>
+              <Magnetic strength={0.2}>
+                <motion.a
+                  href="https://www.linkedin.com/company/strucureo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="p-2 border border-[#111111]/10 rounded-full hover:bg-black hover:text-white transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </motion.a>
+              </Magnetic>
+              <Magnetic strength={0.2}>
+                <motion.a
+                  href="https://github.com/strucureo-comp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  className="p-2 border border-[#111111]/10 rounded-full hover:bg-black hover:text-white transition-colors"
+                >
+                  <Github className="w-5 h-5" />
+                </motion.a>
+              </Magnetic>
             </div>
 
             <div className="group pt-8">
@@ -144,12 +157,16 @@ export const Contact = () => {
         </div>
         <div className="flex gap-8 text-xs font-mono uppercase tracking-widest pb-2 md:pb-0 text-[#111111]">
           <span className="opacity-40">© {new Date().getFullYear()}</span>
-          <a href={`/${locale}/privacy`} className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
-            Privacy
-          </a>
-          <a href={`/${locale}/legal`} className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
-            Legal
-          </a>
+          <Magnetic strength={0.2}>
+            <a href={`/${locale}/privacy`} className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+              Privacy
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.2}>
+            <a href={`/${locale}/legal`} className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+              Legal
+            </a>
+          </Magnetic>
         </div>
       </motion.div>
 

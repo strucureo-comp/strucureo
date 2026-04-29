@@ -1,37 +1,13 @@
 'use client';
 
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 const Geometries = () => {
-  const count = 20;
+  const count = 10;
   const meshRef = useRef<THREE.InstancedMesh>(null);
-
-  // Gyro / Mobile Device Orientation state
-  const deviceOrientation = useRef({ alpha: 0, beta: 0, gamma: 0 });
-
-  React.useEffect(() => {
-    const handleOrientation = (event: DeviceOrientationEvent) => {
-      // iOS sometimes returns null values
-      if (event.beta === null || event.gamma === null) return;
-
-      deviceOrientation.current = {
-        alpha: event.alpha || 0,
-        beta: event.beta,
-        gamma: event.gamma,
-      };
-    };
-
-    // Just listen. Permission is handled by MobileOptimizer globally.
-    // We add it here to ensure this component catches it if it's already firing.
-    window.addEventListener('deviceorientation', handleOrientation, true);
-
-    return () => {
-      window.removeEventListener('deviceorientation', handleOrientation);
-    };
-  }, []);
 
   const particles = useMemo(() => {
     const temp = [];
@@ -52,25 +28,21 @@ const Geometries = () => {
   useFrame((state) => {
     if (!meshRef.current) return;
 
-    // Gyro Input (Mobile)
-    // Gamma: Left/Right tilt (-90 to 90). Restricted to -45/45.
-    // Beta: Front/Back tilt (-180 to 180). Restricted to -45/45.
-    const gyroX = Math.min(Math.max(deviceOrientation.current.gamma, -45), 45) / 10; // Boost sensitivity
-    const gyroY = Math.min(Math.max(deviceOrientation.current.beta - 45, -45), 45) / 10;
+    // Scroll influence
+    const scrollSpeed = typeof window !== 'undefined' ? Math.min(Math.abs(window.scrollY - (window as any).lastY || 0) / 10, 5) : 0;
+    if (typeof window !== 'undefined') (window as any).lastY = window.scrollY;
 
     // Mouse Input (Desktop)
-    // state.pointer is -1 to 1
     const mouseX = state.pointer.x * 2;
     const mouseY = state.pointer.y * 2;
 
-    // Additive Blend: Ensures smooth transition or combined use
-    const targetX = (mouseX + gyroX) * 30;
-    const targetY = (mouseY + gyroY) * 30;
+    const targetX = mouseX * 30;
+    const targetY = mouseY * 30;
 
     particles.forEach((particle, i) => {
       let { factor, speed, xFactor, yFactor, zFactor } = particle;
-      // update t
-      particle.t += speed / 2;
+      // update t with scroll speed influence
+      particle.t += (speed + scrollSpeed * 0.01) / 2;
       const t = particle.t;
 
       // Update mouse influence with lerp
@@ -81,10 +53,13 @@ const Geometries = () => {
       const b = Math.sin(t) + Math.cos(t * 2) / 10;
       const s = Math.cos(t);
 
+      // Scroll speed spreads particles out more (increase x/y/z factors temporarily)
+      const spread = 1 + scrollSpeed * 0.2;
+
       dummy.position.set(
-        (particle.mx / 10) * a + xFactor + Math.cos((t / 10) * factor) + (Math.sin(t * 1) * factor) / 10,
-        (particle.my / 10) * b + yFactor + Math.sin((t / 10) * factor) + (Math.cos(t * 2) * factor) / 10,
-        (particle.my / 10) * b + zFactor + Math.cos((t / 10) * factor) + (Math.sin(t * 3) * factor) / 10
+        (particle.mx / 10) * a + xFactor * spread + Math.cos((t / 10) * factor) + (Math.sin(t * 1) * factor) / 10,
+        (particle.my / 10) * b + yFactor * spread + Math.sin((t / 10) * factor) + (Math.cos(t * 2) * factor) / 10,
+        (particle.my / 10) * b + zFactor * spread + Math.cos((t / 10) * factor) + (Math.sin(t * 3) * factor) / 10
       );
       dummy.scale.setScalar(s * 1.5 + 2);
       dummy.rotation.set(s * 5, s * 5, s * 5);
@@ -103,20 +78,47 @@ const Geometries = () => {
 };
 
 export const Structure3D = () => {
+  const [shouldRenderCanvas, setShouldRenderCanvas] = useState(false);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const coarsePointer = window.matchMedia('(pointer: coarse)');
+
+    const updateCanvasState = () => {
+      setShouldRenderCanvas(!reducedMotion.matches && !coarsePointer.matches);
+    };
+
+    updateCanvasState();
+    reducedMotion.addEventListener('change', updateCanvasState);
+    coarsePointer.addEventListener('change', updateCanvasState);
+
+    return () => {
+      reducedMotion.removeEventListener('change', updateCanvasState);
+      coarsePointer.removeEventListener('change', updateCanvasState);
+    };
+  }, []);
+
   return (
     <div className="absolute inset-0 z-0 opacity-60">
-      <Canvas camera={{ position: [0, 0, 80], fov: 75 }}>
-        <fog attach="fog" args={['#ffffff', 50, 150]} />
-        <ambientLight intensity={0.5} />
-        <Geometries />
-        <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-          {/* Center Object */}
-          <mesh position={[20, 0, -20]} rotation={[0, 0, 0]}>
-            <boxGeometry args={[15, 15, 15]} />
-            <meshStandardMaterial color="#eeeeee" wireframe transparent opacity={0.15} />
-          </mesh>
-        </Float>
-      </Canvas>
+      {shouldRenderCanvas ? (
+        <Canvas
+          camera={{ position: [0, 0, 80], fov: 75 }}
+          dpr={[1, 1.25]}
+          gl={{ antialias: false, powerPreference: 'low-power' }}
+        >
+          <fog attach="fog" args={['#ffffff', 50, 150]} />
+          <ambientLight intensity={0.5} />
+          <Geometries />
+          <Float speed={1.2} rotationIntensity={0.25} floatIntensity={0.25}>
+            <mesh position={[20, 0, -20]} rotation={[0, 0, 0]}>
+              <boxGeometry args={[15, 15, 15]} />
+              <meshStandardMaterial color="#eeeeee" wireframe transparent opacity={0.12} />
+            </mesh>
+          </Float>
+        </Canvas>
+      ) : (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_35%,rgba(17,17,17,0.08),transparent_35%),radial-gradient(circle_at_25%_65%,rgba(17,17,17,0.05),transparent_30%)]" />
+      )}
       {/* Soft gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
     </div>

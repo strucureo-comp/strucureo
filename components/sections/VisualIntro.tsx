@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Section } from '@/components/shared/Section';
@@ -61,7 +62,13 @@ const BlueprintItem = ({ number, title, sub, image, delay }: BlueprintItemProps)
         transition={{ duration: 0.6, ease: EASE_LUXURY }}
       >
         <div className="absolute inset-0 bg-[#111111]/80 z-10 mix-blend-multiply" />
-        <img src={image} alt={title} className="w-full h-full object-cover filter grayscale contrast-125" />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="(min-width: 1024px) 66vw, 100vw"
+          className="object-cover filter grayscale contrast-125"
+        />
       </motion.div>
 
       <motion.p
@@ -91,21 +98,21 @@ export const VisualIntro = () => {
             number="1"
             title="STARTUPS"
             sub="MVP to Scale"
-            image="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop"
+            image="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=75&w=1400&auto=format&fit=crop"
             delay={0}
           />
           <BlueprintItem
             number="2"
             title="SMALL BUSINESSES"
             sub="Digital Transformation"
-            image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop"
+            image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=75&w=1400&auto=format&fit=crop"
             delay={0.2}
           />
           <BlueprintItem
             number="3"
             title="WORLDWIDE"
             sub="Servicing Global Clients"
-            image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+            image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=75&w=1400&auto=format&fit=crop"
             delay={0.4}
           />
         </div>

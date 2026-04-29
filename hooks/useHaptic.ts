@@ -4,10 +4,12 @@ import { useCallback } from 'react';
 
 export const useHaptic = () => {
     const triggerHaptic = useCallback((pattern: number | number[] = 10) => {
-        if (typeof navigator !== 'undefined' && navigator.vibrate) {
-            // Vibrate if supported
-            // Use small value (10ms) for light feedback (like hover)
-            // Use array like [50, 50, 50] for complex patterns
+        if (
+            typeof window !== 'undefined' &&
+            typeof navigator !== 'undefined' &&
+            navigator.vibrate &&
+            !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ) {
             try {
                 navigator.vibrate(pattern);
             } catch (e) {

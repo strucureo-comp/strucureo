@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import OrganizationSchema from '@/components/OrganizationSchema';
 import SmoothScroll from '@/components/shared/SmoothScroll';
 import { MobileOptimizer } from '@/components/shared/MobileOptimizer';
+import { ScrollHaptic } from '@/components/shared/ScrollHaptic';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -40,6 +41,7 @@ export default async function LocaleLayout({
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <SmoothScroll>
                         <MobileOptimizer />
+                        <ScrollHaptic />
                         {children}
                     </SmoothScroll>
                 </NextIntlClientProvider>
