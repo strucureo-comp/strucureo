@@ -64,9 +64,9 @@ const projects: WorkProject[] = [
 
 const deckPositions = [
     { y: 0, scale: 1, opacity: 1, rotate: 0 },
-    { y: 34, scale: 0.94, opacity: 0.52, rotate: -2 },
-    { y: 68, scale: 0.88, opacity: 0.24, rotate: 2 },
-    { y: 102, scale: 0.82, opacity: 0, rotate: 0 },
+    { y: 34, scale: 0.94, opacity: 0.7, rotate: -2 },
+    { y: 68, scale: 0.88, opacity: 0.4, rotate: 2 },
+    { y: 102, scale: 0.82, opacity: 0.2, rotate: -1 },
 ];
 
 const getDeckPosition = (index: number, activeIndex: number) => {
@@ -173,7 +173,7 @@ const ProjectDeck = ({ activeIndex }: { activeIndex: number }) => {
                             opacity: position.opacity,
                             zIndex: projects.length - relativeIndex,
                         }}
-                        className="absolute inset-x-0 top-0 overflow-hidden rounded-[2rem] border border-white/40 bg-[#111111] shadow-xl shadow-black/10 transition-[transform,opacity] duration-500 ease-in-out will-change-transform"
+                        className="absolute inset-x-0 top-0 overflow-hidden rounded-[2rem] border border-white/40 bg-[#111111] shadow-xl shadow-black/10 transition-[transform,opacity] duration-500 ease-in-out"
                     >
                         <div className="relative aspect-[1.12/1] min-h-[300px] md:min-h-[370px]">
                             <Image

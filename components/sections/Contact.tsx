@@ -10,6 +10,8 @@ import { Magnetic } from '@/components/shared/Magnetic';
 import { useSound } from '@/hooks/useSound';
 import { useHaptic } from '@/hooks/useHaptic';
 
+import { toast } from 'sonner';
+
 const initialState = {
   success: false,
   message: '',
@@ -26,15 +28,18 @@ export const Contact = () => {
   const { triggerHaptic } = useHaptic();
 
 
-  // Close form on success after a delay
+  // Close form on success after a delay and show toast
   React.useEffect(() => {
     if (state.success) {
+      toast.success(state.message);
       const timer = setTimeout(() => {
         setIsFormOpen(false);
       }, 2000);
       return () => clearTimeout(timer);
+    } else if (state.message) {
+      toast.error(state.message);
     }
-  }, [state.success]);
+  }, [state.success, state.message]);
 
   return (
     <footer id="contact" className="bg-[#ffffff] pt-16 md:pt-32 px-6 md:px-12 lg:px-24 border-t border-[#111111]/10 relative">
@@ -77,7 +82,37 @@ export const Contact = () => {
             </motion.div>
           </div>
 
-
+          <div className="mt-24 lg:mt-32">
+            <p className="text-xs uppercase tracking-[0.2em] opacity-40 mb-12">Recent Feedback</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {[
+                {
+                  quote: "The speed of delivery was matched only by the precision of the architecture. Truly elite engineering.",
+                  author: "Startup Founder",
+                  context: "Fintech MVP"
+                },
+                {
+                  quote: "They identify problems we didn't even know we had. A partnership built on deep technical research.",
+                  author: "CTO",
+                  context: "Cloud Migration"
+                }
+              ].map((testimonial, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  transition={{ delay: 0.8 + (i * 0.2), duration: 1 }}
+                  className="border-l border-[#111111]/10 pl-6"
+                >
+                  <p className="text-lg leading-relaxed text-[#6E6E6E] mb-4 italic">"{testimonial.quote}"</p>
+                  <div>
+                    <p className="text-sm font-bold">{testimonial.author}</p>
+                    <p className="text-[10px] uppercase tracking-widest opacity-40">{testimonial.context}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Right Column: Contact Details */}

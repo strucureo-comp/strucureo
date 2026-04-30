@@ -1,8 +1,6 @@
 import { Metadata } from 'next';
 import { Hero } from '@/components/sections/Hero';
 import { Uniqueness } from '@/components/sections/Uniqueness';
-import { Method } from '@/components/sections/Method';
-import { Capabilities } from '@/components/sections/Capabilities';
 import { RemoteOps } from '@/components/sections/RemoteOps';
 import { VisualIntro } from '@/components/sections/VisualIntro';
 import { Contact } from '@/components/sections/Contact';
@@ -78,8 +76,6 @@ export default function Home() {
         <main className="bg-[#ffffff] text-[#111111] font-sans selection:bg-[#111111] selection:text-[#ffffff] overflow-x-hidden antialiased">
             <Hero />
             <Uniqueness />
-            <Method />
-            <Capabilities />
             <RemoteOps />
             <VisualIntro />
             <Contact />
