@@ -14,7 +14,7 @@ export const Hero = () => {
   const locale = typeof params?.locale === 'string' ? params.locale : 'en-US';
   const navLinks = [
     { label: 'Services', href: `/${locale}/services` },
-    { label: 'Work', href: `/${locale}/work` },
+    { label: 'Work', href: 'https://portfolio.strucureo.com' },
   ];
 
   return (

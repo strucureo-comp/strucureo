@@ -10,6 +10,20 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' }
     ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:locale/work',
+        destination: 'https://portfolio.strucureo.com',
+        permanent: true,
+      },
+      {
+        source: '/work',
+        destination: 'https://portfolio.strucureo.com',
+        permanent: true,
+      }
+    ];
   }
 };
 

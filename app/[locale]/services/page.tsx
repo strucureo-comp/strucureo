@@ -143,7 +143,7 @@ export default async function ServicesPage({ params }: PageProps) {
                     <a href={`/${locale}`} className="transition-opacity hover:opacity-100">
                         Home
                     </a>
-                    <a href={`/${locale}/work`} className="transition-opacity hover:opacity-100">
+                    <a href="https://portfolio.strucureo.com" className="transition-opacity hover:opacity-100">
                         Work
                     </a>
                 </div>
