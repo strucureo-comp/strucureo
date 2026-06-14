@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { Inter } from 'next/font/google';
 import OrganizationSchema from '@/components/OrganizationSchema';
+import PersonSchema from '@/components/PersonSchema';
 import SmoothScroll from '@/components/shared/SmoothScroll';
 import { MobileOptimizer } from '@/components/shared/MobileOptimizer';
 import { ScrollHaptic } from '@/components/shared/ScrollHaptic';
@@ -39,6 +40,7 @@ export default async function LocaleLayout({
             </head>
             <body className={`${inter.className} bg-white text-black font-sans antialiased`}>
                 <OrganizationSchema locale={locale} />
+                <PersonSchema locale={locale} />
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <SmoothScroll>
                         <MobileOptimizer />

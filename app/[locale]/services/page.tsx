@@ -11,6 +11,7 @@ import {
     Workflow,
     Wrench,
 } from 'lucide-react';
+import { FAQAccordion } from '@/components/FAQAccordion';
 
 const SITE_URL = 'https://strucureo.com';
 
@@ -102,13 +103,119 @@ const deliveryStandards = [
     'Post-launch support path',
 ];
 
+const faqItems = [
+    {
+        question: 'What services does Strucureo offer?',
+        answer:
+            'Strucureo offers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation services. We deliver focused software solutions for startups and small businesses in days, not months.',
+    },
+    {
+        question: 'How fast can Strucureo build a website or software product?',
+        answer:
+            'Strucureo specializes in rapid development. Most websites and MVPs are delivered in days to a few weeks, depending on scope. We follow a structured 4-step process: Diagnose, Design Options, Build Fast, and Launch & Support.',
+    },
+    {
+        question: 'Who are the founders of Strucureo?',
+        answer:
+            'Strucureo was founded on February 26, 2026, by a team of three: Nagaratinam S (Managing Director), Balaviyas Viyas (CEO), and Dharini Karthik (COO). The leadership team brings expertise in software engineering, business strategy, and operations.',
+    },
+    {
+        question: 'Does Strucureo work with international clients?',
+        answer:
+            'Yes. Strucureo serves clients globally, with a focus on the United States, United Arab Emirates, Germany, Russia, and India. We operate as a remote engineering studio and can work across time zones.',
+    },
+    {
+        question: 'What technologies does Strucureo use?',
+        answer:
+            'Strucureo builds with modern technologies including Next.js, React, TypeScript, Tailwind CSS, Three.js for 3D experiences, Supabase for backend services, and various AI/ML tools for automation and chatbot development.',
+    },
+    {
+        question: 'How much does custom software development cost with Strucureo?',
+        answer:
+            'Pricing depends on project scope and complexity. Strucureo offers focused, cost-effective builds for startups and small businesses. Contact us with your requirements for a tailored quote and timeline.',
+    },
+];
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+        },
+    })),
+};
+
+const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Strucureo Software Development Process',
+    description:
+        'Our 4-step structured approach to building software products quickly and effectively.',
+    totalTime: 'P2W',
+    step: processSteps.map((step, index) => ({
+        '@type': 'HowToStep',
+        name: step.title,
+        text: step.description,
+        url: `${SITE_URL}/services#step-${index + 1}`,
+        position: index + 1,
+    })),
+};
+
+const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Custom Software Development',
+    name: 'Strucureo Software Services',
+    description:
+        'Custom software development, AI chatbots, web development, ERP systems, startup MVP builds, and cloud automation services.',
+    provider: {
+        '@type': 'Organization',
+        name: 'Strucureo',
+        url: SITE_URL,
+    },
+    areaServed: [
+        { '@type': 'Country', name: 'United States' },
+        { '@type': 'Country', name: 'United Arab Emirates' },
+        { '@type': 'Country', name: 'Germany' },
+        { '@type': 'Country', name: 'India' },
+    ],
+    hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Software Services',
+        itemListElement: services.map((service) => ({
+            '@type': 'Offer',
+            itemOffered: {
+                '@type': 'Service',
+                name: service.title,
+                description: service.description,
+            },
+        })),
+    },
+};
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { locale } = await params;
 
     return {
-        title: 'Services | Strucureo',
+        title: 'Custom Software & AI Services | Strucureo',
         description:
-            'Explore Strucureo services for websites, AI chatbots, ERP systems, startup MVPs, custom software, automation, and cloud support.',
+            'Strucureo offers custom software development, AI chatbots, ERP systems, startup MVPs, web development, and cloud automation — built in days, not months. Serving startups and small businesses in the US, UAE, Germany, and India.',
+        keywords: [
+            'custom software development',
+            'AI chatbot development',
+            'web development services',
+            'ERP system development',
+            'startup MVP development',
+            'cloud automation',
+            'Next.js development',
+            'software agency',
+            'IT services company',
+            'rapid software development',
+        ],
         alternates: {
             canonical: `${SITE_URL}/${locale}/services`,
             languages: {
@@ -119,7 +226,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             },
         },
         openGraph: {
-            title: 'Services | Strucureo',
+            title: 'Custom Software & AI Services | Strucureo',
             description:
                 'Websites, AI chatbots, ERP systems, MVPs, custom software, automation, and cloud support built with a structured engineering process.',
             url: `${SITE_URL}/${locale}/services`,
@@ -134,16 +241,39 @@ export default async function ServicesPage({ params }: PageProps) {
 
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
+            {/* Structured Data Scripts */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+            />
+
             <nav className="flex items-start justify-between px-6 py-8 text-xs font-medium uppercase tracking-[0.2em] md:px-12 lg:px-24">
-                <a href={`/${locale}`} className="flex flex-col transition-opacity hover:opacity-50">
+                <a
+                    href={`/${locale}`}
+                    className="flex flex-col transition-opacity hover:opacity-50"
+                >
                     <span>Strucureo</span>
                     <span className="mt-1 opacity-40">Services</span>
                 </a>
                 <div className="flex gap-5 opacity-60">
-                    <a href={`/${locale}`} className="transition-opacity hover:opacity-100">
+                    <a
+                        href={`/${locale}`}
+                        className="transition-opacity hover:opacity-100"
+                    >
                         Home
                     </a>
-                    <a href="https://portfolio.strucureo.com" className="transition-opacity hover:opacity-100">
+                    <a
+                        href="https://portfolio.strucureo.com"
+                        className="transition-opacity hover:opacity-100"
+                    >
                         Work
                     </a>
                 </div>
@@ -161,9 +291,9 @@ export default async function ServicesPage({ params }: PageProps) {
                     </div>
                     <div className="lg:col-span-4">
                         <p className="text-lg font-light leading-relaxed text-[#6E6E6E] md:text-xl">
-                            We plan, build, launch, and support practical systems for startups and
-                            small businesses, from high-converting websites to internal operations
-                            platforms.
+                            We plan, build, launch, and support practical systems for startups
+                            and small businesses, from high-converting websites to internal
+                            operations platforms.
                         </p>
                     </div>
                 </div>
@@ -247,8 +377,8 @@ export default async function ServicesPage({ params }: PageProps) {
                     </h2>
                     <p className="max-w-xl text-lg leading-relaxed text-[#6E6E6E]">
                         The goal is not just to write code. The goal is to reduce ambiguity,
-                        choose the right technical path, and ship something that can survive real
-                        usage.
+                        choose the right technical path, and ship something that can survive
+                        real usage.
                     </p>
                 </div>
 
@@ -256,6 +386,7 @@ export default async function ServicesPage({ params }: PageProps) {
                     {processSteps.map((step, index) => (
                         <div
                             key={step.title}
+                            id={`step-${index + 1}`}
                             className="grid gap-6 border-b border-[#111111]/10 px-6 py-10 last:border-b-0 md:grid-cols-[80px_1fr] md:px-12"
                         >
                             <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-30">
@@ -298,7 +429,7 @@ export default async function ServicesPage({ params }: PageProps) {
                 </div>
             </section>
 
-            <section className="px-6 pb-24 md:px-12 lg:px-24">
+            <section className="px-6 pb-12 md:px-12 lg:px-24">
                 <div className="overflow-hidden rounded-[2rem] bg-[#111111] p-8 text-white md:p-12 lg:p-16">
                     <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
                         <div className="lg:col-span-8">
@@ -309,8 +440,8 @@ export default async function ServicesPage({ params }: PageProps) {
                         </div>
                         <div className="lg:col-span-4">
                             <p className="mb-8 leading-relaxed text-white/60">
-                                Send the problem, current state, and target outcome. We will help
-                                define the right build path.
+                                Send the problem, current state, and target outcome. We will
+                                help define the right build path.
                             </p>
                             <a
                                 href={`/${locale}#contact`}
@@ -321,6 +452,18 @@ export default async function ServicesPage({ params }: PageProps) {
                             </a>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="border-t border-[#111111]/10 px-6 py-20 md:px-12 lg:px-24">
+                <div className="mx-auto max-w-3xl">
+                    <p className="mb-4 text-xs uppercase tracking-[0.24em] opacity-40">
+                        FAQ
+                    </p>
+                    <h2 className="mb-8 text-4xl font-bold tracking-tighter md:text-6xl">
+                        Common questions about working with Strucureo.
+                    </h2>
+                    <FAQAccordion items={faqItems} />
                 </div>
             </section>
         </main>
