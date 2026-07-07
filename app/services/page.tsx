@@ -115,9 +115,9 @@ const faqItems = [
             'Strucureo specializes in rapid development. Most websites and MVPs are delivered in days to a few weeks, depending on scope. We follow a structured 4-step process: Diagnose, Design Options, Build Fast, and Launch & Support.',
     },
     {
-        question: 'Who are the founders of Strucureo?',
+        question: 'Who is the founder of Strucureo?',
         answer:
-            'Strucureo was founded on February 26, 2026, by a team of three: Nagaratinam S (Managing Director), Balaviyas Viyas (CEO), and Dharini Karthik (COO). The leadership team brings expertise in software engineering, business strategy, and operations.',
+            'Strucureo was founded on February 26, 2026, by Nagaratinam S. Under his leadership as Managing Director, the team brings expertise in software engineering, business strategy, and operations.',
     },
     {
         question: 'Does Strucureo work with international clients?',
@@ -133,6 +133,18 @@ const faqItems = [
         question: 'How much does custom software development cost with Strucureo?',
         answer:
             'Pricing depends on project scope and complexity. Strucureo offers focused, cost-effective builds for startups and small businesses. Contact us with your requirements for a tailored quote and timeline.',
+    },
+    {
+        question: 'Does Strucureo work with startups based in Dubai / UAE?',
+        answer: 'Yes. We are specifically structured to support businesses across Dubai, Abu Dhabi, and the wider UAE. Whether you need a local corporate website, an MVP for a DIFC-based startup, or custom operations software, our team is equipped to deliver rapidly while accommodating your timezone.',
+    },
+    {
+        question: 'Can Strucureo build software for businesses in India with local payment gateway integration (UPI, Razorpay, etc.)?',
+        answer: 'Yes. We frequently integrate domestic payment gateways like Razorpay, Cashfree, and PayU, alongside direct UPI integrations and standard gateways like Stripe to ensure your platform meets local consumer expectations.',
+    },
+    {
+        question: 'What is the typical cost of custom software development in UAE / India?',
+        answer: 'We provide highly competitive pricing for both markets. While costs depend heavily on the project scope, typical MVP builds start from $X (approx. AED X / INR X). We operate transparently and provide a fixed-price roadmap before writing any code.',
     },
 ];
 
@@ -178,10 +190,10 @@ const serviceSchema = {
         url: SITE_URL,
     },
     areaServed: [
-        { '@type': 'Country', name: 'United States' },
         { '@type': 'Country', name: 'United Arab Emirates' },
-        { '@type': 'Country', name: 'Germany' },
         { '@type': 'Country', name: 'India' },
+        { '@type': 'Country', name: 'United States' },
+        { '@type': 'Country', name: 'Germany' },
     ],
     hasOfferCatalog: {
         '@type': 'OfferCatalog',
@@ -197,48 +209,34 @@ const serviceSchema = {
     },
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const { locale } = await params;
-
-    return {
+export const metadata: Metadata = {
+    title: 'Custom Software & AI Services in UAE & India | Strucureo',
+    description: 'Strucureo offers custom software development, AI chatbots, ERP systems, startup MVPs, web development, and cloud automation for businesses across the UAE and India — built in days, not months.',
+    keywords: [
+        'custom software development',
+        'AI chatbot development',
+        'web development services',
+        'ERP system development',
+        'startup MVP development',
+        'cloud automation',
+        'Next.js development',
+        'software agency',
+        'IT services company',
+        'rapid software development',
+    ],
+    alternates: {
+        canonical: `${SITE_URL}/services`,
+    },
+    openGraph: {
         title: 'Custom Software & AI Services | Strucureo',
-        description:
-            'Strucureo offers custom software development, AI chatbots, ERP systems, startup MVPs, web development, and cloud automation — built in days, not months. Serving startups and small businesses in the US, UAE, Germany, and India.',
-        keywords: [
-            'custom software development',
-            'AI chatbot development',
-            'web development services',
-            'ERP system development',
-            'startup MVP development',
-            'cloud automation',
-            'Next.js development',
-            'software agency',
-            'IT services company',
-            'rapid software development',
-        ],
-        alternates: {
-            canonical: `${SITE_URL}/${locale}/services`,
-            languages: {
-                'en-US': `${SITE_URL}/en-US/services`,
-                'en-AE': `${SITE_URL}/en-AE/services`,
-                'de-DE': `${SITE_URL}/de-DE/services`,
-                'ru-RU': `${SITE_URL}/ru-RU/services`,
-            },
-        },
-        openGraph: {
-            title: 'Custom Software & AI Services | Strucureo',
-            description:
-                'Websites, AI chatbots, ERP systems, MVPs, custom software, automation, and cloud support built with a structured engineering process.',
-            url: `${SITE_URL}/${locale}/services`,
-            siteName: 'Strucureo',
-            type: 'website',
-        },
-    };
-}
+        description: 'Websites, AI chatbots, ERP systems, MVPs, custom software, automation, and cloud support built with a structured engineering process.',
+        url: `${SITE_URL}/services`,
+        siteName: 'Strucureo',
+        type: 'website',
+    },
+};
 
-export default async function ServicesPage({ params }: PageProps) {
-    const { locale } = await params;
-
+export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             {/* Structured Data Scripts */}
@@ -257,7 +255,7 @@ export default async function ServicesPage({ params }: PageProps) {
 
             <nav className="flex items-start justify-between px-6 py-8 text-xs font-medium uppercase tracking-[0.2em] md:px-12 lg:px-24">
                 <a
-                    href={`/${locale}`}
+                    href="/"
                     className="flex flex-col transition-opacity hover:opacity-50"
                 >
                     <span>Strucureo</span>
@@ -265,7 +263,7 @@ export default async function ServicesPage({ params }: PageProps) {
                 </a>
                 <div className="flex gap-5 opacity-60">
                     <a
-                        href={`/${locale}`}
+                        href="/"
                         className="transition-opacity hover:opacity-100"
                     >
                         Home
@@ -444,7 +442,7 @@ export default async function ServicesPage({ params }: PageProps) {
                                 help define the right build path.
                             </p>
                             <a
-                                href={`/${locale}#contact`}
+                                href="/#contact"
                                 className="inline-flex items-center gap-3 border-b border-white pb-2 text-sm font-bold uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
                             >
                                 Start a project

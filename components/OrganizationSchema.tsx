@@ -1,4 +1,4 @@
-const OrganizationSchema = ({ locale }: { locale: string }) => {
+const OrganizationSchema = () => {
     const schema = {
         "@context": "https://schema.org",
         "@graph": [
@@ -22,9 +22,7 @@ const OrganizationSchema = ({ locale }: { locale: string }) => {
                     "https://github.com/strucureo-comp"
                 ],
                 "founder": [
-                    { "@id": "https://strucureo.com/#nagaratinam" },
-                    { "@id": "https://strucureo.com/#balaviyas" },
-                    { "@id": "https://strucureo.com/#dharini" }
+                    { "@id": "https://strucureo.com/#nagaratinam" }
                 ],
                 "knowsAbout": [
                     "Custom Software Development",
@@ -36,34 +34,18 @@ const OrganizationSchema = ({ locale }: { locale: string }) => {
                     "Next.js Development",
                     "Full-Stack Engineering"
                 ],
-                "serviceArea": {
-                    "@type": "Place",
-                    "name": "Global"
-                }
+                "areaServed": [
+                    { "@type": "Country", "name": "United Arab Emirates" },
+                    { "@type": "Country", "name": "India" },
+                    { "@type": "Country", "name": "United States" },
+                    { "@type": "Country", "name": "Germany" }
+                ]
             },
             {
                 "@type": "Person",
                 "@id": "https://strucureo.com/#nagaratinam",
                 "name": "Nagaratinam S",
                 "jobTitle": "Managing Director",
-                "worksFor": { "@id": "https://strucureo.com/#organization" }
-            },
-            {
-                "@type": "Person",
-                "@id": "https://strucureo.com/#balaviyas",
-                "name": "Balaviyas Viyas",
-                "jobTitle": "Chief Executive Officer",
-                "url": "https://www.linkedin.com/in/viyas56/",
-                "sameAs": ["https://www.linkedin.com/in/viyas56/"],
-                "worksFor": { "@id": "https://strucureo.com/#organization" }
-            },
-            {
-                "@type": "Person",
-                "@id": "https://strucureo.com/#dharini",
-                "name": "Dharini Karthik",
-                "jobTitle": "Chief Operating Officer",
-                "url": "https://www.linkedin.com/in/dharini-karthik",
-                "sameAs": ["https://www.linkedin.com/in/dharini-karthik"],
                 "worksFor": { "@id": "https://strucureo.com/#organization" }
             }
         ]

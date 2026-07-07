@@ -14,7 +14,6 @@ type Founder = {
     linkedin: string;
     bio: string;
 };
-
 const founders: Founder[] = [
     {
         id: 'nagaratinam',
@@ -22,20 +21,6 @@ const founders: Founder[] = [
         role: 'Managing Director',
         linkedin: '',
         bio: 'Nagaratinam S is Managing Director at Strucureo, leading the company\'s strategic direction and client relationships, ensuring every build aligns with business goals and delivers measurable outcomes.',
-    },
-    {
-        id: 'balaviyas',
-        name: 'Balaviyas Viyas',
-        role: 'Chief Executive Officer',
-        linkedin: 'https://www.linkedin.com/in/viyas56/',
-        bio: 'Balaviyas Viyas is Chief Executive Officer at Strucureo, driving the company\'s vision, growth strategy, and operations — with a focus on helping startups and small businesses ship software faster.',
-    },
-    {
-        id: 'dharini',
-        name: 'Dharini Karthik',
-        role: 'Chief Operating Officer',
-        linkedin: 'https://www.linkedin.com/in/dharini-karthik',
-        bio: 'Dharini Karthik is Chief Operating Officer at Strucureo, overseeing delivery, processes, and team coordination to ensure structured, on-time builds with consistent quality across all projects.',
     },
 ];
 
@@ -62,43 +47,27 @@ const values = [
     },
 ];
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const { locale } = await params;
+export const metadata: Metadata = {
+    title: 'Nagaratinam S | Strucureo Team',
+    description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+    alternates: {
+        canonical: `${SITE_URL}/about`,
+    },
+    openGraph: {
+        title: 'Nagaratinam S | Strucureo Team',
+        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+        url: `${SITE_URL}/about`,
+        siteName: 'Strucureo',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Nagaratinam S | Strucureo Team',
+        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+    },
+};
 
-    const title = 'Dharini Karthik, Balaviyas Viyas & Nagaratinam S | Strucureo Team';
-    const description =
-        'Meet the Strucureo leadership team — Dharini Karthik (COO), Balaviyas Viyas (CEO), and Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.';
-
-    return {
-        title,
-        description,
-        alternates: {
-            canonical: `${SITE_URL}/${locale}/about`,
-            languages: {
-                'en-US': `${SITE_URL}/en-US/about`,
-                'en-AE': `${SITE_URL}/en-AE/about`,
-                'de-DE': `${SITE_URL}/de-DE/about`,
-                'ru-RU': `${SITE_URL}/ru-RU/about`,
-            },
-        },
-        openGraph: {
-            title,
-            description,
-            url: `${SITE_URL}/${locale}/about`,
-            siteName: 'Strucureo',
-            type: 'website',
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title,
-            description,
-        },
-    };
-}
-
-export default async function AboutPage({ params }: PageProps) {
-    const { locale } = await params;
-
+export default function AboutPage() {
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             {/* JSON-LD Person schemas for each founder */}
@@ -108,12 +77,8 @@ export default async function AboutPage({ params }: PageProps) {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@graph': founders.map((founder) => {
-                            const sameAs = [];
-                            if (founder.id === 'balaviyas') {
-                                sameAs.push('https://www.linkedin.com/in/viyas56/');
-                            } else if (founder.id === 'dharini') {
-                                sameAs.push('https://www.linkedin.com/in/dharini-karthik');
-                            }
+                            const sameAs: string[] = [];
+
                             return {
                                 '@type': 'Person',
                                 '@id': `https://strucureo.com/#${founder.id}`,
@@ -133,14 +98,14 @@ export default async function AboutPage({ params }: PageProps) {
 
             <nav className="flex items-start justify-between px-6 py-8 text-xs font-medium uppercase tracking-[0.2em] md:px-12 lg:px-24">
                 <a
-                    href={`/${locale}`}
+                    href="/"
                     className="flex flex-col transition-opacity hover:opacity-50"
                 >
                     <span>Strucureo</span>
                     <span className="mt-1 opacity-40">About</span>
                 </a>
                 <div className="flex gap-5 opacity-60">
-                    <a href={`/${locale}`} className="transition-opacity hover:opacity-100">
+                    <a href="/" className="transition-opacity hover:opacity-100">
                         Home
                     </a>
                     <a
@@ -160,7 +125,7 @@ export default async function AboutPage({ params }: PageProps) {
                             About
                         </p>
                         <h1 className="max-w-5xl text-5xl font-bold leading-[0.9] tracking-tighter md:text-7xl lg:text-8xl">
-                            Strucureo — founded by Dharini Karthik, Balaviyas Viyas, and Nagaratinam S
+                            Strucureo — led by Nagaratinam S
                         </h1>
                     </div>
                     <div className="lg:col-span-4">
@@ -175,7 +140,6 @@ export default async function AboutPage({ params }: PageProps) {
                 <div className="mt-16 grid gap-4 border-y border-[#111111]/10 py-6 md:grid-cols-3">
                     {[
                         ['Feb 2026', 'Founded'],
-                        ['3', 'Core Members'],
                         ['Global', 'Markets'],
                     ].map(([number, label]) => (
                         <div key={number} className="flex items-center gap-4">
@@ -196,12 +160,11 @@ export default async function AboutPage({ params }: PageProps) {
                             The Team
                         </p>
                         <h2 className="text-4xl font-bold tracking-tighter md:text-6xl">
-                            Our founders
+                            Leadership
                         </h2>
                     </div>
                     <p className="max-w-md text-[#6E6E6E]">
-                        Three specialists with expertise in software engineering, business
-                        strategy, and operations — working as one focused unit.
+                        Driven by expertise in software engineering and business strategy, working to build systems that scale.
                     </p>
                 </div>
 
@@ -289,7 +252,7 @@ export default async function AboutPage({ params }: PageProps) {
                                 forward — fast.
                             </p>
                             <a
-                                href={`/${locale}`}
+                                href="/"
                                 className="inline-flex items-center gap-3 border-b border-white pb-2 text-sm font-bold uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
                             >
                                 Back to home

@@ -24,9 +24,9 @@ const faqs: FAQItem[] = [
             'Strucureo specializes in rapid development. Most websites and MVPs are delivered in days to a few weeks, depending on scope. We follow a structured 4-step process: Diagnose, Design Options, Build Fast, and Launch & Support.',
     },
     {
-        question: 'Who are the founders of Strucureo?',
+        question: 'Who is the founder of Strucureo?',
         answer:
-            'Strucureo was founded on February 26, 2026, by a team of three: Nagaratinam S (Managing Director), Balaviyas Viyas (CEO), and Dharini Karthik (COO). The leadership team brings expertise in software engineering, business strategy, and operations.',
+            'Strucureo was founded on February 26, 2026, by Nagaratinam S. Under his leadership as Managing Director, the team brings expertise in software engineering, business strategy, and operations.',
     },
     {
         question: 'Does Strucureo work with international clients?',
@@ -53,6 +53,18 @@ const faqs: FAQItem[] = [
         answer:
             'Yes. Our Automation & Cloud Support service covers system cleanup, performance fixes, deployment automation, and operational improvements for existing products. We also offer ongoing support after launching new builds.',
     },
+    {
+        question: 'Does Strucureo work with startups based in Dubai / UAE?',
+        answer: 'Yes. We are specifically structured to support businesses across Dubai, Abu Dhabi, and the wider UAE. Whether you need a local corporate website, an MVP for a DIFC-based startup, or custom operations software, our team is equipped to deliver rapidly while accommodating your timezone.',
+    },
+    {
+        question: 'Can Strucureo build software for businesses in India with local payment gateway integration (UPI, Razorpay, etc.)?',
+        answer: 'Yes. We frequently integrate domestic payment gateways like Razorpay, Cashfree, and PayU, alongside direct UPI integrations and standard gateways like Stripe to ensure your platform meets local consumer expectations.',
+    },
+    {
+        question: 'What is the typical cost of custom software development in UAE / India?',
+        answer: 'We provide highly competitive pricing for both markets. While costs depend heavily on the project scope, typical MVP builds start from $X (approx. AED X / INR X). We operate transparently and provide a fixed-price roadmap before writing any code.',
+    },
 ];
 
 const faqSchema = {
@@ -68,42 +80,27 @@ const faqSchema = {
     })),
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const { locale } = await params;
-
-    return {
+export const metadata: Metadata = {
+    title: 'FAQ | Strucureo',
+    description: 'Frequently asked questions about Strucureo services, process, pricing, and team. Learn how we build websites, AI chatbots, ERP systems, and custom software fast.',
+    alternates: {
+        canonical: `${SITE_URL}/faq`,
+    },
+    openGraph: {
         title: 'FAQ | Strucureo',
-        description:
-            'Frequently asked questions about Strucureo services, process, pricing, and team. Learn how we build websites, AI chatbots, ERP systems, and custom software fast.',
-        alternates: {
-            canonical: `${SITE_URL}/${locale}/faq`,
-            languages: {
-                'en-US': `${SITE_URL}/en-US/faq`,
-                'en-AE': `${SITE_URL}/en-AE/faq`,
-                'de-DE': `${SITE_URL}/de-DE/faq`,
-                'ru-RU': `${SITE_URL}/ru-RU/faq`,
-            },
-        },
-        openGraph: {
-            title: 'FAQ | Strucureo',
-            description:
-                'Frequently asked questions about Strucureo services, process, pricing, and team.',
-            url: `${SITE_URL}/${locale}/faq`,
-            siteName: 'Strucureo',
-            type: 'website',
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: 'FAQ | Strucureo',
-            description:
-                'Frequently asked questions about Strucureo services, process, pricing, and team.',
-        },
-    };
-}
+        description: 'Frequently asked questions about Strucureo services, process, pricing, and team.',
+        url: `${SITE_URL}/faq`,
+        siteName: 'Strucureo',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'FAQ | Strucureo',
+        description: 'Frequently asked questions about Strucureo services, process, pricing, and team.',
+    },
+};
 
-export default async function FAQPage({ params }: PageProps) {
-    const { locale } = await params;
-
+export default function FAQPage() {
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             {/* FAQPage JSON-LD Schema */}
@@ -116,14 +113,14 @@ export default async function FAQPage({ params }: PageProps) {
 
             <nav className="flex items-start justify-between px-6 py-8 text-xs font-medium uppercase tracking-[0.2em] md:px-12 lg:px-24">
                 <a
-                    href={`/${locale}`}
+                    href="/"
                     className="flex flex-col transition-opacity hover:opacity-50"
                 >
                     <span>Strucureo</span>
                     <span className="mt-1 opacity-40">FAQ</span>
                 </a>
                 <div className="flex gap-5 opacity-60">
-                    <a href={`/${locale}`} className="transition-opacity hover:opacity-100">
+                    <a href="/" className="transition-opacity hover:opacity-100">
                         Home
                     </a>
                     <a
@@ -193,7 +190,7 @@ export default async function FAQPage({ params }: PageProps) {
                     </p>
                     <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                         <a
-                            href={`/${locale}`}
+                            href="/"
                             className="inline-flex items-center gap-3 border-b border-[#111111] pb-2 text-sm font-bold uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
                         >
                             Back to home

@@ -1,6 +1,6 @@
 # Strucureo
 
-> Strucureo is an IT services and software development company founded in February 2026. We help startups and small businesses worldwide build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months. Led by Nagaratinam S (MD), Balaviyas Viyas (CEO), and Dharini Karthik (COO), Strucureo operates as a remote engineering studio serving clients across the US, UAE, Germany, Russia, and India.
+> Strucureo is an IT services and software development company founded in February 2026. We help startups and small businesses worldwide build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months. Led by Nagaratinam S (MD), Strucureo operates as a remote engineering studio serving clients across the US, UAE, Germany, Russia, and India.
 
 Strucureo specializes in rapid, focused software builds using modern technologies including Next.js, React, TypeScript, AI/ML tools, and cloud platforms. Our structured 4-step process — Diagnose, Design Options, Build Fast, Launch & Support — ensures practical solutions that reduce ambiguity and ship quickly.
 
@@ -13,7 +13,7 @@ Strucureo specializes in rapid, focused software builds using modern technologie
 - Automation & Cloud Support: Cloud deployment, CI/CD setup, performance fixes, and monitoring for existing products.
 
 ## About
-- Company: Strucureo was founded on February 26, 2026, by Nagaratinam S (Managing Director), Balaviyas Viyas (CEO, https://www.linkedin.com/in/viyas56/), and Dharini Karthik (COO, https://www.linkedin.com/in/dharini-karthik).
+- Company: Strucureo was founded on February 26, 2026, by Nagaratinam S (Managing Director).
 - Team: A remote engineering studio of 3 core members focused on full-stack development, AI solutions, and cloud platforms.
 - Markets: United States, United Arab Emirates, Germany, Russia, India, and global.
 - Process: 4-step structured approach — Diagnose, Design Options, Build Fast, Launch & Support.

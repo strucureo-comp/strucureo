@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const createNextIntlPlugin = require('next-intl/plugin');
-const withNextIntl = createNextIntlPlugin();
-
 const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react']
@@ -14,17 +11,47 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/:locale/work',
-        destination: 'https://portfolio.strucureo.com',
+        source: '/en-US/:path*',
+        destination: '/:path*',
         permanent: true,
       },
       {
-        source: '/work',
-        destination: 'https://portfolio.strucureo.com',
+        source: '/en-AE/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+      {
+        source: '/de-DE/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+      {
+        source: '/ru-RU/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+      {
+        source: '/en-US',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en-AE',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/de-DE',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/ru-RU',
+        destination: '/',
         permanent: true,
       }
     ];
   }
 };
 
-module.exports = withNextIntl(nextConfig);
+module.exports = nextConfig;

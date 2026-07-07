@@ -10,7 +10,7 @@ Last updated: 2026-02-26
 
 Strucureo is an IT services and software development company founded in February 2026. We help startups and small businesses worldwide build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months.
 
-Our structured 4-step process — Diagnose, Design Options, Build Fast, Launch & Support — ensures practical solutions that reduce ambiguity and ship quickly. Led by Nagaratinam S (Managing Director), Balaviyas Viyas (CEO), and Dharini Karthik (COO), Strucureo operates as a remote engineering studio serving clients across the US, UAE, Germany, Russia, and India.
+Our structured 4-step process — Diagnose, Design Options, Build Fast, Launch & Support — ensures practical solutions that reduce ambiguity and ship quickly. Led by Nagaratinam S (Managing Director), Strucureo operates as a remote engineering studio serving clients across the US, UAE, Germany, Russia, and India.
 
 We specialize in custom software development, AI automation, web development, ERP systems, startup MVP development, and cloud support. Our technology stack includes Next.js, React, TypeScript, Tailwind CSS, Three.js, Supabase, and various AI/ML tools.
 
@@ -50,18 +50,12 @@ Cloud deployment, CI/CD setup, performance fixes, and monitoring for existing pr
 
 ## About Strucureo
 
-Strucureo was founded on February 26, 2026, by a team of three experienced software professionals with a shared vision: to build a remote engineering studio that delivers focused, high-quality software solutions without the bloat of traditional agencies.
+Strucureo was founded on February 26, 2026, with a vision to build a remote engineering studio that delivers focused, high-quality software solutions without the bloat of traditional agencies.
 
 ### Our Team
 
 **Nagaratinam S — Managing Director**
 Nagaratinam leads Strucureo's strategic direction and operations, ensuring we deliver exceptional results for every client.
-
-**Balaviyas Viyas — Chief Executive Officer**
-Viyas drives business development and client relationships. With a focus on startups and scale-ups, he ensures Strucureo remains agile and results-oriented. Connect on LinkedIn: https://www.linkedin.com/in/viyas56/
-
-**Dharini Karthik — Chief Operating Officer**
-Dharini oversees project delivery and team operations, ensuring seamless execution across all engagements. Connect on LinkedIn: https://www.linkedin.com/in/dharini-karthik
 
 ### Our Markets
 Strucureo serves clients globally, with a focus on:
