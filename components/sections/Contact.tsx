@@ -139,7 +139,7 @@ export const Contact = () => {
               <p className="text-xs uppercase tracking-widest opacity-40 mb-2 group-hover:opacity-100 transition-opacity">
                 Phone
               </p>
-              <p className="text-xl md:text-2xl font-medium">+91 63853 62719</p>
+              <p className="text-xl md:text-2xl font-medium">+919344275731</p>
             </div>
 
             <div className="flex gap-6">
