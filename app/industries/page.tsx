@@ -1,14 +1,18 @@
 import type { Metadata } from 'next';
 import type { LucideIcon } from 'lucide-react';
 import {
-    ArrowRight,
     Boxes,
     Factory,
     Handshake,
-    Repeat,
-    ShieldCheck,
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { SiteHeader } from '@/components/shared/SiteHeader';
+import { PageHero } from '@/components/shared/PageHero';
+import { SplitList } from '@/components/shared/SplitList';
+import { NumberedRow } from '@/components/shared/NumberedRow';
+import { Section } from '@/components/shared/Section';
+import { AnimatedText } from '@/components/shared/AnimatedText';
+import { Contact } from '@/components/sections/Contact';
 
 const SITE_URL = 'https://strucureo.com';
 
@@ -108,218 +112,96 @@ export const metadata: Metadata = {
 export default function IndustriesPage() {
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
-            <nav className="flex items-start justify-between px-6 py-8 text-xs font-medium uppercase tracking-[0.2em] md:px-12 lg:px-24">
-                <a
-                    href="/"
-                    className="flex flex-col transition-opacity hover:opacity-50"
-                >
-                    <span>Strucureo</span>
-                    <span className="mt-1 opacity-40">Industries</span>
-                </a>
-                <div className="flex gap-5 opacity-60">
-                    <a href="/" className="transition-opacity hover:opacity-100">
-                        Home
-                    </a>
-                    <a href="/services" className="transition-opacity hover:opacity-100">
-                        Build
-                    </a>
-                    <a href="/labs" className="transition-opacity hover:opacity-100">
-                        Labs
-                    </a>
-                    <a
-                        href="https://portfolio.strucureo.com"
-                        className="transition-opacity hover:opacity-100"
-                    >
-                        Work
-                    </a>
-                </div>
-            </nav>
+            <SiteHeader />
 
-            <section className="px-6 pb-20 pt-12 md:px-12 md:pt-24 lg:px-24">
-                <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
-                    <div className="lg:col-span-8">
-                        <p className="mb-6 text-xs uppercase tracking-[0.24em] opacity-40">
-                            Strucureo Industries
-                        </p>
-                        <h1 className="max-w-5xl text-5xl font-bold leading-[0.9] tracking-tighter md:text-7xl lg:text-8xl">
-                            Software made for your industry, ready to use.
-                        </h1>
-                    </div>
-                    <div className="lg:col-span-4">
-                        <p className="text-lg font-light leading-relaxed text-[#6E6E6E] md:text-xl">
-                            Packaged from proven Labs work — configured to
-                            your team instead of built from scratch.
-                        </p>
-                    </div>
-                </div>
+            <PageHero
+                eyebrow="Strucureo Industries"
+                title="Software made for your industry, ready to use."
+                intro="Packaged from proven Labs work — configured to your team instead of built from scratch."
+                points={[
+                    { number: '01', label: 'Proven in Labs first' },
+                    { number: '02', label: 'Configured to your team' },
+                    { number: '03', label: 'Early partners welcome' },
+                ]}
+            />
 
-                <div className="mt-16 grid gap-4 border-y border-[#111111]/10 py-6 md:grid-cols-3">
-                    {[
-                        ['01', 'Proven in Labs first'],
-                        ['02', 'Configured to your team'],
-                        ['03', 'Early partners welcome'],
-                    ].map(([number, label]) => (
-                        <div key={number} className="flex items-center gap-4">
-                            <span className="font-mono text-xs opacity-30">{number}</span>
-                            <span className="text-sm font-bold uppercase tracking-[0.18em]">
-                                {label}
-                            </span>
+            <SplitList
+                eyebrow="Product Lines"
+                title="Starting points"
+                intro="Industry and product names are placeholders until the first packages are confirmed. [TODO: industry names, product names]"
+            >
+                {productLines.map((line, index) => (
+                    <NumberedRow
+                        key={line.title}
+                        index={index}
+                        icon={line.icon}
+                        title={line.title}
+                        desc={line.description}
+                        extra={
+                            <p className="mt-6 leading-relaxed text-[#6E6E6E]">
+                                {line.includes.join(' · ')}
+                            </p>
+                        }
+                    />
+                ))}
+            </SplitList>
+
+            <Section className="bg-[#f9f9f9]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div className="relative">
+                        <div className="relative z-10">
+                            <AnimatedText
+                                text="How products differ from custom projects."
+                                className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6"
+                            />
+                            <AnimatedText
+                                text="Build projects are designed around one client. Industry products start from a shared, proven core and are configured to fit."
+                                className="text-xl md:text-2xl font-light text-[#6E6E6E] leading-relaxed mb-8 max-w-md"
+                                delay={0.2}
+                            />
                         </div>
-                    ))}
-                </div>
-            </section>
-
-            <section className="border-t border-[#111111]/10 px-6 py-20 md:px-12 lg:px-24">
-                <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-                    <div>
-                        <p className="mb-4 text-xs uppercase tracking-[0.24em] opacity-40">
-                            Product Lines
-                        </p>
-                        <h2 className="text-4xl font-bold tracking-tighter md:text-6xl">
-                            Starting points
-                        </h2>
                     </div>
-                    <p className="max-w-md text-[#6E6E6E]">
-                        Industry and product names are placeholders until the
-                        first packages are confirmed. [TODO: industry names,
-                        product names]
-                    </p>
-                </div>
 
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {productLines.map((line) => {
-                        const Icon = line.icon;
-
-                        return (
-                            <article
-                                key={line.title}
-                                className="group flex min-h-[360px] flex-col justify-between rounded-3xl border border-[#111111]/10 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#111111]/30 hover:shadow-2xl hover:shadow-black/5"
-                            >
-                                <div>
-                                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#111111] text-white transition-transform duration-300 group-hover:scale-110">
-                                        <Icon className="h-7 w-7" />
-                                    </div>
-                                    <h3 className="mb-4 text-2xl font-bold tracking-tight">
-                                        {line.title}
-                                    </h3>
-                                    <p className="leading-relaxed text-[#6E6E6E]">
-                                        {line.description}
-                                    </p>
-                                </div>
-
-                                <div className="mt-8 flex flex-wrap gap-2">
-                                    {line.includes.map((item) => (
-                                        <span
-                                            key={item}
-                                            className="rounded-full border border-[#111111]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] opacity-60"
-                                        >
-                                            {item}
-                                        </span>
-                                    ))}
-                                </div>
-                            </article>
-                        );
-                    })}
-                </div>
-            </section>
-
-            <section className="grid border-t border-[#111111]/10 bg-[#f9f9f9] md:grid-cols-2">
-                <div className="px-6 py-20 md:px-12 lg:px-24">
-                    <p className="mb-4 text-xs uppercase tracking-[0.24em] opacity-40">
-                        Difference
-                    </p>
-                    <h2 className="mb-8 text-4xl font-bold tracking-tighter md:text-6xl">
-                        How products differ from custom projects.
-                    </h2>
-                    <p className="max-w-xl text-lg leading-relaxed text-[#6E6E6E]">
-                        Build projects are designed around one client. Industry
-                        products start from a shared, proven core and are
-                        configured to fit.
-                    </p>
-                </div>
-
-                <div className="border-t border-[#111111]/10 md:border-l md:border-t-0">
-                    {differenceSteps.map((step, index) => (
-                        <div
-                            key={step.title}
-                            className="grid gap-6 border-b border-[#111111]/10 px-6 py-10 last:border-b-0 md:grid-cols-[80px_1fr] md:px-12"
-                        >
-                            <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-30">
-                                0{index + 1}
-                            </span>
-                            <div>
-                                <h3 className="mb-3 text-2xl font-bold">{step.title}</h3>
-                                <p className="max-w-xl leading-relaxed text-[#6E6E6E]">
-                                    {step.description}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            <section className="px-6 py-20 md:px-12 lg:px-24">
-                <div className="grid gap-12 lg:grid-cols-12">
-                    <div className="lg:col-span-5">
-                        <p className="mb-4 text-xs uppercase tracking-[0.24em] opacity-40">
-                            Early Partners
-                        </p>
-                        <h2 className="text-4xl font-bold tracking-tighter md:text-6xl">
-                            Shape the product for your industry.
-                        </h2>
-                    </div>
-                    <div className="grid gap-4 md:grid-cols-2 lg:col-span-7">
-                        {[
-                            'Scoped pilot shaped with your team',
-                            'Direct input into the roadmap',
-                            'Guided setup and training',
-                            'Support path after launch',
-                            'Early-partner terms [TODO]',
-                            'Availability by industry [TODO]',
-                        ].map((standard) => (
-                            <div
-                                key={standard}
-                                className="flex items-start gap-4 rounded-2xl border border-[#111111]/10 p-5"
-                            >
-                                <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0" />
-                                <span className="text-sm font-medium leading-relaxed">
-                                    {standard}
-                                </span>
-                            </div>
+                    <div className="border-t border-[#111111]/10">
+                        {differenceSteps.map((step, index) => (
+                            <NumberedRow
+                                key={step.title}
+                                index={index}
+                                size="sm"
+                                title={step.title}
+                                desc={step.description}
+                            />
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
 
-            <section className="px-6 pb-12 md:px-12 lg:px-24">
-                <div className="overflow-hidden rounded-[2rem] bg-[#111111] p-8 text-white md:p-12 lg:p-16">
-                    <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-                        <div className="lg:col-span-8">
-                            <Repeat className="mb-8 h-10 w-10 opacity-60" />
-                            <h2 className="text-4xl font-bold leading-[0.95] tracking-tighter md:text-6xl">
-                                Want a ready-made starting point for your industry?
-                            </h2>
-                        </div>
-                        <div className="lg:col-span-4">
-                            <p className="mb-8 leading-relaxed text-white/60">
-                                Tell us your industry and workflow. We will show
-                                the closest starting point — or a pilot path.
-                            </p>
-                            <a
-                                href="/#contact"
-                                className="inline-flex items-center gap-3 border-b border-white pb-2 text-sm font-bold uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
-                            >
-                                Join the early-partner list
-                                <ArrowRight className="h-4 w-4" />
-                            </a>
-                        </div>
-                    </div>
+            <SplitList
+                eyebrow="Early Partners"
+                title="Shape the product for your industry."
+            >
+                <div className="border-t border-[#111111]/10">
+                    {[
+                        'Scoped pilot shaped with your team',
+                        'Direct input into the roadmap',
+                        'Guided setup and training',
+                        'Support path after launch',
+                        'Early-partner terms [TODO]',
+                        'Availability by industry [TODO]',
+                    ].map((standard, index) => (
+                        <NumberedRow
+                            key={standard}
+                            index={index}
+                            size="sm"
+                            title={standard}
+                        />
+                    ))}
                 </div>
-            </section>
+            </SplitList>
 
             <section className="border-t border-[#111111]/10 px-6 py-20 md:px-12 lg:px-24">
                 <div className="mx-auto max-w-3xl">
-                    <p className="mb-4 text-xs uppercase tracking-[0.24em] opacity-40">
+                    <p className="mb-4 text-xs uppercase tracking-[0.2em] opacity-40">
                         FAQ
                     </p>
                     <h2 className="mb-8 text-4xl font-bold tracking-tighter md:text-6xl">
@@ -328,6 +210,8 @@ export default function IndustriesPage() {
                     <FAQAccordion items={faqItems} />
                 </div>
             </section>
+
+            <Contact />
         </main>
     );
 }
