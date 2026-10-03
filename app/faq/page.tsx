@@ -14,9 +14,9 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
     {
-        question: 'What services does Strucureo offer?',
+        question: 'What does Strucureo Build offer?',
         answer:
-            'Strucureo offers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation services. We deliver focused software solutions for startups and small businesses in days, not months.',
+            'Strucureo Build delivers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation. We deliver focused software for startups and small businesses in days, not months.',
     },
     {
         question: 'How fast can Strucureo build a website or software product?',
@@ -51,7 +51,7 @@ const faqs: FAQItem[] = [
     {
         question: 'Can Strucureo help with an existing project that has problems?',
         answer:
-            'Yes. Our Automation & Cloud Support service covers system cleanup, performance fixes, deployment automation, and operational improvements for existing products. We also offer ongoing support after launching new builds.',
+            'Yes. Our Automation & Cloud Support team covers system cleanup, performance fixes, deployment automation, and operational improvements for existing products. We also offer ongoing support after launching new builds.',
     },
     {
         question: 'Does Strucureo work with startups based in Dubai / UAE?',
@@ -82,13 +82,13 @@ const faqSchema = {
 
 export const metadata: Metadata = {
     title: 'FAQ | Strucureo',
-    description: 'Frequently asked questions about Strucureo services, process, pricing, and team. Learn how we build websites, AI chatbots, ERP systems, and custom software fast.',
+    description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team. Learn how we build websites, AI chatbots, ERP systems, and custom software fast.',
     alternates: {
         canonical: `${SITE_URL}/faq`,
     },
     openGraph: {
         title: 'FAQ | Strucureo',
-        description: 'Frequently asked questions about Strucureo services, process, pricing, and team.',
+        description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team.',
         url: `${SITE_URL}/faq`,
         siteName: 'Strucureo',
         type: 'website',
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'FAQ | Strucureo',
-        description: 'Frequently asked questions about Strucureo services, process, pricing, and team.',
+        description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team.',
     },
 };
 
@@ -146,7 +146,7 @@ export default function FAQPage() {
                     <div className="lg:col-span-4">
                         <p className="text-lg font-light leading-relaxed text-[#6E6E6E] md:text-xl">
                             Everything you need to know about working with Strucureo — our
-                            services, process, pricing, and team.
+                            process, pricing, and team.
                         </p>
                     </div>
                 </div>

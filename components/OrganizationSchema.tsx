@@ -14,7 +14,7 @@ const OrganizationSchema = () => {
                     "width": 512,
                     "height": 512
                 },
-                "description": "IT services and software development company helping startups and small businesses build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months.",
+                "description": "Engineering studio helping startups and small businesses build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months.",
                 "foundingDate": "2026-02-26",
                 "sameAs": [
                     "https://www.linkedin.com/company/strucureo/",

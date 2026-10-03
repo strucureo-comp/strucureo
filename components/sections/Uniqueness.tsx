@@ -74,7 +74,7 @@ export const Uniqueness = () => {
               <span className="text-[#111111]/20">Standard.</span>
             </h2>
             <p className="text-lg text-[#6E6E6E] max-w-sm leading-relaxed">
-              We bring a disciplined, transparent, and high-velocity approach to IT services.
+              We bring a disciplined, transparent, and high-velocity approach to building software.
             </p>
           </div>
         </div>

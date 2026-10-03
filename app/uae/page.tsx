@@ -44,7 +44,7 @@ const uaeSchema = {
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Strucureo UAE Services",
+    "name": "Strucureo UAE",
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Chatbot Development" } },
@@ -75,13 +75,13 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-    title: 'Custom Software & IT Services in UAE | Strucureo',
+        title: 'Custom Software, AI Chatbots & ERP in UAE | Strucureo',
     description: 'Strucureo builds custom software, AI chatbots, ERP systems, and startup MVPs for businesses in Dubai, Abu Dhabi, and across the UAE — delivered in days, not months.',
     keywords: [
-        'IT services company UAE',
-        'software agency Dubai',
+        'engineering studio UAE',
+        'software studio Dubai',
         'AI chatbot development company UAE',
-        'IT company Dubai',
+        'engineering studio Dubai',
         'custom software development UAE',
         'startup MVP development Dubai'
     ],
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/uae`,
     },
     openGraph: {
-        title: 'Custom Software & IT Services in UAE | Strucureo',
+    title: 'Custom Software, AI Chatbots & ERP in UAE | Strucureo',
         description: 'Elite software engineering for businesses across the UAE.',
         url: `${SITE_URL}/uae`,
         siteName: 'Strucureo',
@@ -115,7 +115,7 @@ export default function UAEPage() {
                         Home
                     </a>
                     <a href="/services" className="transition-opacity hover:opacity-100">
-                        Services
+                        Build
                     </a>
                 </div>
             </nav>

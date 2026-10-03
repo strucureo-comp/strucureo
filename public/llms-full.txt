@@ -8,7 +8,7 @@ Last updated: 2026-02-26
 
 ## Home
 
-Strucureo is an IT services and software development company founded in February 2026. We help startups and small businesses worldwide build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months.
+Strucureo is an engineering studio founded in February 2026. We help startups and small businesses worldwide build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months.
 
 Our structured 4-step process — Diagnose, Design Options, Build Fast, Launch & Support — ensures practical solutions that reduce ambiguity and ship quickly. Led by Nagaratinam S (Managing Director), Strucureo operates as a remote engineering studio serving clients across the US, UAE, Germany, Russia, and India.
 
@@ -18,7 +18,7 @@ We specialize in custom software development, AI automation, web development, ER
 
 # https://strucureo.com/services
 
-## Services
+## Build
 
 ### Custom Software Development
 Purpose-built applications designed for your specific business needs. We build internal portals, customer-facing platforms, and everything in between — delivered in focused sprints.

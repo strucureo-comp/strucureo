@@ -105,9 +105,9 @@ const deliveryStandards = [
 
 const faqItems = [
     {
-        question: 'What services does Strucureo offer?',
+        question: 'What does Strucureo Build offer?',
         answer:
-            'Strucureo offers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation services. We deliver focused software solutions for startups and small businesses in days, not months.',
+            'Strucureo Build delivers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation. We deliver focused software for startups and small businesses in days, not months.',
     },
     {
         question: 'How fast can Strucureo build a website or software product?',
@@ -181,9 +181,9 @@ const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Custom Software Development',
-    name: 'Strucureo Software Services',
+    name: 'Strucureo Build',
     description:
-        'Custom software development, AI chatbots, web development, ERP systems, startup MVP builds, and cloud automation services.',
+        'Custom software development, AI chatbots, web development, ERP systems, startup MVP builds, and cloud automation.',
     provider: {
         '@type': 'Organization',
         name: 'Strucureo',
@@ -197,7 +197,7 @@ const serviceSchema = {
     ],
     hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: 'Software Services',
+        name: 'Strucureo Build',
         itemListElement: services.map((service) => ({
             '@type': 'Offer',
             itemOffered: {
@@ -210,25 +210,25 @@ const serviceSchema = {
 };
 
 export const metadata: Metadata = {
-    title: 'Custom Software & AI Services in UAE & India | Strucureo',
+    title: 'Custom Software, AI Chatbots & ERP in UAE & India | Strucureo',
     description: 'Strucureo offers custom software development, AI chatbots, ERP systems, startup MVPs, web development, and cloud automation for businesses across the UAE and India — built in days, not months.',
     keywords: [
         'custom software development',
         'AI chatbot development',
-        'web development services',
+        'web development',
         'ERP system development',
         'startup MVP development',
         'cloud automation',
         'Next.js development',
         'software agency',
-        'IT services company',
+        'engineering studio',
         'rapid software development',
     ],
     alternates: {
         canonical: `${SITE_URL}/services`,
     },
     openGraph: {
-        title: 'Custom Software & AI Services | Strucureo',
+        title: 'Strucureo Build: Custom Software & AI | Strucureo',
         description: 'Websites, AI chatbots, ERP systems, MVPs, custom software, automation, and cloud support built with a structured engineering process.',
         url: `${SITE_URL}/services`,
         siteName: 'Strucureo',
@@ -331,11 +331,11 @@ export default function ServicesPage() {
                             What We Build
                         </p>
                         <h2 className="text-4xl font-bold tracking-tighter md:text-6xl">
-                            Service lines
+                            What we build
                         </h2>
                     </div>
                     <p className="max-w-md text-[#6E6E6E]">
-                        Each service can be delivered as a focused project or combined into a
+                        Each build can be delivered as a focused project or combined into a
                         larger product build.
                     </p>
                 </div>

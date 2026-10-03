@@ -44,7 +44,7 @@ const indiaSchema = {
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Strucureo India Services",
+    "name": "Strucureo India",
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Chatbot Development" } },
@@ -75,11 +75,11 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-    title: 'Custom Software & IT Services in India | Strucureo',
+        title: 'Custom Software, AI Chatbots & ERP in India | Strucureo',
     description: 'Strucureo builds custom software, AI chatbots, ERP systems, and startup MVPs for businesses in Chennai, Bangalore, Mumbai and across India — delivered in days, not months.',
     keywords: [
-        'IT services company India',
-        'software agency Chennai',
+        'engineering studio India',
+        'software studio Chennai',
         'custom software development India',
         'startup MVP development Chennai',
         'software development company Bangalore',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/india`,
     },
     openGraph: {
-        title: 'Custom Software & IT Services in India | Strucureo',
+    title: 'Custom Software, AI Chatbots & ERP in India | Strucureo',
         description: 'Elite software engineering for businesses across India.',
         url: `${SITE_URL}/india`,
         siteName: 'Strucureo',
@@ -115,7 +115,7 @@ export default function IndiaPage() {
                         Home
                     </a>
                     <a href="/services" className="transition-opacity hover:opacity-100">
-                        Services
+                        Build
                     </a>
                 </div>
             </nav>

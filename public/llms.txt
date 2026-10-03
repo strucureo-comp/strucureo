@@ -1,10 +1,10 @@
 # Strucureo
 
-> Strucureo is an IT services and software development company founded in February 2026. We help startups and small businesses worldwide build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months. Led by Nagaratinam S (MD), Strucureo operates as a remote engineering studio serving clients across the US, UAE, Germany, Russia, and India.
+> Strucureo is an engineering studio founded in February 2026. We help startups and small businesses worldwide build custom websites, AI chatbots, ERP systems, and software products — delivered in days, not months. Led by Nagaratinam S (MD), Strucureo operates as a remote engineering studio serving clients across the US, UAE, Germany, Russia, and India.
 
 Strucureo specializes in rapid, focused software builds using modern technologies including Next.js, React, TypeScript, AI/ML tools, and cloud platforms. Our structured 4-step process — Diagnose, Design Options, Build Fast, Launch & Support — ensures practical solutions that reduce ambiguity and ship quickly.
 
-## Services
+## Build
 - Website Development: Conversion-focused marketing sites, landing pages, and product pages built with Next.js for speed, SEO, and trust.
 - AI Chatbot Development: Customer support bots, internal assistants, and AI workflows connected to your documents and escalation paths.
 - ERP & Operations Systems: Custom dashboards and business systems for inventory, orders, roles, and reporting.
