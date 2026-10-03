@@ -56,7 +56,7 @@ export const Hero = () => {
       <div className="flex-grow flex flex-col justify-center mt-12 md:mt-0 z-10 pb-24 pointer-events-none"> {/* content wrapper */}
         <div className="pointer-events-auto"> {/* Interactive elements wrapper */}
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-0 md:space-y-4">
-            {['Fast IT Services &', 'Custom Software.'].map((line, i) => (
+            {['Clarity Against', 'Complexity.'].map((line, i) => (
               <motion.h1
                 key={i}
                 variants={{

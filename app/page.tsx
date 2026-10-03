@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         default: 'Strucureo | Engineering Studio: Build, Labs & Industry Products in UAE & India',
         template: '%s | Strucureo'
     },
-    description: 'Strucureo is an engineering studio in the UAE and India with three arms: Build for client software delivered in days, Labs for research into AI agents and reusable modules, and Industries for ready-made industry products. Also serving clients globally.',
+    description: 'Strucureo is an engineering studio in the UAE and India. Build delivers custom software, AI chatbots, ERP systems and startup MVPs in days. Labs researches AI agents and reusable modules. Industries turns proven work into industry products. Serving clients globally.',
     keywords: [
         'engineering studio UAE',
         'custom software development India',

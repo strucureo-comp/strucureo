@@ -142,7 +142,7 @@ export default function IndustriesPage() {
                             Strucureo Industries
                         </p>
                         <h1 className="max-w-5xl text-5xl font-bold leading-[0.9] tracking-tighter md:text-7xl lg:text-8xl">
-                            Ready-made products for specific industries.
+                            Software made for your industry, ready to use.
                         </h1>
                     </div>
                     <div className="lg:col-span-4">
@@ -309,7 +309,7 @@ export default function IndustriesPage() {
                                 href="/#contact"
                                 className="inline-flex items-center gap-3 border-b border-white pb-2 text-sm font-bold uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
                             >
-                                Talk to us
+                                Join the early-partner list
                                 <ArrowRight className="h-4 w-4" />
                             </a>
                         </div>

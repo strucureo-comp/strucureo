@@ -6,22 +6,22 @@ import { AnimatedText } from '@/components/shared/AnimatedText';
 
 const flowSteps = [
   {
-    title: 'Build reveals real problems',
+    title: 'Build meets real business problems in client work.',
     description:
       'Client work in Strucureo Build surfaces repeated, real-world problems worth solving once and reusing.',
   },
   {
-    title: 'Labs researches and tests solutions',
+    title: 'Labs researches and tests solutions for the ones that repeat.',
     description:
       'Strucureo Labs turns those problems into prototypes, AI agents, and reusable modules, tested against real client needs.',
   },
   {
-    title: 'Industries packages what works',
+    title: 'Industries packages what works into a product.',
     description:
       'Proven Labs work is packaged into ready-made industry products. [TODO: product names]',
   },
   {
-    title: 'Back to Build',
+    title: 'New clients and reusable modules return to Build.',
     description:
       'New clients and reusable modules return to Build, so the next client project starts faster and stronger.',
   },

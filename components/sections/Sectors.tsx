@@ -32,18 +32,18 @@ const ScrollItem = ({ item, index }: { item: any, index: number }) => {
 export const Sectors = () => {
   const items = [
     {
-      title: 'Build',
-      desc: 'Strucureo Build: custom software for clients — websites, AI chatbots, ERP systems, and startup MVPs — delivered in days.',
+      title: 'Strucureo Build',
+      desc: 'Custom software for startups and businesses, delivered in days. Websites, AI chatbots, ERP systems and MVPs.',
       icon: Hammer
     },
     {
-      title: 'Labs',
-      desc: 'Strucureo Labs: research and prototypes that turn repeated problems from client work into reusable solutions.',
+      title: 'Strucureo Labs',
+      desc: 'Research and prototypes. We turn problems that repeat across client work into tested, reusable solutions.',
       icon: FlaskConical
     },
     {
-      title: 'Industries',
-      desc: 'Strucureo Industries: ready-made products for specific industries, built from proven Labs work. [TODO: industry names]',
+      title: 'Strucureo Industries',
+      desc: 'Ready-made products for specific industries, built from work that has already proven itself.',
       icon: Factory
     }
   ];

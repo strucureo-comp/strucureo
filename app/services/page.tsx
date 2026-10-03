@@ -296,7 +296,7 @@ export default function ServicesPage() {
                             Strucureo Build
                         </p>
                         <h1 className="max-w-5xl text-5xl font-bold leading-[0.9] tracking-tighter md:text-7xl lg:text-8xl">
-                            Focused software builds for teams that need results fast.
+                            Custom software, delivered in days.
                         </h1>
                     </div>
                     <div className="lg:col-span-4">
@@ -457,7 +457,7 @@ export default function ServicesPage() {
                                 href="/#contact"
                                 className="inline-flex items-center gap-3 border-b border-white pb-2 text-sm font-bold uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
                             >
-                                Start a project
+                                Book a free consultation
                                 <ArrowRight className="h-4 w-4" />
                             </a>
                         </div>
