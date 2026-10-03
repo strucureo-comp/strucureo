@@ -151,6 +151,7 @@ export default function LabsPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     <div className="relative">
                         <div className="relative z-10">
+                            <AnimatedText text="Graduation" className="text-xs uppercase tracking-[0.2em] mb-6 block opacity-50" />
                             <AnimatedText
                                 text="How ideas graduate to products."
                                 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6"
