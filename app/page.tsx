@@ -7,23 +7,23 @@ import { Contact } from '@/components/sections/Contact';
 
 export const metadata: Metadata = {
     title: {
-        default: 'Strucureo | Custom Software & IT Services in UAE & India',
+        default: 'Strucureo | Engineering Studio: Build, Labs & Industry Products in UAE & India',
         template: '%s | Strucureo'
     },
-    description: 'Strucureo builds custom software, AI chatbots, ERP systems, and startup MVPs for businesses in the UAE and India — delivered in days, not months. Also serving clients globally.',
+    description: 'Strucureo is an engineering studio in the UAE and India with three arms: Build for client software delivered in days, Labs for research into AI agents and reusable modules, and Industries for ready-made industry products. Also serving clients globally.',
     keywords: [
-        'IT services company UAE',
+        'engineering studio UAE',
         'custom software development India',
-        'software agency Dubai',
+        'software studio Dubai',
         'startup MVP development Chennai',
-        'AI chatbot development company UAE',
-        'ERP systems India',
-        'IT company Dubai',
-        'software development company Bangalore'
+        'AI chatbot development UAE',
+        'ERP development India',
+        'engineering studio Dubai',
+        'software development Bangalore'
     ],
     openGraph: {
-        title: 'Strucureo | Fast IT Services & Custom Software',
-        description: 'Strucureo helps startups and small businesses build websites, AI chatbots, ERP systems, and custom software delivered in days, not months.',
+        title: 'Strucureo | Engineering Studio: Build, Labs & Industries',
+        description: 'Strucureo helps startups and small businesses build websites, AI chatbots, ERP systems, and custom software delivered in days — plus Labs research and ready-made industry products.',
         url: 'https://www.strucureo.com',
         siteName: 'Strucureo',
         locale: 'en_US',
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
                 url: 'https://www.strucureo.com/opengraph-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'Strucureo IT Services'
+                alt: 'Strucureo Engineering Studio'
             }
         ]
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Strucureo | Fast IT Services & Software Development',
-        description: 'Websites, AI Chatbots, ERPs, and Custom Software delivered in days.',
+        title: 'Strucureo | Engineering Studio: Build, Labs & Industries',
+        description: 'Websites, AI Chatbots, ERPs, and custom software delivered in days — plus Labs research and industry products.',
         creator: '@strucureo',
         images: ['https://www.strucureo.com/opengraph-image.png']
     },

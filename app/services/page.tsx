@@ -259,7 +259,7 @@ export default function ServicesPage() {
                     className="flex flex-col transition-opacity hover:opacity-50"
                 >
                     <span>Strucureo</span>
-                    <span className="mt-1 opacity-40">Services</span>
+                    <span className="mt-1 opacity-40">Strucureo Build</span>
                 </a>
                 <div className="flex gap-5 opacity-60">
                     <a
@@ -281,7 +281,7 @@ export default function ServicesPage() {
                 <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
                     <div className="lg:col-span-8">
                         <p className="mb-6 text-xs uppercase tracking-[0.24em] opacity-40">
-                            Services
+                            Strucureo Build
                         </p>
                         <h1 className="max-w-5xl text-5xl font-bold leading-[0.9] tracking-tighter md:text-7xl lg:text-8xl">
                             Focused software builds for teams that need results fast.
