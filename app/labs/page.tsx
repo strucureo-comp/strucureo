@@ -3,11 +3,9 @@ import type { LucideIcon } from 'lucide-react';
 import {
     ArrowRight,
     Bot,
-    Boxes,
     FlaskConical,
     Microscope,
     Puzzle,
-    Rocket,
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
 

@@ -5,7 +5,6 @@ import {
     Boxes,
     Factory,
     Handshake,
-    PackageCheck,
     Repeat,
     ShieldCheck,
 } from 'lucide-react';
