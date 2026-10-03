@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
-import { ArrowRight, Building2, MapPin, Globe, CreditCard } from 'lucide-react';
+import { Building2, Globe, CreditCard } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { SiteHeader } from '@/components/shared/SiteHeader';
+import { PageHero } from '@/components/shared/PageHero';
+import { NumberedRow } from '@/components/shared/NumberedRow';
+import { Section } from '@/components/shared/Section';
+import { Contact } from '@/components/sections/Contact';
 
 const SITE_URL = 'https://www.strucureo.com';
 
@@ -105,61 +110,45 @@ export default function UAEPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(uaeSchema) }}
             />
 
-            <nav className="flex items-start justify-between px-6 py-8 text-xs font-medium uppercase tracking-[0.2em] md:px-12 lg:px-24">
-                <a href="/" className="flex flex-col transition-opacity hover:opacity-50">
-                    <span>Strucureo</span>
-                    <span className="mt-1 opacity-40">UAE</span>
-                </a>
-                <div className="flex gap-5 opacity-60">
-                    <a href="/" className="transition-opacity hover:opacity-100">
-                        Home
-                    </a>
-                    <a href="/services" className="transition-opacity hover:opacity-100">
-                        Build
-                    </a>
-                </div>
-            </nav>
+            <SiteHeader />
 
-            <section className="px-6 pb-20 pt-12 md:px-12 md:pt-24 lg:px-24 border-b border-[#111111]/10">
-                <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
-                    <div className="lg:col-span-8">
-                        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#111111]/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em]">
-                            <MapPin className="h-3 w-3" />
-                            <span>United Arab Emirates</span>
-                        </div>
-                        <h1 className="max-w-5xl text-5xl font-bold leading-[0.9] tracking-tighter md:text-7xl lg:text-8xl">
-                            Elite software engineering for the UAE.
-                        </h1>
-                    </div>
-                    <div className="lg:col-span-4">
-                        <p className="text-lg font-light leading-relaxed text-[#6E6E6E] md:text-xl">
-                            We build custom software, AI chatbots, and startup MVPs for forward-thinking businesses in Dubai, Abu Dhabi, and across the Emirates — delivered in days, not months.
-                        </p>
-                    </div>
-                </div>
+            <PageHero
+                eyebrow="United Arab Emirates"
+                title="Elite software engineering for the UAE."
+                intro="We build custom software, AI chatbots, and startup MVPs for forward-thinking businesses in Dubai, Abu Dhabi, and across the Emirates — delivered in days, not months."
+            />
 
-                <div className="mt-16 grid gap-6 md:grid-cols-3">
-                    <div className="rounded-3xl border border-[#111111]/10 p-8">
-                        <Building2 className="mb-6 h-8 w-8 opacity-40" />
-                        <h3 className="mb-2 text-xl font-bold">Local Expertise</h3>
-                        <p className="text-sm text-[#6E6E6E]">Understanding the unique business landscape and compliance requirements of the UAE market.</p>
-                    </div>
-                    <div className="rounded-3xl border border-[#111111]/10 p-8">
-                        <Globe className="mb-6 h-8 w-8 opacity-40" />
-                        <h3 className="mb-2 text-xl font-bold">AED Pricing</h3>
-                        <p className="text-sm text-[#6E6E6E]">Transparent, fixed-price contracts in your preferred currency with no hidden fees.</p>
-                    </div>
-                    <div className="rounded-3xl border border-[#111111]/10 p-8">
-                        <CreditCard className="mb-6 h-8 w-8 opacity-40" />
-                        <h3 className="mb-2 text-xl font-bold">MENA Integrations</h3>
-                        <p className="text-sm text-[#6E6E6E]">Deep experience connecting platforms to local payment gateways and corporate systems.</p>
-                    </div>
-                </div>
-            </section>
+            <Section>
+                {[
+                    {
+                        icon: Building2,
+                        title: 'Local Expertise',
+                        desc: 'Understanding the unique business landscape and compliance requirements of the UAE market.',
+                    },
+                    {
+                        icon: Globe,
+                        title: 'AED Pricing',
+                        desc: 'Transparent, fixed-price contracts in your preferred currency with no hidden fees.',
+                    },
+                    {
+                        icon: CreditCard,
+                        title: 'MENA Integrations',
+                        desc: 'Deep experience connecting platforms to local payment gateways and corporate systems.',
+                    },
+                ].map((feature, index) => (
+                    <NumberedRow
+                        key={feature.title}
+                        index={index}
+                        icon={feature.icon}
+                        title={feature.title}
+                        desc={feature.desc}
+                    />
+                ))}
+            </Section>
 
             <section className="px-6 py-20 md:px-12 lg:px-24 bg-[#f9f9f9]">
                 <div className="mx-auto max-w-3xl">
-                    <p className="mb-4 text-xs uppercase tracking-[0.24em] opacity-40">
+                    <p className="mb-4 text-xs uppercase tracking-[0.2em] opacity-40">
                         UAE FAQ
                     </p>
                     <h2 className="mb-8 text-4xl font-bold tracking-tighter md:text-6xl">
@@ -169,29 +158,7 @@ export default function UAEPage() {
                 </div>
             </section>
 
-            <section className="px-6 py-20 md:px-12 lg:px-24">
-                <div className="overflow-hidden rounded-[2rem] bg-[#111111] p-8 text-white md:p-12 lg:p-16">
-                    <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-                        <div className="lg:col-span-8">
-                            <h2 className="text-4xl font-bold leading-[0.95] tracking-tighter md:text-6xl">
-                                Ready to build something great in the UAE?
-                            </h2>
-                        </div>
-                        <div className="lg:col-span-4">
-                            <p className="mb-8 leading-relaxed text-white/60">
-                                Contact us directly to discuss your project requirements and get a technical roadmap.
-                            </p>
-                            <a
-                                href="/#contact"
-                                className="inline-flex items-center gap-3 border-b border-white pb-2 text-sm font-bold uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
-                            >
-                                Start your project
-                                <ArrowRight className="h-4 w-4" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Contact />
         </main>
     );
 }
