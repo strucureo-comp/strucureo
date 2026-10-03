@@ -269,6 +269,18 @@ export default function ServicesPage() {
                         Home
                     </a>
                     <a
+                        href="/labs"
+                        className="transition-opacity hover:opacity-100"
+                    >
+                        Labs
+                    </a>
+                    <a
+                        href="/industries"
+                        className="transition-opacity hover:opacity-100"
+                    >
+                        Industries
+                    </a>
+                    <a
                         href="https://portfolio.strucureo.com"
                         className="transition-opacity hover:opacity-100"
                     >
