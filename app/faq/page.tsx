@@ -17,7 +17,7 @@ type FAQItem = {
     answer: string;
 };
 
-const faqs: FAQItem[] = [
+export const faqs: FAQItem[] = [
     {
         question: 'What does Strucureo Build offer?',
         answer:
