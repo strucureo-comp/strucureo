@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google';
 import OrganizationSchema from '@/components/OrganizationSchema';
-import PersonSchema from '@/components/PersonSchema';
 import SmoothScroll from '@/components/shared/SmoothScroll';
 import { MobileOptimizer } from '@/components/shared/MobileOptimizer';
 import { ScrollHaptic } from '@/components/shared/ScrollHaptic';
@@ -22,10 +21,12 @@ export default function RootLayout({
         <html lang="en" className="scroll-smooth">
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <noscript>
+                    <style>{`[style*="opacity: 0"]{opacity:1!important;transform:none!important;filter:none!important;}.opacity-20{opacity:1!important;}.blur-sm{filter:none!important;}`}</style>
+                </noscript>
             </head>
             <body className={`${inter.className} bg-white text-black font-sans antialiased`}>
                 <OrganizationSchema />
-                <PersonSchema />
                 <SmoothScroll>
                     <MobileOptimizer />
                     <ScrollHaptic />

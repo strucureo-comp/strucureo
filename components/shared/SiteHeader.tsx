@@ -1,20 +1,17 @@
 'use client';
 
 import React from 'react';
-import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Magnetic } from '@/components/shared/Magnetic';
 import { useSound } from '@/hooks/useSound';
 
 export const SiteHeader = () => {
   const { playTick } = useSound();
-  const params = useParams();
-  const locale = typeof params?.locale === 'string' ? params.locale : 'en-US';
   const navLinks = [
-    { label: 'Build', href: `/${locale}/services` },
-    { label: 'Labs', href: `/${locale}/labs` },
-    { label: 'Industries', href: `/${locale}/industries` },
-    { label: 'Blog', href: `/${locale}/blog` },
+    { label: 'Build', href: '/services' },
+    { label: 'Labs', href: '/labs' },
+    { label: 'Industries', href: '/industries' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Work', href: 'https://portfolio.strucureo.com' },
   ];
 

@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { Section } from '@/components/shared/Section';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type PageProps = {
     params: Promise<{ locale: string }>;
@@ -16,7 +17,7 @@ type FAQItem = {
     answer: string;
 };
 
-const faqs: FAQItem[] = [
+export const faqs: FAQItem[] = [
     {
         question: 'What does Strucureo Build offer?',
         answer:
@@ -71,47 +72,55 @@ const faqs: FAQItem[] = [
     },
 ];
 
-const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-            '@type': 'Answer',
-            text: faq.answer,
-        },
-    })),
-};
+const faqSchema = faqPageNode(faqs);
+
+const breadcrumbSchema = breadcrumbList([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'FAQ', url: `${SITE_URL}/faq` },
+]);
 
 export const metadata: Metadata = {
     title: 'FAQ | Strucureo',
-    description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team. Learn how we build websites, AI chatbots, ERP systems, and custom software fast.',
+    description: 'Frequently asked questions about working with Strucureo, an engineering studio: process, pricing, timelines and team.',
     alternates: {
         canonical: `${SITE_URL}/faq`,
     },
     openGraph: {
         title: 'FAQ | Strucureo',
-        description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team.',
+        description: 'Frequently asked questions about working with Strucureo, an engineering studio: our process, pricing, and team.',
         url: `${SITE_URL}/faq`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: 'FAQ | Strucureo',
-        description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team.',
+        description: 'Frequently asked questions about working with Strucureo, an engineering studio: our process, pricing, and team.',
     },
 };
 
 export default function FAQPage() {
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
-            {/* FAQPage JSON-LD Schema */}
+            {/* FAQPage + Breadcrumb JSON-LD */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify(faqSchema),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema),
                 }}
             />
 
@@ -121,11 +130,12 @@ export default function FAQPage() {
                 eyebrow="FAQ"
                 title="Questions and answers."
                 intro="Everything you need to know about working with Strucureo — our process, pricing, and team."
+                definition="These are answers about working with Strucureo, an engineering studio in the UAE and India. They cover process, pricing, timelines and the team behind Build, Labs and Industries."
             />
 
             <Section>
                 <div className="mx-auto max-w-3xl">
-                    <FAQAccordion items={faqs} className="mt-0" />
+                    <FAQAccordion items={faqs} className="mt-0" questionTag="h2" />
                 </div>
             </Section>
 

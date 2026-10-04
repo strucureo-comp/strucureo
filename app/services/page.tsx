@@ -9,6 +9,8 @@ import {
     Workflow,
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { buildServiceNodes, breadcrumbList } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
@@ -17,7 +19,7 @@ import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type PageProps = {
     params: Promise<{ locale: string }>;
@@ -150,6 +152,11 @@ const faqItems = [
         question: 'What is the typical cost of custom software development in UAE / India?',
         answer: 'We provide highly competitive pricing for both markets. While costs depend heavily on the project scope, typical MVP builds start from $X (approx. AED X / INR X). We operate transparently and provide a fixed-price roadmap before writing any code.',
     },
+    {
+        question: 'What does Strucureo Build not do?',
+        answer:
+            'Build does not do open-ended staff augmentation, take over large legacy codebases sight unseen, or promise fixed timelines before diagnosis. Every engagement starts with a defined scope and a chosen solution path. Research without a client problem belongs in Labs, and packaged products belong in Industries.',
+    },
 ];
 
 const faqSchema = {
@@ -181,41 +188,30 @@ const howToSchema = {
     })),
 };
 
+const listedServiceNames = [
+    'Website Development',
+    'AI Chatbot Development',
+    'ERP & Operations Systems',
+    'Startup MVP Development',
+];
+
 const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Custom Software Development',
-    name: 'Strucureo Build',
-    description:
-        'Custom software development, AI chatbots, web development, ERP systems, startup MVP builds, and cloud automation.',
-    provider: {
-        '@type': 'Organization',
-        name: 'Strucureo',
-        url: SITE_URL,
-    },
-    areaServed: [
-        { '@type': 'Country', name: 'United Arab Emirates' },
-        { '@type': 'Country', name: 'India' },
-        { '@type': 'Country', name: 'United States' },
-        { '@type': 'Country', name: 'Germany' },
-    ],
-    hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Strucureo Build',
-        itemListElement: services.map((service) => ({
-            '@type': 'Offer',
-            itemOffered: {
-                '@type': 'Service',
-                name: service.title,
-                description: service.description,
-            },
-        })),
-    },
+    '@graph': buildServiceNodes(
+        services
+            .filter((service) => listedServiceNames.includes(service.title))
+            .map((service) => ({ name: service.title, description: service.description }))
+    ),
 };
 
+const breadcrumbSchema = breadcrumbList([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Build', url: `${SITE_URL}/services` },
+]);
+
 export const metadata: Metadata = {
-    title: 'Custom Software, AI Chatbots & ERP in UAE & India | Strucureo',
-    description: 'Strucureo offers custom software development, AI chatbots, ERP systems, startup MVPs, web development, and cloud automation for businesses across the UAE and India — built in days, not months.',
+    title: 'Strucureo Build: Custom Software, Delivered Fast',
+    description: 'Strucureo Build is the client software arm of our engineering studio: websites, AI chatbots, ERP systems and MVPs in days.',
     keywords: [
         'custom software development',
         'AI chatbot development',
@@ -237,10 +233,20 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/services`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 
 export default function ServicesPage() {
+    assertNoPlaceholders('services FAQs', faqItems);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             {/* Structured Data Scripts */}
@@ -256,6 +262,10 @@ export default function ServicesPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
 
             <SiteHeader />
 
@@ -263,6 +273,7 @@ export default function ServicesPage() {
                 eyebrow="Strucureo Build"
                 title="Custom software, delivered in days."
                 intro="We plan, build, launch, and support practical systems for startups and small businesses, from high-converting websites to internal operations platforms."
+                definition="Strucureo Build is the client software arm of Strucureo, an engineering studio in the UAE and India. It delivers websites, AI chatbots, ERP systems and startup MVPs in days."
                 points={[
                     { number: '01', label: 'Built in days, not months' },
                     { number: '02', label: 'One dedicated contact' },

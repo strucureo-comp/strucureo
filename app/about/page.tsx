@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
 import { SiteHeader } from '@/components/shared/SiteHeader';
+import { breadcrumbList } from '@/lib/jsonld';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
 import { NumberedRow } from '@/components/shared/NumberedRow';
@@ -8,7 +9,7 @@ import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type PageProps = {
     params: Promise<{ locale: string }>;
@@ -56,51 +57,43 @@ const values = [
 
 export const metadata: Metadata = {
     title: 'Nagaratinam S | Strucureo Team',
-    description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+    description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
     alternates: {
         canonical: `${SITE_URL}/about`,
     },
     openGraph: {
         title: 'Nagaratinam S | Strucureo Team',
-        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
         url: `${SITE_URL}/about`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Nagaratinam S | Strucureo Team',
-        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
     },
 };
 
 export default function AboutPage() {
+    const breadcrumbSchema = breadcrumbList([
+        { name: 'Home', url: `${SITE_URL}/` },
+        { name: 'About', url: `${SITE_URL}/about` },
+    ]);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
-            {/* JSON-LD Person schemas for each founder */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@graph': founders.map((founder) => {
-                            const sameAs: string[] = [];
-
-                            return {
-                                '@type': 'Person',
-                                '@id': `https://strucureo.com/#${founder.id}`,
-                                name: founder.name,
-                                jobTitle: founder.role,
-                                url: founder.linkedin || undefined,
-                                sameAs,
-                                worksFor: {
-                                    '@type': 'Organization',
-                                    '@id': 'https://strucureo.com/#organization',
-                                },
-                            };
-                        }),
-                    }),
-                }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
             <SiteHeader />
@@ -109,6 +102,7 @@ export default function AboutPage() {
                 eyebrow="About"
                 title="Strucureo — led by Nagaratinam S"
                 intro="Founded February 26, 2026. A remote engineering studio helping startups and small businesses build custom software, AI tools, and digital products — fast."
+                definition="Strucureo is an engineering studio in the UAE and India, led by Nagaratinam S. It runs three arms — Build, Labs and Industries — for startups and small businesses worldwide."
                 points={[
                     { number: 'Feb 2026', label: 'Founded' },
                     { number: 'Global', label: 'Markets' },

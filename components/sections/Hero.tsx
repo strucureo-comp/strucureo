@@ -1,21 +1,24 @@
 'use client';
 
 import React from 'react';
-import { useParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { Structure3D } from '@/components/shared/Structure3D';
 import { staggerContainer, EASE_LUXURY } from '@/lib/animations';
 import { Magnetic } from '@/components/shared/Magnetic';
 import { useSound } from '@/hooks/useSound';
 
+const Structure3D = dynamic(
+    () => import('@/components/shared/Structure3D').then((module) => module.Structure3D),
+    { ssr: false }
+);
+
 export const Hero = () => {
   const { playTick } = useSound();
-  const params = useParams();
-  const locale = typeof params?.locale === 'string' ? params.locale : 'en-US';
   const navLinks = [
-    { label: 'Build', href: `/${locale}/services` },
-    { label: 'Labs', href: `/${locale}/labs` },
-    { label: 'Industries', href: `/${locale}/industries` },
+    { label: 'Build', href: '/services' },
+    { label: 'Labs', href: '/labs' },
+    { label: 'Industries', href: '/industries' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Work', href: 'https://portfolio.strucureo.com' },
   ];
 
@@ -56,23 +59,26 @@ export const Hero = () => {
       <div className="flex-grow flex flex-col justify-center mt-12 md:mt-0 z-10 pb-24 pointer-events-none"> {/* content wrapper */}
         <div className="pointer-events-auto"> {/* Interactive elements wrapper */}
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-0 md:space-y-4">
-            {['Clarity Against', 'Complexity.'].map((line, i) => (
-              <motion.h1
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 100, letterSpacing: '-0.05em' },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    letterSpacing: '-0.03em',
-                    transition: { duration: 1.8, ease: EASE_LUXURY }
-                  }
-                }}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] text-[#111111]"
-              >
-                {line}
-              </motion.h1>
-            ))}
+            {['Clarity Against', 'Complexity.'].map((line, i) => {
+              const Tag = i === 0 ? motion.h1 : motion.span;
+              return (
+                <Tag
+                  key={i}
+                  variants={{
+                    hidden: { opacity: 0, y: 100, letterSpacing: '-0.05em' },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      letterSpacing: '-0.03em',
+                      transition: { duration: 1.8, ease: EASE_LUXURY }
+                    }
+                  }}
+                  className="block text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] text-[#111111]"
+                >
+                  {line}
+                </Tag>
+              );
+            })}
           </motion.div>
 
           <motion.div

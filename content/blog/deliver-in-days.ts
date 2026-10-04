@@ -5,8 +5,14 @@ export const deliverInDays: Post = {
     title: 'How we deliver software in days, not months',
     summary: 'Speed comes from the process, not the hours: root cause first, options to choose from, one contact throughout.',
     date: '2026-10-05',
+    updated: '2026-10-05',
     category: 'Build',
     draft: true,
+    takeaways: [
+        'Speed comes from removing ambiguity early: diagnosis first, then a chosen solution path.',
+        'One dedicated contact and a shared portal keep feedback loops to hours, not weeks.',
+        'Support and handover after launch are part of every project, not an extra.',
+    ],
     body: [
         {
             type: 'paragraph',

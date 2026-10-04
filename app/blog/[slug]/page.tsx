@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { getAllPosts, getPost, getPrevNext, readingTime, formatDate } from '@/lib/blog';
+import { breadcrumbList } from '@/lib/jsonld';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
@@ -36,6 +37,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             siteName: 'Strucureo',
             type: 'article',
             publishedTime: post.date,
+            images: [
+                {
+                    url: 'https://www.strucureo.com/opengraph-image.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'Strucureo Engineering Studio'
+                }
+            ]
         },
         twitter: {
             card: 'summary_large_image',
@@ -57,6 +66,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         headline: post.title,
         description: post.summary,
         datePublished: post.date,
+        dateModified: post.updated ?? post.date,
         author: {
             '@type': 'Organization',
             name: 'Strucureo',
@@ -67,11 +77,21 @@ export default async function BlogPostPage({ params }: PageProps) {
         },
     };
 
+    const breadcrumbSchema = breadcrumbList([
+        { name: 'Home', url: `${SITE_URL}/` },
+        { name: 'Blog', url: `${SITE_URL}/blog` },
+        { name: post.title, url: `${SITE_URL}/blog/${post.slug}` },
+    ]);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
             <SiteHeader />
@@ -89,7 +109,24 @@ export default async function BlogPostPage({ params }: PageProps) {
                         <time dateTime={post.date}>{formatDate(post.date)}</time>
                         {' · '}
                         {readingTime(post)} min read
+                        {post.updated && post.updated !== post.date && (
+                            <>
+                                {' · '}
+                                <span>Last updated <time dateTime={post.updated}>{formatDate(post.updated)}</time></span>
+                            </>
+                        )}
                     </p>
+
+                    {post.takeaways && post.takeaways.length > 0 && (
+                        <div className="max-w-3xl mt-12">
+                            <h2 className="mb-4 text-2xl font-bold">Key takeaways</h2>
+                            <ul className="space-y-3 list-disc pl-6 text-xl font-light leading-relaxed text-[#6E6E6E]">
+                                {post.takeaways.map((takeaway) => (
+                                    <li key={takeaway}>{takeaway}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
                     <div className="max-w-3xl mt-16">
                         <PostBody blocks={post.body} />

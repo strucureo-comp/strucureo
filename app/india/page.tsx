@@ -6,59 +6,10 @@ import { PageHero } from '@/components/shared/PageHero';
 import { NumberedRow } from '@/components/shared/NumberedRow';
 import { Section } from '@/components/shared/Section';
 import { Contact } from '@/components/sections/Contact';
+import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 
 const SITE_URL = 'https://www.strucureo.com';
-
-const indiaSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Strucureo",
-  "alternateName": "Strucureo Software",
-  "description": "Custom software development, AI chatbot development, and startup MVP builds for businesses in India — delivered in days, not months.",
-  "url": "https://www.strucureo.com/india",
-  "image": "https://www.strucureo.com/logo.png",
-  "telephone": "<<FILL IN: India contact number>>",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "<<FILL IN: e.g. Chennai office/coworking address>>",
-    "addressLocality": "Chennai",
-    "addressRegion": "Tamil Nadu",
-    "postalCode": "<<FILL IN>>",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "<<FILL IN: e.g. 13.0827>>",
-    "longitude": "<<FILL IN: e.g. 80.2707>>"
-  },
-  "areaServed": [
-    { "@type": "Country", "name": "India" },
-    { "@type": "City", "name": "Chennai" },
-    { "@type": "City", "name": "Bangalore" },
-    { "@type": "City", "name": "Mumbai" }
-  ],
-  "founder": [
-    { "@type": "Person", "name": "Nagaratinam S" }
-  ],
-  "foundingDate": "2026-02-26",
-  "sameAs": [
-    "https://www.linkedin.com/company/strucureo",
-    "https://twitter.com/strucureo",
-    "https://github.com/strucureo"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Strucureo India",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Chatbot Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Startup MVP Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ERP & Operations Systems" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } }
-    ]
-  }
-};
 
 const faqItems = [
     {
@@ -76,12 +27,27 @@ const faqItems = [
     {
         question: 'How fast can you build and launch a product?',
         answer: 'We prioritize speed without sacrificing quality. Most websites and operational MVPs are delivered in days to a few weeks, allowing Indian founders to go to market and test hypotheses rapidly.'
+    },
+    {
+        question: 'What does Strucureo Build deliver in India?',
+        answer: 'Websites, AI chatbots, ERP systems and startup MVPs, delivered in days with one dedicated contact. India specifics are covered where they count — leadership in Chennai, domestic gateways like Razorpay, Cashfree, PayU and UPI, and fixed pricing in INR. [TODO: confirm INR billing]'
+    },
+    {
+        question: 'Do you only work with companies in Chennai?',
+        answer: 'No. We partner with startups, SMEs and enterprises across Chennai, Bangalore, Mumbai and India, all through the same remote process and shared portal. [TODO: confirm whether in-person meetings are offered in India]'
     }
 ];
 
+const breadcrumbSchema = breadcrumbList([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'India', url: `${SITE_URL}/india` },
+]);
+
+const faqSchema = faqPageNode(faqItems);
+
 export const metadata: Metadata = {
-        title: 'Custom Software, AI Chatbots & ERP in India | Strucureo',
-    description: 'Strucureo builds custom software, AI chatbots, ERP systems, and startup MVPs for businesses in Chennai, Bangalore, Mumbai and across India — delivered in days, not months.',
+        title: 'Strucureo Build in India: Custom Software & AI',
+    description: 'Strucureo, an engineering studio, builds custom software, AI chatbots, ERP systems and MVPs for Chennai, Bangalore, Mumbai and India — in days.',
     keywords: [
         'engineering studio India',
         'software studio Chennai',
@@ -94,20 +60,34 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/india`,
     },
     openGraph: {
-    title: 'Custom Software, AI Chatbots & ERP in India | Strucureo',
+    title: 'Strucureo Build in India: Custom Software & AI | Strucureo',
         description: 'Elite software engineering for businesses across India.',
         url: `${SITE_URL}/india`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 
 export default function IndiaPage() {
+    assertNoPlaceholders('india FAQs', faqItems);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(indiaSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
             <SiteHeader />
@@ -116,6 +96,7 @@ export default function IndiaPage() {
                 eyebrow="India"
                 title="Elite software engineering for India."
                 intro="We build custom software, AI chatbots, and startup MVPs for forward-thinking businesses in Chennai, Bangalore, and across India — delivered in days, not months."
+                definition="Strucureo is an engineering studio serving India, with leadership in Chennai. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days."
             />
 
             <Section>
@@ -139,6 +120,7 @@ export default function IndiaPage() {
                     <NumberedRow
                         key={feature.title}
                         index={index}
+                        titleTag="h2"
                         icon={<feature.icon className="w-12 h-12 text-[#111111]" />}
                         title={feature.title}
                         desc={feature.desc}

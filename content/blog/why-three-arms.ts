@@ -5,8 +5,14 @@ export const whyThreeArms: Post = {
     title: 'Why we organized Strucureo into Build, Labs and Industries',
     summary: 'Client work taught us the same problems repeat. Three arms let us solve them once and reuse the answers.',
     date: '2026-10-05',
+    updated: '2026-10-05',
     category: 'Company',
     draft: true,
+    takeaways: [
+        'Strucureo runs three arms — Build, Labs and Industries — so client work feeds research and research feeds products.',
+        'Labs only researches problems that repeat across real projects; everything else stays in Build.',
+        'Clients benefit directly: reused, tested modules mean shorter timelines and fewer unknowns.',
+    ],
     body: [
         {
             type: 'paragraph',

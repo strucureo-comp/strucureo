@@ -5,8 +5,14 @@ export const repeatedProblems: Post = {
     title: 'Turning repeated problems into reusable modules',
     summary: 'Labs picks problems from real client work, tests solutions as prototypes, and keeps only what proves itself.',
     date: '2026-10-05',
+    updated: '2026-10-05',
     category: 'Labs',
     draft: true,
+    takeaways: [
+        'Labs research starts only from problems seen repeating in real client work.',
+        'A prototype must prove itself against real needs; failed ones are kept as notes.',
+        'Graduated modules skip the riskiest phase of the next Build project.',
+    ],
     body: [
         {
             type: 'paragraph',

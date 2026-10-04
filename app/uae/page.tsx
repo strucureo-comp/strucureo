@@ -6,59 +6,10 @@ import { PageHero } from '@/components/shared/PageHero';
 import { NumberedRow } from '@/components/shared/NumberedRow';
 import { Section } from '@/components/shared/Section';
 import { Contact } from '@/components/sections/Contact';
+import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 
 const SITE_URL = 'https://www.strucureo.com';
-
-const uaeSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Strucureo",
-  "alternateName": "Strucureo Software",
-  "description": "Custom software development, AI chatbot development, and startup MVP builds for businesses in the UAE — delivered in days, not months.",
-  "url": "https://www.strucureo.com/uae",
-  "image": "https://www.strucureo.com/logo.png",
-  "telephone": "<<FILL IN: UAE contact number, e.g. +971-XX-XXX-XXXX>>",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "<<FILL IN: e.g. Business Bay / DIFC / coworking address>>",
-    "addressLocality": "Dubai",
-    "addressRegion": "Dubai",
-    "postalCode": "<<FILL IN if applicable>>",
-    "addressCountry": "AE"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "<<FILL IN: e.g. 25.2048>>",
-    "longitude": "<<FILL IN: e.g. 55.2708>>"
-  },
-  "areaServed": [
-    { "@type": "Country", "name": "United Arab Emirates" },
-    { "@type": "City", "name": "Dubai" },
-    { "@type": "City", "name": "Abu Dhabi" },
-    { "@type": "City", "name": "Sharjah" }
-  ],
-  "founder": [
-    { "@type": "Person", "name": "Nagaratinam S" }
-  ],
-  "foundingDate": "2026-02-26",
-  "sameAs": [
-    "https://www.linkedin.com/company/strucureo",
-    "https://twitter.com/strucureo",
-    "https://github.com/strucureo"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Strucureo UAE",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Chatbot Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Startup MVP Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ERP & Operations Systems" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } }
-    ]
-  }
-};
 
 const faqItems = [
     {
@@ -76,12 +27,27 @@ const faqItems = [
     {
         question: 'How fast can you build and launch a product?',
         answer: 'We prioritize speed without sacrificing quality. Most websites and operational MVPs are delivered in days to a few weeks, making us the ideal technical partner for fast-moving businesses in the UAE.'
+    },
+    {
+        question: 'What does Strucureo Build deliver in the UAE?',
+        answer: 'The same Build offering as everywhere: websites, AI chatbots, ERP systems and startup MVPs, delivered in days with one dedicated contact. UAE specifics are handled where they matter — timezone overlap, MENA payment gateways like PayTabs, Telr and Checkout.com, and fixed pricing in AED. [TODO: confirm AED billing]'
+    },
+    {
+        question: 'Do you only work with companies in Dubai?',
+        answer: 'No. We support businesses across Dubai, Abu Dhabi, Sharjah and the wider Emirates, all through the same remote process and shared portal. [TODO: confirm whether in-person meetings are offered in the UAE]'
     }
 ];
 
+const breadcrumbSchema = breadcrumbList([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'UAE', url: `${SITE_URL}/uae` },
+]);
+
+const faqSchema = faqPageNode(faqItems);
+
 export const metadata: Metadata = {
-        title: 'Custom Software, AI Chatbots & ERP in UAE | Strucureo',
-    description: 'Strucureo builds custom software, AI chatbots, ERP systems, and startup MVPs for businesses in Dubai, Abu Dhabi, and across the UAE — delivered in days, not months.',
+        title: 'Strucureo Build in UAE: Custom Software & AI',
+    description: 'Strucureo, an engineering studio, builds custom software, AI chatbots, ERP systems and MVPs for Dubai, Abu Dhabi and the UAE — in days.',
     keywords: [
         'engineering studio UAE',
         'software studio Dubai',
@@ -94,20 +60,34 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/uae`,
     },
     openGraph: {
-    title: 'Custom Software, AI Chatbots & ERP in UAE | Strucureo',
+    title: 'Strucureo Build in UAE: Custom Software & AI | Strucureo',
         description: 'Elite software engineering for businesses across the UAE.',
         url: `${SITE_URL}/uae`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 
 export default function UAEPage() {
+    assertNoPlaceholders('uae FAQs', faqItems);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(uaeSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
             <SiteHeader />
@@ -116,6 +96,7 @@ export default function UAEPage() {
                 eyebrow="United Arab Emirates"
                 title="Elite software engineering for the UAE."
                 intro="We build custom software, AI chatbots, and startup MVPs for forward-thinking businesses in Dubai, Abu Dhabi, and across the Emirates — delivered in days, not months."
+                definition="Strucureo is an engineering studio serving businesses across Dubai, Abu Dhabi and the Emirates. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days."
             />
 
             <Section>
@@ -139,6 +120,7 @@ export default function UAEPage() {
                     <NumberedRow
                         key={feature.title}
                         index={index}
+                        titleTag="h2"
                         icon={<feature.icon className="w-12 h-12 text-[#111111]" />}
                         title={feature.title}
                         desc={feature.desc}

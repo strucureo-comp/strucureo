@@ -6,6 +6,8 @@ import {
     Puzzle,
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
@@ -14,7 +16,7 @@ import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type FocusArea = {
     title: string;
@@ -86,11 +88,31 @@ const faqItems = [
         answer:
             'Labs work is driven by problems seen in client projects. If your project surfaces a reusable problem, we will tell you. [TODO: confirm whether standalone Labs engagements are offered]',
     },
+    {
+        question: 'How does Strucureo Labs pick what to research?',
+        answer:
+            'Labs only researches problems that repeat across real Strucureo Build client work. When the same need appears in several projects, it becomes a research candidate. This keeps every prototype anchored to something clients already pay to solve. [TODO: confirm the exact selection bar]',
+    },
+    {
+        question: 'How long does Labs research take?',
+        answer:
+            'It depends on the question the prototype has to answer. Most tracks run alongside active client work so prototypes meet real data and real users early. [TODO: replace with confirmed timelines once the first tracks complete] We publish what graduates and what does not.',
+    },
+    {
+        question: 'Can I buy a Labs prototype directly?',
+        answer:
+            'No. Prototypes are experiments, not products, and they ship only as part of a Build project or as graduated Industries packages. If your project surfaces a repeating problem, Labs may research it with your knowledge — and you keep the working result.',
+    },
+    {
+        question: 'What does Strucureo Labs not do?',
+        answer:
+            'Labs does not take on standalone research commissions, chase technology for its own sake, or ship untested prototypes as products. If an idea cannot point to repeated client pain, it waits. One-off needs stay in Build, where they get solved directly without research overhead.',
+    },
 ];
 
 export const metadata: Metadata = {
     title: 'Strucureo Labs: Research & Prototypes | Strucureo',
-    description: 'Strucureo Labs is the research arm of our engineering studio: AI agents, reusable modules, and prototypes that turn repeated client problems into products.',
+    description: 'Strucureo Labs is the research arm of our engineering studio: AI agents, reusable modules, and prototypes from real client problems.',
     keywords: [
         'Strucureo Labs',
         'AI agents research',
@@ -107,18 +129,43 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/labs`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 
 export default function LabsPage() {
+    assertNoPlaceholders('labs FAQs', faqItems);
+    const breadcrumbSchema = breadcrumbList([
+        { name: 'Home', url: `${SITE_URL}/` },
+        { name: 'Labs', url: `${SITE_URL}/labs` },
+    ]);
+    const faqSchema = faqPageNode(faqItems);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+
             <SiteHeader />
 
             <PageHero
                 eyebrow="Strucureo Labs"
                 title="Where repeated problems become reusable solutions."
                 intro="Labs explores AI agents, reusable modules, and prototypes — then hardens what works so the next build starts faster."
+                definition="Strucureo Labs is the research arm of Strucureo, an engineering studio in the UAE and India. It turns problems that repeat across client work into tested prototypes, AI agents and reusable modules."
                 points={[
                     { number: '01', label: 'Driven by client work' },
                     { number: '02', label: 'Tested with real users' },

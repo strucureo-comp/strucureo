@@ -6,6 +6,8 @@ import {
     Handshake,
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
@@ -14,7 +16,7 @@ import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type ProductLine = {
     title: string;
@@ -86,11 +88,31 @@ const faqItems = [
         answer:
             'If your industry is not packaged yet, we can run a scoped Build pilot shaped with your input. [TODO: confirm early-partner terms, pricing, and availability]',
     },
+    {
+        question: 'Which industries does Strucureo Industries serve?',
+        answer:
+            'The first industry packages are being shaped with early partners now, so the list is still open. [TODO: name the first industries once confirmed] If your industry is not packaged yet, a scoped Build pilot can become the starting point — and you help define the product.',
+    },
+    {
+        question: 'What does an Industries engagement cost?',
+        answer:
+            'Pricing depends on the package and the configuration your team needs. [TODO: replace with confirmed pricing or pricing model] Every engagement starts with a scoped pilot, so you approve a fixed shape before committing further.',
+    },
+    {
+        question: 'How do I join the early-partner list?',
+        answer:
+            'Contact us through the consultation form and tell us your industry and workflow. If there is a matching starting point, we will show it. If not, we will propose a scoped pilot shaped with your team — early partners get direct input into the roadmap. [TODO: confirm early-partner terms]',
+    },
+    {
+        question: 'What does Strucureo Industries not do?',
+        answer:
+            'Industries does not build fully custom software — that is Build — and does not sell unfinished prototypes — that is Labs. Each product starts from a proven, shared core and is configured to fit. [TODO: confirm support and update terms for packaged products]',
+    },
 ];
 
 export const metadata: Metadata = {
-    title: 'Strucureo Industries: Ready-Made Industry Products | Strucureo',
-    description: 'Strucureo Industries offers ready-made products for specific industries, packaged from proven Labs research — configured to your team, faster than custom builds.',
+    title: 'Strucureo Industries: Ready-Made Products',
+    description: 'Strucureo Industries, the product arm of our engineering studio, packages proven Labs research into ready-made industry products.',
     keywords: [
         'Strucureo Industries',
         'industry software products',
@@ -101,23 +123,48 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/industries`,
     },
     openGraph: {
-        title: 'Strucureo Industries: Ready-Made Industry Products | Strucureo',
+        title: 'Strucureo Industries: Ready-Made Products | Strucureo',
         description: 'Ready-made industry products from proven Labs work — plus early-partner pilots for new industries.',
         url: `${SITE_URL}/industries`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 
 export default function IndustriesPage() {
+    assertNoPlaceholders('industries FAQs', faqItems);
+    const breadcrumbSchema = breadcrumbList([
+        { name: 'Home', url: `${SITE_URL}/` },
+        { name: 'Industries', url: `${SITE_URL}/industries` },
+    ]);
+    const faqSchema = faqPageNode(faqItems);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+
             <SiteHeader />
 
             <PageHero
                 eyebrow="Strucureo Industries"
                 title="Software made for your industry, ready to use."
                 intro="Packaged from proven Labs work — configured to your team instead of built from scratch."
+                definition="Strucureo Industries is the product arm of Strucureo, an engineering studio in the UAE and India. It packages proven Labs work into ready-made products for specific industries."
                 points={[
                     { number: '01', label: 'Proven in Labs first' },
                     { number: '02', label: 'Configured to your team' },

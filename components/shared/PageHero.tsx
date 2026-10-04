@@ -11,10 +11,11 @@ type PageHeroProps = {
   eyebrow: string;
   title: string;
   intro: string;
+  definition?: string;
   points?: HeroPoint[];
 };
 
-export const PageHero = ({ eyebrow, title, intro, points }: PageHeroProps) => {
+export const PageHero = ({ eyebrow, title, intro, definition, points }: PageHeroProps) => {
   return (
     <Section>
       <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
@@ -33,6 +34,11 @@ export const PageHero = ({ eyebrow, title, intro, points }: PageHeroProps) => {
           </p>
         </div>
       </div>
+      {definition && (
+        <p className="mt-12 max-w-2xl text-xl md:text-2xl font-light leading-relaxed text-[#6E6E6E]">
+          {definition}
+        </p>
+      )}
       {points && points.length > 0 && (
         <div className="mt-16 border-t border-[#111111]/10">
           {points.map((point) => (
