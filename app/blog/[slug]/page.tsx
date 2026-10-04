@@ -66,6 +66,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         headline: post.title,
         description: post.summary,
         datePublished: post.date,
+        dateModified: post.updated ?? post.date,
         author: {
             '@type': 'Organization',
             name: 'Strucureo',
@@ -108,7 +109,24 @@ export default async function BlogPostPage({ params }: PageProps) {
                         <time dateTime={post.date}>{formatDate(post.date)}</time>
                         {' · '}
                         {readingTime(post)} min read
+                        {post.updated && post.updated !== post.date && (
+                            <>
+                                {' · '}
+                                <span>Last updated <time dateTime={post.updated}>{formatDate(post.updated)}</time></span>
+                            </>
+                        )}
                     </p>
+
+                    {post.takeaways && post.takeaways.length > 0 && (
+                        <div className="max-w-3xl mt-12">
+                            <h2 className="mb-4 text-2xl font-bold">Key takeaways</h2>
+                            <ul className="space-y-3 list-disc pl-6 text-xl font-light leading-relaxed text-[#6E6E6E]">
+                                {post.takeaways.map((takeaway) => (
+                                    <li key={takeaway}>{takeaway}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
                     <div className="max-w-3xl mt-16">
                         <PostBody blocks={post.body} />

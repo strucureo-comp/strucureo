@@ -23,6 +23,10 @@ export type Post = {
     summary: string;
     /** ISO date, e.g. '2026-10-05' */
     date: string;
+    /** ISO date of the last substantial update. Omit when never updated. */
+    updated?: string;
+    /** Optional 3-bullet 'Key takeaways' shown at the top of the post. */
+    takeaways?: string[];
     category: PostCategory;
     body: Block[];
     /** Drafts are excluded from the index, sitemap, RSS and static params. */
