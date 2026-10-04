@@ -39,7 +39,7 @@ const allPosts: Post[] = [whyThreeArms, deliverInDays, repeatedProblems];
 function assertPublishedClean(posts: Post[]) {
     if (process.env.BLOG_ALLOW_TODO === '1') return;
     const offenders = posts
-        .filter((post) => !post.draft && JSON.stringify(post).includes('[TODO]'))
+        .filter((post) => !post.draft && JSON.stringify(post).includes('[TODO'))
         .map((post) => post.slug);
     if (offenders.length > 0) {
         throw new Error(
