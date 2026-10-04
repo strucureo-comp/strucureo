@@ -134,7 +134,7 @@ export default function IndustriesPage() {
                     <NumberedRow
                         key={line.title}
                         index={index}
-                        icon={line.icon}
+                        icon={<line.icon className="w-12 h-12 text-[#111111]" />}
                         title={line.title}
                         desc={line.description}
                         extra={

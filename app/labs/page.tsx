@@ -135,7 +135,7 @@ export default function LabsPage() {
                     <NumberedRow
                         key={area.title}
                         index={index}
-                        icon={area.icon}
+                        icon={<area.icon className="w-12 h-12 text-[#111111]" />}
                         title={area.title}
                         desc={area.description}
                         extra={

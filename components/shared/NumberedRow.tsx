@@ -6,14 +6,14 @@ import { useInView } from 'framer-motion';
 type NumberedRowProps = {
   index: number;
   id?: string;
-  icon?: React.ComponentType<{ className?: string }>;
+  icon?: React.ReactNode;
   title: string;
   desc?: React.ReactNode;
   extra?: React.ReactNode;
   size?: 'lg' | 'sm';
 };
 
-export const NumberedRow = ({ index, id, icon: Icon, title, desc, extra, size = 'lg' }: NumberedRowProps) => {
+export const NumberedRow = ({ index, id, icon, title, desc, extra, size = 'lg' }: NumberedRowProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-40% 0px -40% 0px" });
 
@@ -46,9 +46,9 @@ export const NumberedRow = ({ index, id, icon: Icon, title, desc, extra, size = 
         <span className="text-sm font-mono tracking-widest text-[#111111]">0{index + 1}</span>
       </div>
       <div>
-        {Icon && (
+        {icon && (
           <div className="mb-6">
-            <Icon className="w-12 h-12 text-[#111111]" />
+            {icon}
           </div>
         )}
         <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-none">{title}</h3>

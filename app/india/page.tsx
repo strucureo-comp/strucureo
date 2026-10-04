@@ -139,7 +139,7 @@ export default function IndiaPage() {
                     <NumberedRow
                         key={feature.title}
                         index={index}
-                        icon={feature.icon}
+                        icon={<feature.icon className="w-12 h-12 text-[#111111]" />}
                         title={feature.title}
                         desc={feature.desc}
                     />

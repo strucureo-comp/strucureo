@@ -279,7 +279,7 @@ export default function ServicesPage() {
                     <NumberedRow
                         key={service.title}
                         index={index}
-                        icon={service.icon}
+                        icon={<service.icon className="w-12 h-12 text-[#111111]" />}
                         title={service.title}
                         desc={service.description}
                         extra={
