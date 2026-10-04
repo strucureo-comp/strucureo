@@ -13,7 +13,9 @@ export const Hero = () => {
   const params = useParams();
   const locale = typeof params?.locale === 'string' ? params.locale : 'en-US';
   const navLinks = [
-    { label: 'Services', href: `/${locale}/services` },
+    { label: 'Build', href: `/${locale}/services` },
+    { label: 'Labs', href: `/${locale}/labs` },
+    { label: 'Industries', href: `/${locale}/industries` },
     { label: 'Work', href: 'https://portfolio.strucureo.com' },
   ];
 
@@ -29,7 +31,7 @@ export const Hero = () => {
       >
         <div className="flex flex-col">
           <span>Strucureo</span>
-          <span className="opacity-50">IT Services & Product Company</span>
+          <span className="opacity-50">Engineering Studio</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-right opacity-80">
           {navLinks.map((link) => (
@@ -54,7 +56,7 @@ export const Hero = () => {
       <div className="flex-grow flex flex-col justify-center mt-12 md:mt-0 z-10 pb-24 pointer-events-none"> {/* content wrapper */}
         <div className="pointer-events-auto"> {/* Interactive elements wrapper */}
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-0 md:space-y-4">
-            {['Fast IT Services &', 'Custom Software.'].map((line, i) => (
+            {['Clarity Against', 'Complexity.'].map((line, i) => (
               <motion.h1
                 key={i}
                 variants={{
@@ -81,7 +83,7 @@ export const Hero = () => {
           >
             <div className="flex flex-col gap-6">
               <p className="text-xl md:text-2xl font-light text-[#6E6E6E] max-w-2xl leading-relaxed">
-                Strucureo is an IT services and product company helping startups and small businesses worldwide build websites, AI chatbots, ERP systems, and custom software — delivered in days, not months.
+                Strucureo is an engineering studio with three arms: Build for client software delivered in days, Labs for research, and Industries for ready-made industry products.
               </p>
               <div className="flex flex-col md:flex-row gap-4 items-start">
                 <Magnetic strength={0.15}>

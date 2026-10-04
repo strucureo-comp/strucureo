@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
-import { ArrowUpRight, Microscope, Zap, CircuitBoard, Users, LifeBuoy } from 'lucide-react';
+import { Hammer, FlaskConical, Factory } from 'lucide-react';
 
 const ScrollItem = ({ item, index }: { item: any, index: number }) => {
   const ref = useRef(null);
@@ -29,37 +29,22 @@ const ScrollItem = ({ item, index }: { item: any, index: number }) => {
   );
 }
 
-export const Uniqueness = () => {
+export const Sectors = () => {
   const items = [
     {
-      title: 'Root-cause Problem Analysis',
-      desc: "We don't just patch symptoms. We identify and solve the underlying business and technical problems.",
-      icon: Microscope
+      title: 'Strucureo Build',
+      desc: 'Custom software for startups and businesses, delivered in days. Websites, AI chatbots, ERP systems and MVPs.',
+      icon: Hammer
     },
     {
-      title: 'Multiple Solutions',
-      desc: 'We propose multiple approaches for every problem, allowing you to choose the best trade-off for your needs.',
-      icon: CircuitBoard
+      title: 'Strucureo Labs',
+      desc: 'Research and prototypes. We turn problems that repeat across client work into tested, reusable solutions.',
+      icon: FlaskConical
     },
     {
-      title: 'Fast Delivery',
-      desc: 'Delivered in days, not months. We use modern stacks and pre-built modules to accelerate development.',
-      icon: Zap
-    },
-    {
-      title: 'Dedicated Contact',
-      desc: 'You get a single dedicated point of contact who understands your business and manages the entire project.',
-      icon: Users
-    },
-    {
-      title: 'Structured Process',
-      desc: 'A predictable, engineering-grade process that ensures quality, reliability, and no surprises.',
-      icon: ArrowUpRight
-    },
-    {
-      title: 'Ongoing Support',
-      desc: 'We don’t just launch and leave. We provide ongoing support, optimization, and scaling as you grow.',
-      icon: LifeBuoy
+      title: 'Strucureo Industries',
+      desc: 'Ready-made products for specific industries, built from work that has already proven itself.',
+      icon: Factory
     }
   ];
 
@@ -68,13 +53,13 @@ export const Uniqueness = () => {
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
         <div className="lg:w-1/3">
           <div className="lg:sticky lg:top-32">
-            <AnimatedText text="Why Clients Choose Strucureo" className="text-xs uppercase tracking-[0.2em] mb-8 block opacity-50" />
+            <AnimatedText text="Our three sectors" className="text-xs uppercase tracking-[0.2em] mb-8 block opacity-50" />
             <h2 className="text-4xl md:text-6xl font-bold leading-[0.9] tracking-tighter mb-8">
-              Engineering <br />
-              <span className="text-[#111111]/20">Standard.</span>
+              Three arms, <br />
+              <span className="text-[#111111]/20">one studio.</span>
             </h2>
             <p className="text-lg text-[#6E6E6E] max-w-sm leading-relaxed">
-              We bring a disciplined, transparent, and high-velocity approach to building software.
+              Strucureo is an engineering studio with three connected arms: Build, Labs, and Industries.
             </p>
           </div>
         </div>
