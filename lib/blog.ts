@@ -1,3 +1,4 @@
+import { containsTodo } from '@/lib/guard';
 import { whyThreeArms } from '@/content/blog/why-three-arms';
 import { deliverInDays } from '@/content/blog/deliver-in-days';
 import { repeatedProblems } from '@/content/blog/repeated-problems';
@@ -39,7 +40,7 @@ const allPosts: Post[] = [whyThreeArms, deliverInDays, repeatedProblems];
 function assertPublishedClean(posts: Post[]) {
     if (process.env.BLOG_ALLOW_TODO === '1') return;
     const offenders = posts
-        .filter((post) => !post.draft && JSON.stringify(post).includes('[TODO'))
+        .filter((post) => !post.draft && containsTodo(post))
         .map((post) => post.slug);
     if (offenders.length > 0) {
         throw new Error(

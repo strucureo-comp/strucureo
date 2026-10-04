@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { buildServiceNodes, breadcrumbList } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
@@ -239,6 +240,8 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+    assertNoPlaceholders('services FAQs', faqItems);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             {/* Structured Data Scripts */}
@@ -265,6 +268,7 @@ export default function ServicesPage() {
                 eyebrow="Strucureo Build"
                 title="Custom software, delivered in days."
                 intro="We plan, build, launch, and support practical systems for startups and small businesses, from high-converting websites to internal operations platforms."
+                definition="Strucureo Build is the client software arm of Strucureo, an engineering studio in the UAE and India. It delivers websites, AI chatbots, ERP systems and startup MVPs in days."
                 points={[
                     { number: '01', label: 'Built in days, not months' },
                     { number: '02', label: 'One dedicated contact' },

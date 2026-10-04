@@ -66,6 +66,7 @@ export default function BlogIndexPage() {
                 eyebrow="Blog"
                 title="Notes from the studio"
                 intro="Notes from our engineering studio: what we learn building software, researching ideas and shipping industry products."
+                definition="Notes from Strucureo, an engineering studio in the UAE and India. Short essays on building software, researching ideas and shipping industry products."
             />
 
             {posts.length === 0 ? (

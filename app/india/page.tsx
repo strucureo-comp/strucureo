@@ -7,6 +7,7 @@ import { NumberedRow } from '@/components/shared/NumberedRow';
 import { Section } from '@/components/shared/Section';
 import { Contact } from '@/components/sections/Contact';
 import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 
 const SITE_URL = 'https://www.strucureo.com';
 
@@ -68,6 +69,8 @@ export const metadata: Metadata = {
 };
 
 export default function IndiaPage() {
+    assertNoPlaceholders('india FAQs', faqItems);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             <script
@@ -85,6 +88,7 @@ export default function IndiaPage() {
                 eyebrow="India"
                 title="Elite software engineering for India."
                 intro="We build custom software, AI chatbots, and startup MVPs for forward-thinking businesses in Chennai, Bangalore, and across India — delivered in days, not months."
+                definition="Strucureo is an engineering studio serving India, with leadership in Chennai. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days."
             />
 
             <Section>

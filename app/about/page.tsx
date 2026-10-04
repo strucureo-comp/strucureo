@@ -102,6 +102,7 @@ export default function AboutPage() {
                 eyebrow="About"
                 title="Strucureo — led by Nagaratinam S"
                 intro="Founded February 26, 2026. A remote engineering studio helping startups and small businesses build custom software, AI tools, and digital products — fast."
+                definition="Strucureo is an engineering studio in the UAE and India, led by Nagaratinam S. It runs three arms — Build, Labs and Industries — for startups and small businesses worldwide."
                 points={[
                     { number: 'Feb 2026', label: 'Founded' },
                     { number: 'Global', label: 'Markets' },

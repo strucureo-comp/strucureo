@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
@@ -119,6 +120,7 @@ export const metadata: Metadata = {
 };
 
 export default function IndustriesPage() {
+    assertNoPlaceholders('industries FAQs', faqItems);
     const breadcrumbSchema = breadcrumbList([
         { name: 'Home', url: `${SITE_URL}/` },
         { name: 'Industries', url: `${SITE_URL}/industries` },
@@ -142,6 +144,7 @@ export default function IndustriesPage() {
                 eyebrow="Strucureo Industries"
                 title="Software made for your industry, ready to use."
                 intro="Packaged from proven Labs work — configured to your team instead of built from scratch."
+                definition="Strucureo Industries is the product arm of Strucureo, an engineering studio in the UAE and India. It packages proven Labs work into ready-made products for specific industries."
                 points={[
                     { number: '01', label: 'Proven in Labs first' },
                     { number: '02', label: 'Configured to your team' },

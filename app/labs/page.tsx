@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
+import { assertNoPlaceholders } from '@/lib/guard';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
@@ -120,6 +121,7 @@ export const metadata: Metadata = {
 };
 
 export default function LabsPage() {
+    assertNoPlaceholders('labs FAQs', faqItems);
     const breadcrumbSchema = breadcrumbList([
         { name: 'Home', url: `${SITE_URL}/` },
         { name: 'Labs', url: `${SITE_URL}/labs` },
@@ -143,6 +145,7 @@ export default function LabsPage() {
                 eyebrow="Strucureo Labs"
                 title="Where repeated problems become reusable solutions."
                 intro="Labs explores AI agents, reusable modules, and prototypes — then hardens what works so the next build starts faster."
+                definition="Strucureo Labs is the research arm of Strucureo, an engineering studio in the UAE and India. It turns problems that repeat across client work into tested prototypes, AI agents and reusable modules."
                 points={[
                     { number: '01', label: 'Driven by client work' },
                     { number: '02', label: 'Tested with real users' },

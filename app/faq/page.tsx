@@ -130,6 +130,7 @@ export default function FAQPage() {
                 eyebrow="FAQ"
                 title="Questions and answers."
                 intro="Everything you need to know about working with Strucureo — our process, pricing, and team."
+                definition="These are answers about working with Strucureo, an engineering studio in the UAE and India. They cover process, pricing, timelines and the team behind Build, Labs and Industries."
             />
 
             <Section>
