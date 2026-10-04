@@ -1,11 +1,16 @@
 'use client';
 
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { Structure3D } from '@/components/shared/Structure3D';
 import { staggerContainer, EASE_LUXURY } from '@/lib/animations';
 import { Magnetic } from '@/components/shared/Magnetic';
 import { useSound } from '@/hooks/useSound';
+
+const Structure3D = dynamic(
+    () => import('@/components/shared/Structure3D').then((module) => module.Structure3D),
+    { ssr: false }
+);
 
 export const Hero = () => {
   const { playTick } = useSound();
