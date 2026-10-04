@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useRef, useState, useActionState } from 'react';
-import { useParams } from 'next/navigation';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, Loader2, Linkedin, Github } from 'lucide-react';
 import { EASE_LUXURY } from '@/lib/animations';
@@ -19,8 +18,6 @@ const initialState = {
 
 export const Contact = () => {
   const ref = useRef(null);
-  const params = useParams();
-  const locale = params?.locale || 'en'; // Default fallback
   const isInView = useInView(ref, { once: true, margin: '-10%' });
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [state, formAction, isPending] = useActionState(sendEmailAction, initialState);
@@ -193,12 +190,12 @@ export const Contact = () => {
         <div className="flex gap-8 text-xs font-mono uppercase tracking-widest pb-2 md:pb-0 text-[#111111]">
           <span className="opacity-40">© {new Date().getFullYear()}</span>
           <Magnetic strength={0.2}>
-            <a href={`/${locale}/privacy`} className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+            <a href="/privacy" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
               Privacy
             </a>
           </Magnetic>
           <Magnetic strength={0.2}>
-            <a href={`/${locale}/legal`} className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+            <a href="/legal" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
               Legal
             </a>
           </Magnetic>

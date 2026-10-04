@@ -133,7 +133,7 @@ export default function FAQPage() {
 
             <Section>
                 <div className="mx-auto max-w-3xl">
-                    <FAQAccordion items={faqs} className="mt-0" />
+                    <FAQAccordion items={faqs} className="mt-0" questionTag="h2" />
                 </div>
             </Section>
 

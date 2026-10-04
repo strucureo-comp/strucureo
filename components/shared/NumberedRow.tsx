@@ -8,14 +8,16 @@ type NumberedRowProps = {
   id?: string;
   icon?: React.ReactNode;
   title: string;
+  titleTag?: 'h2' | 'h3';
   desc?: React.ReactNode;
   extra?: React.ReactNode;
   size?: 'lg' | 'sm';
 };
 
-export const NumberedRow = ({ index, id, icon, title, desc, extra, size = 'lg' }: NumberedRowProps) => {
+export const NumberedRow = ({ index, id, icon, title, titleTag = 'h3', desc, extra, size = 'lg' }: NumberedRowProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-40% 0px -40% 0px" });
+  const TitleTag = titleTag;
 
   if (size === 'sm') {
     return (
@@ -28,8 +30,7 @@ export const NumberedRow = ({ index, id, icon, title, desc, extra, size = 'lg' }
           0{index + 1}
         </span>
         <div>
-          <h3 className="mb-3 text-2xl font-bold">{title}</h3>
-          {desc && <div className="max-w-xl leading-relaxed text-[#6E6E6E]">{desc}</div>}
+          <TitleTag className="mb-3 text-2xl font-bold">{title}</TitleTag>          {desc && <div className="max-w-xl leading-relaxed text-[#6E6E6E]">{desc}</div>}
           {extra}
         </div>
       </div>
@@ -51,7 +52,7 @@ export const NumberedRow = ({ index, id, icon, title, desc, extra, size = 'lg' }
             {icon}
           </div>
         )}
-        <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-none">{title}</h3>
+        <TitleTag className="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-none">{title}</TitleTag>
         {typeof desc === 'string' ? (
           <p className="text-xl leading-relaxed text-[#6E6E6E] max-w-lg">{desc}</p>
         ) : (

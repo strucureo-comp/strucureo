@@ -8,8 +8,9 @@ export type FAQItem = {
     answer: string;
 };
 
-export function FAQAccordion({ items, className = 'mt-16' }: { items: FAQItem[]; className?: string }) {
+export function FAQAccordion({ items, className = 'mt-16', questionTag = 'h3' }: { items: FAQItem[]; className?: string; questionTag?: 'h2' | 'h3' }) {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const QuestionTag = questionTag;
 
     return (
         <div className={className}>
@@ -24,9 +25,9 @@ export function FAQAccordion({ items, className = 'mt-16' }: { items: FAQItem[];
                         className="flex w-full items-center justify-between py-6 text-left transition-opacity hover:opacity-70"
                         aria-expanded={openIndex === index}
                     >
-                        <h3 className="pr-8 text-xl font-bold tracking-tight md:text-2xl">
+                        <QuestionTag className="pr-8 text-xl font-bold tracking-tight md:text-2xl">
                             {item.question}
-                        </h3>
+                        </QuestionTag>
                         <ChevronDown
                             className={`h-5 w-5 flex-shrink-0 transition-transform duration-300 ${
                                 openIndex === index ? 'rotate-180' : ''
