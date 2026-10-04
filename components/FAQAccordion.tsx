@@ -8,11 +8,11 @@ export type FAQItem = {
     answer: string;
 };
 
-export function FAQAccordion({ items }: { items: FAQItem[] }) {
+export function FAQAccordion({ items, className = 'mt-16' }: { items: FAQItem[]; className?: string }) {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <div className="mt-16">
+        <div className={className}>
             {items.map((item, index) => (
                 <div
                     key={index}
