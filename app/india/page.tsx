@@ -27,6 +27,14 @@ const faqItems = [
     {
         question: 'How fast can you build and launch a product?',
         answer: 'We prioritize speed without sacrificing quality. Most websites and operational MVPs are delivered in days to a few weeks, allowing Indian founders to go to market and test hypotheses rapidly.'
+    },
+    {
+        question: 'What does Strucureo Build deliver in India?',
+        answer: 'Websites, AI chatbots, ERP systems and startup MVPs, delivered in days with one dedicated contact. India specifics are covered where they count — leadership in Chennai, domestic gateways like Razorpay, Cashfree, PayU and UPI, and fixed pricing in INR. [TODO: confirm INR billing]'
+    },
+    {
+        question: 'Do you only work with companies in Chennai?',
+        answer: 'No. We partner with startups, SMEs and enterprises across Chennai, Bangalore, Mumbai and India, all through the same remote process and shared portal. [TODO: confirm whether in-person meetings are offered in India]'
     }
 ];
 

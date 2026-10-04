@@ -88,6 +88,26 @@ const faqItems = [
         answer:
             'Labs work is driven by problems seen in client projects. If your project surfaces a reusable problem, we will tell you. [TODO: confirm whether standalone Labs engagements are offered]',
     },
+    {
+        question: 'How does Strucureo Labs pick what to research?',
+        answer:
+            'Labs only researches problems that repeat across real Strucureo Build client work. When the same need appears in several projects, it becomes a research candidate. This keeps every prototype anchored to something clients already pay to solve. [TODO: confirm the exact selection bar]',
+    },
+    {
+        question: 'How long does Labs research take?',
+        answer:
+            'It depends on the question the prototype has to answer. Most tracks run alongside active client work so prototypes meet real data and real users early. [TODO: replace with confirmed timelines once the first tracks complete] We publish what graduates and what does not.',
+    },
+    {
+        question: 'Can I buy a Labs prototype directly?',
+        answer:
+            'No. Prototypes are experiments, not products, and they ship only as part of a Build project or as graduated Industries packages. If your project surfaces a repeating problem, Labs may research it with your knowledge — and you keep the working result.',
+    },
+    {
+        question: 'What does Strucureo Labs not do?',
+        answer:
+            'Labs does not take on standalone research commissions, chase technology for its own sake, or ship untested prototypes as products. If an idea cannot point to repeated client pain, it waits. One-off needs stay in Build, where they get solved directly without research overhead.',
+    },
 ];
 
 export const metadata: Metadata = {

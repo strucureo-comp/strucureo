@@ -88,6 +88,26 @@ const faqItems = [
         answer:
             'If your industry is not packaged yet, we can run a scoped Build pilot shaped with your input. [TODO: confirm early-partner terms, pricing, and availability]',
     },
+    {
+        question: 'Which industries does Strucureo Industries serve?',
+        answer:
+            'The first industry packages are being shaped with early partners now, so the list is still open. [TODO: name the first industries once confirmed] If your industry is not packaged yet, a scoped Build pilot can become the starting point — and you help define the product.',
+    },
+    {
+        question: 'What does an Industries engagement cost?',
+        answer:
+            'Pricing depends on the package and the configuration your team needs. [TODO: replace with confirmed pricing or pricing model] Every engagement starts with a scoped pilot, so you approve a fixed shape before committing further.',
+    },
+    {
+        question: 'How do I join the early-partner list?',
+        answer:
+            'Contact us through the consultation form and tell us your industry and workflow. If there is a matching starting point, we will show it. If not, we will propose a scoped pilot shaped with your team — early partners get direct input into the roadmap. [TODO: confirm early-partner terms]',
+    },
+    {
+        question: 'What does Strucureo Industries not do?',
+        answer:
+            'Industries does not build fully custom software — that is Build — and does not sell unfinished prototypes — that is Labs. Each product starts from a proven, shared core and is configured to fit. [TODO: confirm support and update terms for packaged products]',
+    },
 ];
 
 export const metadata: Metadata = {

@@ -27,6 +27,14 @@ const faqItems = [
     {
         question: 'How fast can you build and launch a product?',
         answer: 'We prioritize speed without sacrificing quality. Most websites and operational MVPs are delivered in days to a few weeks, making us the ideal technical partner for fast-moving businesses in the UAE.'
+    },
+    {
+        question: 'What does Strucureo Build deliver in the UAE?',
+        answer: 'The same Build offering as everywhere: websites, AI chatbots, ERP systems and startup MVPs, delivered in days with one dedicated contact. UAE specifics are handled where they matter — timezone overlap, MENA payment gateways like PayTabs, Telr and Checkout.com, and fixed pricing in AED. [TODO: confirm AED billing]'
+    },
+    {
+        question: 'Do you only work with companies in Dubai?',
+        answer: 'No. We support businesses across Dubai, Abu Dhabi, Sharjah and the wider Emirates, all through the same remote process and shared portal. [TODO: confirm whether in-person meetings are offered in the UAE]'
     }
 ];
 

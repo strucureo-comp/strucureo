@@ -152,6 +152,11 @@ const faqItems = [
         question: 'What is the typical cost of custom software development in UAE / India?',
         answer: 'We provide highly competitive pricing for both markets. While costs depend heavily on the project scope, typical MVP builds start from $X (approx. AED X / INR X). We operate transparently and provide a fixed-price roadmap before writing any code.',
     },
+    {
+        question: 'What does Strucureo Build not do?',
+        answer:
+            'Build does not do open-ended staff augmentation, take over large legacy codebases sight unseen, or promise fixed timelines before diagnosis. Every engagement starts with a defined scope and a chosen solution path. Research without a client problem belongs in Labs, and packaged products belong in Industries.',
+    },
 ];
 
 const faqSchema = {
