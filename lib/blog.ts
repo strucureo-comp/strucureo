@@ -70,6 +70,13 @@ export function readingTime(post: Post): number {
     return Math.max(1, Math.ceil(countWords(post) / 200));
 }
 
+/** '2026-10-05' -> '05 Oct 2026'. Manual parts, no timezone surprises. */
+export function formatDate(iso: string): string {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const [year, month, day] = iso.split('-').map(Number);
+    return `${String(day).padStart(2, '0')} ${months[month - 1]} ${year}`;
+}
+
 /** All published posts, newest first. Throws at build time on placeholder leaks. */
 export function getAllPosts(): Post[] {
     const published = allPosts
