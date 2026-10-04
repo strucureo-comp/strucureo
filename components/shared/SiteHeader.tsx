@@ -14,6 +14,7 @@ export const SiteHeader = () => {
     { label: 'Build', href: `/${locale}/services` },
     { label: 'Labs', href: `/${locale}/labs` },
     { label: 'Industries', href: `/${locale}/industries` },
+    { label: 'Blog', href: `/${locale}/blog` },
     { label: 'Work', href: 'https://portfolio.strucureo.com' },
   ];
 
