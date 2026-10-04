@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import { getAllPosts } from '@/lib/blog';
+import { breadcrumbList } from '@/lib/jsonld';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { Section } from '@/components/shared/Section';
@@ -47,9 +48,18 @@ function formatDate(iso: string): string {
 
 export default function BlogIndexPage() {
     const posts = getAllPosts();
+    const breadcrumbSchema = breadcrumbList([
+        { name: 'Home', url: `${SITE_URL}/` },
+        { name: 'Blog', url: `${SITE_URL}/blog` },
+    ]);
 
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+
             <SiteHeader />
 
             <PageHero

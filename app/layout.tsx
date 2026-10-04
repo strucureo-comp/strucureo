@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google';
 import OrganizationSchema from '@/components/OrganizationSchema';
-import PersonSchema from '@/components/PersonSchema';
 import SmoothScroll from '@/components/shared/SmoothScroll';
 import { MobileOptimizer } from '@/components/shared/MobileOptimizer';
 import { ScrollHaptic } from '@/components/shared/ScrollHaptic';
@@ -25,7 +24,6 @@ export default function RootLayout({
             </head>
             <body className={`${inter.className} bg-white text-black font-sans antialiased`}>
                 <OrganizationSchema />
-                <PersonSchema />
                 <SmoothScroll>
                     <MobileOptimizer />
                     <ScrollHaptic />

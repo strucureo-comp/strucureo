@@ -9,6 +9,7 @@ import {
     Workflow,
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { buildServiceNodes, breadcrumbList } from '@/lib/jsonld';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
@@ -181,37 +182,26 @@ const howToSchema = {
     })),
 };
 
+const listedServiceNames = [
+    'Website Development',
+    'AI Chatbot Development',
+    'ERP & Operations Systems',
+    'Startup MVP Development',
+];
+
 const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Custom Software Development',
-    name: 'Strucureo Build',
-    description:
-        'Custom software development, AI chatbots, web development, ERP systems, startup MVP builds, and cloud automation.',
-    provider: {
-        '@type': 'Organization',
-        name: 'Strucureo',
-        url: SITE_URL,
-    },
-    areaServed: [
-        { '@type': 'Country', name: 'United Arab Emirates' },
-        { '@type': 'Country', name: 'India' },
-        { '@type': 'Country', name: 'United States' },
-        { '@type': 'Country', name: 'Germany' },
-    ],
-    hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Strucureo Build',
-        itemListElement: services.map((service) => ({
-            '@type': 'Offer',
-            itemOffered: {
-                '@type': 'Service',
-                name: service.title,
-                description: service.description,
-            },
-        })),
-    },
+    '@graph': buildServiceNodes(
+        services
+            .filter((service) => listedServiceNames.includes(service.title))
+            .map((service) => ({ name: service.title, description: service.description }))
+    ),
 };
+
+const breadcrumbSchema = breadcrumbList([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Build', url: `${SITE_URL}/services` },
+]);
 
 export const metadata: Metadata = {
     title: 'Strucureo Build: Custom Software, Delivered Fast',
@@ -263,6 +253,10 @@ export default function ServicesPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
             <SiteHeader />

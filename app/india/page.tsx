@@ -6,59 +6,9 @@ import { PageHero } from '@/components/shared/PageHero';
 import { NumberedRow } from '@/components/shared/NumberedRow';
 import { Section } from '@/components/shared/Section';
 import { Contact } from '@/components/sections/Contact';
+import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
 
 const SITE_URL = 'https://www.strucureo.com';
-
-const indiaSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Strucureo",
-  "alternateName": "Strucureo Software",
-  "description": "Custom software development, AI chatbot development, and startup MVP builds for businesses in India — delivered in days, not months.",
-  "url": "https://www.strucureo.com/india",
-  "image": "https://www.strucureo.com/logo.png",
-  "telephone": "<<FILL IN: India contact number>>",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "<<FILL IN: e.g. Chennai office/coworking address>>",
-    "addressLocality": "Chennai",
-    "addressRegion": "Tamil Nadu",
-    "postalCode": "<<FILL IN>>",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "<<FILL IN: e.g. 13.0827>>",
-    "longitude": "<<FILL IN: e.g. 80.2707>>"
-  },
-  "areaServed": [
-    { "@type": "Country", "name": "India" },
-    { "@type": "City", "name": "Chennai" },
-    { "@type": "City", "name": "Bangalore" },
-    { "@type": "City", "name": "Mumbai" }
-  ],
-  "founder": [
-    { "@type": "Person", "name": "Nagaratinam S" }
-  ],
-  "foundingDate": "2026-02-26",
-  "sameAs": [
-    "https://www.linkedin.com/company/strucureo",
-    "https://twitter.com/strucureo",
-    "https://github.com/strucureo"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Strucureo India",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Chatbot Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Startup MVP Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ERP & Operations Systems" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } }
-    ]
-  }
-};
 
 const faqItems = [
     {
@@ -78,6 +28,13 @@ const faqItems = [
         answer: 'We prioritize speed without sacrificing quality. Most websites and operational MVPs are delivered in days to a few weeks, allowing Indian founders to go to market and test hypotheses rapidly.'
     }
 ];
+
+const breadcrumbSchema = breadcrumbList([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'India', url: `${SITE_URL}/india` },
+]);
+
+const faqSchema = faqPageNode(faqItems);
 
 export const metadata: Metadata = {
         title: 'Strucureo Build in India: Custom Software & AI',
@@ -115,7 +72,11 @@ export default function IndiaPage() {
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(indiaSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
             <SiteHeader />

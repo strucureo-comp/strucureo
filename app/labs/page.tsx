@@ -6,6 +6,7 @@ import {
     Puzzle,
 } from 'lucide-react';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
@@ -119,8 +120,23 @@ export const metadata: Metadata = {
 };
 
 export default function LabsPage() {
+    const breadcrumbSchema = breadcrumbList([
+        { name: 'Home', url: `${SITE_URL}/` },
+        { name: 'Labs', url: `${SITE_URL}/labs` },
+    ]);
+    const faqSchema = faqPageNode(faqItems);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+
             <SiteHeader />
 
             <PageHero

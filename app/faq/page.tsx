@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { breadcrumbList, faqPageNode } from '@/lib/jsonld';
 import { SiteHeader } from '@/components/shared/SiteHeader';
 import { PageHero } from '@/components/shared/PageHero';
 import { Section } from '@/components/shared/Section';
@@ -71,18 +72,12 @@ const faqs: FAQItem[] = [
     },
 ];
 
-const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-            '@type': 'Answer',
-            text: faq.answer,
-        },
-    })),
-};
+const faqSchema = faqPageNode(faqs);
+
+const breadcrumbSchema = breadcrumbList([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'FAQ', url: `${SITE_URL}/faq` },
+]);
 
 export const metadata: Metadata = {
     title: 'FAQ | Strucureo',
@@ -115,11 +110,17 @@ export const metadata: Metadata = {
 export default function FAQPage() {
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
-            {/* FAQPage JSON-LD Schema */}
+            {/* FAQPage + Breadcrumb JSON-LD */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify(faqSchema),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema),
                 }}
             />
 

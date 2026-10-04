@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
 import { SiteHeader } from '@/components/shared/SiteHeader';
+import { breadcrumbList } from '@/lib/jsonld';
 import { PageHero } from '@/components/shared/PageHero';
 import { SplitList } from '@/components/shared/SplitList';
 import { NumberedRow } from '@/components/shared/NumberedRow';
@@ -83,32 +84,16 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+    const breadcrumbSchema = breadcrumbList([
+        { name: 'Home', url: `${SITE_URL}/` },
+        { name: 'About', url: `${SITE_URL}/about` },
+    ]);
+
     return (
         <main className="min-h-screen bg-white text-[#111111] selection:bg-[#111111] selection:text-white">
-            {/* JSON-LD Person schemas for each founder */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@graph': founders.map((founder) => {
-                            const sameAs: string[] = [];
-
-                            return {
-                                '@type': 'Person',
-                                '@id': `https://strucureo.com/#${founder.id}`,
-                                name: founder.name,
-                                jobTitle: founder.role,
-                                url: founder.linkedin || undefined,
-                                sameAs,
-                                worksFor: {
-                                    '@type': 'Organization',
-                                    '@id': 'https://strucureo.com/#organization',
-                                },
-                            };
-                        }),
-                    }),
-                }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
             <SiteHeader />
