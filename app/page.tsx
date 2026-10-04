@@ -9,10 +9,10 @@ import { Contact } from '@/components/sections/Contact';
 
 export const metadata: Metadata = {
     title: {
-        default: 'Strucureo | Engineering Studio: Build, Labs & Industry Products in UAE & India',
+        default: 'Strucureo Engineering Studio: UAE & India',
         template: '%s | Strucureo'
     },
-    description: 'Strucureo is an engineering studio in the UAE and India. Build delivers custom software, AI chatbots, ERP systems and startup MVPs in days. Labs researches AI agents and reusable modules. Industries turns proven work into industry products. Serving clients globally.',
+    description: 'Engineering studio in the UAE and India: Build delivers custom software in days, Labs researches AI agents, Industries ships industry products.',
     keywords: [
         'engineering studio UAE',
         'custom software development India',

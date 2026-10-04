@@ -36,6 +36,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             siteName: 'Strucureo',
             type: 'article',
             publishedTime: post.date,
+            images: [
+                {
+                    url: 'https://www.strucureo.com/opengraph-image.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'Strucureo Engineering Studio'
+                }
+            ]
         },
         twitter: {
             card: 'summary_large_image',

@@ -80,8 +80,8 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-        title: 'Custom Software, AI Chatbots & ERP in India | Strucureo',
-    description: 'Strucureo builds custom software, AI chatbots, ERP systems, and startup MVPs for businesses in Chennai, Bangalore, Mumbai and across India — delivered in days, not months.',
+        title: 'Strucureo Build in India: Custom Software & AI',
+    description: 'Strucureo, an engineering studio, builds custom software, AI chatbots, ERP systems and MVPs for Chennai, Bangalore, Mumbai and India — in days.',
     keywords: [
         'engineering studio India',
         'software studio Chennai',
@@ -94,11 +94,19 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/india`,
     },
     openGraph: {
-    title: 'Custom Software, AI Chatbots & ERP in India | Strucureo',
+    title: 'Strucureo Build in India: Custom Software & AI | Strucureo',
         description: 'Elite software engineering for businesses across India.',
         url: `${SITE_URL}/india`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 

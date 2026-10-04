@@ -10,7 +10,7 @@ const SITE_URL = 'https://www.strucureo.com';
 
 export const metadata: Metadata = {
     title: 'Notes from the studio | Strucureo',
-    description: 'What we learn building software, researching new ideas and shipping industry products.',
+    description: 'Notes from our engineering studio: what we learn building software, researching ideas and shipping industry products.',
     alternates: {
         canonical: `${SITE_URL}/blog`,
         types: {
@@ -19,15 +19,23 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Notes from the studio | Strucureo',
-        description: 'What we learn building software, researching new ideas and shipping industry products.',
+        description: 'Notes from our engineering studio: what we learn building software, researching ideas and shipping industry products.',
         url: `${SITE_URL}/blog`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Notes from the studio | Strucureo',
-        description: 'What we learn building software, researching new ideas and shipping industry products.',
+        description: 'Notes from our engineering studio: what we learn building software, researching ideas and shipping industry products.',
     },
 };
 
@@ -47,7 +55,7 @@ export default function BlogIndexPage() {
             <PageHero
                 eyebrow="Blog"
                 title="Notes from the studio"
-                intro="What we learn building software, researching new ideas and shipping industry products."
+                intro="Notes from our engineering studio: what we learn building software, researching ideas and shipping industry products."
             />
 
             {posts.length === 0 ? (

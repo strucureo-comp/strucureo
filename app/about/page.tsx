@@ -8,7 +8,7 @@ import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type PageProps = {
     params: Promise<{ locale: string }>;
@@ -56,21 +56,29 @@ const values = [
 
 export const metadata: Metadata = {
     title: 'Nagaratinam S | Strucureo Team',
-    description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+    description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
     alternates: {
         canonical: `${SITE_URL}/about`,
     },
     openGraph: {
         title: 'Nagaratinam S | Strucureo Team',
-        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
         url: `${SITE_URL}/about`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Nagaratinam S | Strucureo Team',
-        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). Founded February 26, 2026, Strucureo is a remote engineering studio building custom software for startups worldwide.',
+        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
     },
 };
 

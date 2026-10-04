@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Privacy Policy | Strucureo',
     description: 'Privacy Policy and Data Protection guidelines for Strucureo.',
+    alternates: {
+        canonical: 'https://www.strucureo.com/privacy',
+    },
 };
 
 export default function PrivacyPage() {

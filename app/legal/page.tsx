@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Terms of Service | Strucureo',
     description: 'Terms of Service and Legal Agreement for Strucureo.',
+    alternates: {
+        canonical: 'https://www.strucureo.com/legal',
+    },
 };
 
 export default function LegalPage() {

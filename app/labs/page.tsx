@@ -14,7 +14,7 @@ import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type FocusArea = {
     title: string;
@@ -90,7 +90,7 @@ const faqItems = [
 
 export const metadata: Metadata = {
     title: 'Strucureo Labs: Research & Prototypes | Strucureo',
-    description: 'Strucureo Labs is the research arm of our engineering studio: AI agents, reusable modules, and prototypes that turn repeated client problems into products.',
+    description: 'Strucureo Labs is the research arm of our engineering studio: AI agents, reusable modules, and prototypes from real client problems.',
     keywords: [
         'Strucureo Labs',
         'AI agents research',
@@ -107,6 +107,14 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/labs`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 

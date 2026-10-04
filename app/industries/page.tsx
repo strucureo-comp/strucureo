@@ -14,7 +14,7 @@ import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type ProductLine = {
     title: string;
@@ -89,8 +89,8 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-    title: 'Strucureo Industries: Ready-Made Industry Products | Strucureo',
-    description: 'Strucureo Industries offers ready-made products for specific industries, packaged from proven Labs research — configured to your team, faster than custom builds.',
+    title: 'Strucureo Industries: Ready-Made Products',
+    description: 'Strucureo Industries, the product arm of our engineering studio, packages proven Labs research into ready-made industry products.',
     keywords: [
         'Strucureo Industries',
         'industry software products',
@@ -101,11 +101,19 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/industries`,
     },
     openGraph: {
-        title: 'Strucureo Industries: Ready-Made Industry Products | Strucureo',
+        title: 'Strucureo Industries: Ready-Made Products | Strucureo',
         description: 'Ready-made industry products from proven Labs work — plus early-partner pilots for new industries.',
         url: `${SITE_URL}/industries`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 

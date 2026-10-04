@@ -17,7 +17,7 @@ import { Section } from '@/components/shared/Section';
 import { AnimatedText } from '@/components/shared/AnimatedText';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type PageProps = {
     params: Promise<{ locale: string }>;
@@ -214,8 +214,8 @@ const serviceSchema = {
 };
 
 export const metadata: Metadata = {
-    title: 'Custom Software, AI Chatbots & ERP in UAE & India | Strucureo',
-    description: 'Strucureo offers custom software development, AI chatbots, ERP systems, startup MVPs, web development, and cloud automation for businesses across the UAE and India — built in days, not months.',
+    title: 'Strucureo Build: Custom Software, Delivered Fast',
+    description: 'Strucureo Build is the client software arm of our engineering studio: websites, AI chatbots, ERP systems and MVPs in days.',
     keywords: [
         'custom software development',
         'AI chatbot development',
@@ -237,6 +237,14 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/services`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 

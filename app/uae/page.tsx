@@ -80,8 +80,8 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-        title: 'Custom Software, AI Chatbots & ERP in UAE | Strucureo',
-    description: 'Strucureo builds custom software, AI chatbots, ERP systems, and startup MVPs for businesses in Dubai, Abu Dhabi, and across the UAE — delivered in days, not months.',
+        title: 'Strucureo Build in UAE: Custom Software & AI',
+    description: 'Strucureo, an engineering studio, builds custom software, AI chatbots, ERP systems and MVPs for Dubai, Abu Dhabi and the UAE — in days.',
     keywords: [
         'engineering studio UAE',
         'software studio Dubai',
@@ -94,11 +94,19 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/uae`,
     },
     openGraph: {
-    title: 'Custom Software, AI Chatbots & ERP in UAE | Strucureo',
+    title: 'Strucureo Build in UAE: Custom Software & AI | Strucureo',
         description: 'Elite software engineering for businesses across the UAE.',
         url: `${SITE_URL}/uae`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
 };
 

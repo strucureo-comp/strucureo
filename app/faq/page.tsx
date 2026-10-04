@@ -5,7 +5,7 @@ import { PageHero } from '@/components/shared/PageHero';
 import { Section } from '@/components/shared/Section';
 import { Contact } from '@/components/sections/Contact';
 
-const SITE_URL = 'https://strucureo.com';
+const SITE_URL = 'https://www.strucureo.com';
 
 type PageProps = {
     params: Promise<{ locale: string }>;
@@ -86,21 +86,29 @@ const faqSchema = {
 
 export const metadata: Metadata = {
     title: 'FAQ | Strucureo',
-    description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team. Learn how we build websites, AI chatbots, ERP systems, and custom software fast.',
+    description: 'Frequently asked questions about working with Strucureo, an engineering studio: process, pricing, timelines and team.',
     alternates: {
         canonical: `${SITE_URL}/faq`,
     },
     openGraph: {
         title: 'FAQ | Strucureo',
-        description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team.',
+        description: 'Frequently asked questions about working with Strucureo, an engineering studio: our process, pricing, and team.',
         url: `${SITE_URL}/faq`,
         siteName: 'Strucureo',
         type: 'website',
+        images: [
+            {
+                url: 'https://www.strucureo.com/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Strucureo Engineering Studio'
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: 'FAQ | Strucureo',
-        description: 'Frequently asked questions about working with Strucureo, our process, pricing, and team.',
+        description: 'Frequently asked questions about working with Strucureo, an engineering studio: our process, pricing, and team.',
     },
 };
 
