@@ -1,4 +1,6 @@
 import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import OrganizationSchema from '@/components/OrganizationSchema';
 import SmoothScroll from '@/components/shared/SmoothScroll';
 import { MobileOptimizer } from '@/components/shared/MobileOptimizer';
@@ -27,6 +29,8 @@ export default function RootLayout({
             </head>
             <body className={`${inter.className} bg-white text-black font-sans antialiased`}>
                 <OrganizationSchema />
+                <Analytics />
+                <SpeedInsights />
                 <SmoothScroll>
                     <MobileOptimizer />
                     <ScrollHaptic />
