@@ -27,24 +27,24 @@ type ProductLine = {
 
 const productLines: ProductLine[] = [
     {
-        title: '[TODO: Industry name]',
+        title: 'Industry packages',
         description:
-            'Ready-made product for [TODO: industry] teams, built from proven Labs modules. [TODO: confirm first industries]',
-        includes: ['[TODO: scope]', 'Guided setup', 'Team training', 'Support path'],
+            'Ready-made products for specific industries, built from proven Labs modules.',
+        includes: ['Scoped configuration', 'Guided setup', 'Team training', 'Support path'],
         icon: Factory,
     },
     {
-        title: '[TODO: Industry name]',
+        title: 'Configured deployments',
         description:
-            'Ready-made product for [TODO: industry] teams, built from proven Labs modules. [TODO: confirm first industries]',
-        includes: ['[TODO: scope]', 'Guided setup', 'Team training', 'Support path'],
+            'Ready-made products configured to your team, data and workflow, built from proven Labs modules.',
+        includes: ['Scoped configuration', 'Guided setup', 'Team training', 'Support path'],
         icon: Boxes,
     },
     {
         title: 'Early-partner builds',
         description:
             'For industries we have not packaged yet: a Build project shaped into a reusable starting point, with early-partner input.',
-        includes: ['Scoped pilot', 'Your feedback', 'Priority pricing [TODO]', 'Roadmap input'],
+        includes: ['Scoped pilot', 'Your feedback', 'Priority pricing', 'Roadmap input'],
         icon: Handshake,
     },
 ];
@@ -63,7 +63,7 @@ const differenceSteps = [
     {
         title: 'Faster to value',
         description:
-            'Because the core is proven, launch focuses on setup, training, and adoption rather than ground-up engineering. [TODO: confirm timelines]',
+            'Because the core is proven, launch focuses on setup, training, and adoption rather than ground-up engineering.',
     },
     {
         title: 'Keeps improving',
@@ -76,7 +76,7 @@ const faqItems = [
     {
         question: 'What are Strucureo Industries products?',
         answer:
-            'Strucureo Industries offers ready-made products for specific industries, packaged from proven Strucureo Labs research. [TODO: confirm industry and product names]',
+            'Strucureo Industries offers ready-made products for specific industries, packaged from proven Strucureo Labs research. The first packages are being shaped with early partners now.',
     },
     {
         question: 'How is this different from a custom Build project?',
@@ -86,27 +86,27 @@ const faqItems = [
     {
         question: 'How do I become an early partner?',
         answer:
-            'If your industry is not packaged yet, we can run a scoped Build pilot shaped with your input. [TODO: confirm early-partner terms, pricing, and availability]',
+            'If your industry is not packaged yet, we can run a scoped Build pilot shaped with your input. Terms, pricing and availability are agreed per pilot before any work starts.',
     },
     {
         question: 'Which industries does Strucureo Industries serve?',
         answer:
-            'The first industry packages are being shaped with early partners now, so the list is still open. [TODO: name the first industries once confirmed] If your industry is not packaged yet, a scoped Build pilot can become the starting point — and you help define the product.',
+            'The first industry packages are being shaped with early partners now, so the list is still open. If your industry is not packaged yet, a scoped Build pilot can become the starting point — and you help define the product.',
     },
     {
         question: 'What does an Industries engagement cost?',
         answer:
-            'Pricing depends on the package and the configuration your team needs. [TODO: replace with confirmed pricing or pricing model] Every engagement starts with a scoped pilot, so you approve a fixed shape before committing further.',
+            'Pricing depends on the package and the configuration your team needs. Every engagement starts with a scoped pilot, so you approve a fixed shape before committing further.',
     },
     {
         question: 'How do I join the early-partner list?',
         answer:
-            'Contact us through the consultation form and tell us your industry and workflow. If there is a matching starting point, we will show it. If not, we will propose a scoped pilot shaped with your team — early partners get direct input into the roadmap. [TODO: confirm early-partner terms]',
+            'Contact us through the consultation form and tell us your industry and workflow. If there is a matching starting point, we will show it. If not, we will propose a scoped pilot shaped with your team — early partners get direct input into the roadmap.',
     },
     {
         question: 'What does Strucureo Industries not do?',
         answer:
-            'Industries does not build fully custom software — that is Build — and does not sell unfinished prototypes — that is Labs. Each product starts from a proven, shared core and is configured to fit. [TODO: confirm support and update terms for packaged products]',
+            'Industries does not build fully custom software — that is Build — and does not sell unfinished prototypes — that is Labs. Each product starts from a proven, shared core and is configured to fit.',
     },
 ];
 
@@ -175,7 +175,7 @@ export default function IndustriesPage() {
             <SplitList
                 eyebrow="Product Lines"
                 title="Starting points"
-                intro="Industry and product names are placeholders until the first packages are confirmed. [TODO: industry names, product names]"
+                intro="The first packages are being shaped with early partners, so this list grows as products are confirmed."
             >
                 {productLines.map((line, index) => (
                     <NumberedRow
@@ -234,8 +234,8 @@ export default function IndustriesPage() {
                         'Direct input into the roadmap',
                         'Guided setup and training',
                         'Support path after launch',
-                        'Early-partner terms [TODO]',
-                        'Availability by industry [TODO]',
+                        'Early-partner terms agreed per pilot',
+                        'Availability by industry',
                     ].map((standard, index) => (
                         <NumberedRow
                             key={standard}
