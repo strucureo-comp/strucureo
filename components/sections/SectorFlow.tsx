@@ -18,7 +18,7 @@ const flowSteps = [
   {
     title: 'Industries packages what works into a product.',
     description:
-      'Proven Labs work is packaged into ready-made industry products. [TODO: product names]',
+      'Proven Labs work is packaged into ready-made industry products.',
   },
   {
     title: 'New clients and reusable modules return to Build.',

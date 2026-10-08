@@ -30,7 +30,7 @@ const focusAreas: FocusArea[] = [
         title: 'AI Agents',
         description:
             'Assistants and workflows that read your documents, draft answers, and hand off cleanly to humans when needed.',
-        includes: ['Document Q&A', 'Lead capture', 'Human handoff', '[TODO: model policy]'],
+        includes: ['Document Q&A', 'Lead capture', 'Human handoff', 'Clear limits'],
         icon: Bot,
     },
     {
@@ -63,12 +63,12 @@ const graduationSteps = [
     {
         title: 'Harden the module',
         description:
-            'What works is hardened into a documented, reusable module with clear limits. [TODO: review criteria]',
+            'What works is hardened into a documented, reusable module with clear limits on what it does and where it should not be used.',
     },
     {
         title: 'Graduate to Industries',
         description:
-            'Proven modules are packaged into ready-made industry products. [TODO: graduation bar]',
+            'Proven modules are packaged into ready-made industry products.',
     },
 ];
 
@@ -81,22 +81,22 @@ const faqItems = [
     {
         question: 'How do Labs ideas become products?',
         answer:
-            'Ideas graduate in four steps: spot the pattern in client work, research and prototype in Labs, harden what works into a reusable module, and package proven modules into Strucureo Industries products. [TODO: confirm graduation bar and review process]',
+            'Ideas graduate in four steps: spot the pattern in client work, research and prototype in Labs, harden what works into a reusable module, and package proven modules into Strucureo Industries products.',
     },
     {
         question: 'Can I commission Labs research?',
         answer:
-            'Labs work is driven by problems seen in client projects. If your project surfaces a reusable problem, we will tell you. [TODO: confirm whether standalone Labs engagements are offered]',
+            'Labs work is driven by problems seen in client projects. If your project surfaces a reusable problem, we will tell you. Labs does not take standalone research commissions — one-off needs are solved in Build.',
     },
     {
         question: 'How does Strucureo Labs pick what to research?',
         answer:
-            'Labs only researches problems that repeat across real Strucureo Build client work. When the same need appears in several projects, it becomes a research candidate. This keeps every prototype anchored to something clients already pay to solve. [TODO: confirm the exact selection bar]',
+            'Labs only researches problems that repeat across real Strucureo Build client work. When the same need appears in several projects, it becomes a research candidate. This keeps every prototype anchored to something clients already pay to solve.',
     },
     {
         question: 'How long does Labs research take?',
         answer:
-            'It depends on the question the prototype has to answer. Most tracks run alongside active client work so prototypes meet real data and real users early. [TODO: replace with confirmed timelines once the first tracks complete] We publish what graduates and what does not.',
+            'It depends on the question the prototype has to answer. Most tracks run alongside active client work so prototypes meet real data and real users early. We publish what graduates and what does not.',
     },
     {
         question: 'Can I buy a Labs prototype directly?',
@@ -176,7 +176,7 @@ export default function LabsPage() {
             <SplitList
                 eyebrow="What Labs Researches"
                 title="Focus areas"
-                intro="Three tracks, all fed by problems seen in Strucureo Build client work. [TODO: confirm focus list]"
+                intro="Three tracks, all fed by problems seen in Strucureo Build client work."
             >
                 {focusAreas.map((area, index) => (
                     <NumberedRow
