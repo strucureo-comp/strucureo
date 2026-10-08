@@ -20,9 +20,6 @@
  */
 const KNOWN_PLACEHOLDER_PAGES = new Set<string>([
     'industries FAQs',
-    'services FAQs',
-    'uae FAQs',
-    'india FAQs',
     'labs FAQs',
 ]);
 

@@ -59,26 +59,22 @@ export const Hero = () => {
       <div className="flex-grow flex flex-col justify-center mt-12 md:mt-0 z-10 pb-24 pointer-events-none"> {/* content wrapper */}
         <div className="pointer-events-auto"> {/* Interactive elements wrapper */}
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-0 md:space-y-4">
-            {['Clarity Against', 'Complexity.'].map((line, i) => {
-              const Tag = i === 0 ? motion.h1 : motion.span;
-              return (
-                <Tag
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 100, letterSpacing: '-0.05em' },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      letterSpacing: '-0.03em',
-                      transition: { duration: 1.8, ease: EASE_LUXURY }
-                    }
-                  }}
-                  className="block text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] text-[#111111]"
-                >
-                  {line}
-                </Tag>
-              );
-            })}
+            <motion.h1
+              variants={{
+                hidden: { opacity: 0, y: 100, letterSpacing: '-0.05em' },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  letterSpacing: '-0.03em',
+                  transition: { duration: 1.8, ease: EASE_LUXURY }
+                }
+              }}
+              className="block text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] text-[#111111]"
+            >
+              <span className="block">Clarity Against</span>
+              <span className="block">Complexity.</span>
+              <span className="sr-only"> Custom software, AI chatbots, ERP systems and startup MVPs delivered in days for UAE and India.</span>
+            </motion.h1>
           </motion.div>
 
           <motion.div

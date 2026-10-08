@@ -18,7 +18,7 @@ const faqItems = [
     },
     {
         question: 'What is the typical cost of custom software development in the UAE?',
-        answer: 'We provide highly competitive pricing for the UAE market. While costs depend heavily on the project scope, typical MVP builds start from $X (approx. AED X). We operate transparently and provide a fixed-price roadmap before writing any code.'
+        answer: 'Pricing depends on scope. We work on fixed-price roadmaps agreed before any code is written, with transparent pricing. Contact us with your requirements for a tailored quote and timeline.'
     },
     {
         question: 'Can you integrate local payment gateways like PayTabs or Telr?',
@@ -30,11 +30,11 @@ const faqItems = [
     },
     {
         question: 'What does Strucureo Build deliver in the UAE?',
-        answer: 'The same Build offering as everywhere: websites, AI chatbots, ERP systems and startup MVPs, delivered in days with one dedicated contact. UAE specifics are handled where they matter — timezone overlap, MENA payment gateways like PayTabs, Telr and Checkout.com, and fixed pricing in AED. [TODO: confirm AED billing]'
+        answer: 'The same Build offering as everywhere: websites, AI chatbots, ERP systems and startup MVPs, delivered in days with one dedicated contact. UAE specifics are handled where they matter — timezone overlap, MENA payment gateways like PayTabs, Telr and Checkout.com, and transparent fixed-price roadmaps.'
     },
     {
         question: 'Do you only work with companies in Dubai?',
-        answer: 'No. We support businesses across Dubai, Abu Dhabi, Sharjah and the wider Emirates, all through the same remote process and shared portal. [TODO: confirm whether in-person meetings are offered in the UAE]'
+        answer: 'No. We support businesses across Dubai, Abu Dhabi, Sharjah and the wider Emirates, all through the same remote process and shared portal. Write to support@strucureo.com if you need an in-person meeting and we will confirm availability.'
     }
 ];
 
