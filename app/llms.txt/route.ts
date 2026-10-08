@@ -13,12 +13,44 @@ const BODY = `# Strucureo
 ## Key pages
 
 - Home: ${SITE_URL}/
-- Blog: ${SITE_URL}/blog
-- About: ${SITE_URL}/about
-- FAQ: ${SITE_URL}/faq
+- Services (Build): ${SITE_URL}/services
+- Labs: ${SITE_URL}/labs
+- Industries: ${SITE_URL}/industries
 - UAE: ${SITE_URL}/uae
 - India: ${SITE_URL}/india
+- About: ${SITE_URL}/about
+- FAQ: ${SITE_URL}/faq
+- Blog: ${SITE_URL}/blog
 - RSS feed: ${SITE_URL}/blog/rss.xml
+
+## Services
+
+- Website Development: conversion-focused marketing sites, landing pages, Next.js builds with SEO foundations.
+- AI Chatbot Development: support bots and assistants with knowledge base setup, lead capture, human handoff.
+- ERP & Operations Systems: inventory flows, order management, role access, reporting dashboards.
+- Custom Software: internal portals, customer platforms, API integrations, admin panels.
+- Startup MVP Development: lean scope, clickable flows, launch build, iteration roadmap.
+- Automation & Cloud Support: deployment automation, CI/CD, performance fixes, monitoring basics.
+
+## Process
+
+1. Diagnose: clarify problem, users, constraints, success metrics.
+2. Design Options: solution paths with speed/cost/complexity tradeoffs.
+3. Build Fast: focused milestones, visible scope.
+4. Launch & Support: deploy, monitor, document, improve.
+
+## Pricing
+
+- Fixed-price roadmap agreed before any code is written.
+- No open-ended billing. Contact for a tailored quote and timeline.
+
+## FAQ (short answers)
+
+- What does Strucureo build? Websites, AI chatbots, ERP systems, startup MVPs, custom software and automation, delivered in days.
+- How fast? Most websites and MVPs in days to a few weeks depending on scope.
+- Where? Globally, with focus on UAE (Dubai, Abu Dhabi) and India (Chennai, Bangalore, Mumbai). Timezone overlap for both.
+- Cost? Scope-dependent with a fixed-price roadmap before code. Contact for quote.
+- How to start? Free consultation via the contact form or support@strucureo.com.
 
 ## Contact
 

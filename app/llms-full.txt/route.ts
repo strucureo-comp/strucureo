@@ -33,12 +33,41 @@ export async function GET() {
 ## Key pages
 
 - Home: ${SITE_URL}/
-- Blog: ${SITE_URL}/blog
-- About: ${SITE_URL}/about
-- FAQ: ${SITE_URL}/faq
+- Services (Build): ${SITE_URL}/services
+- Labs: ${SITE_URL}/labs
+- Industries: ${SITE_URL}/industries
 - UAE: ${SITE_URL}/uae
 - India: ${SITE_URL}/india
+- About: ${SITE_URL}/about
+- FAQ: ${SITE_URL}/faq
+- Blog: ${SITE_URL}/blog
 - RSS feed: ${SITE_URL}/blog/rss.xml
+
+## Services
+
+- Website Development: conversion-focused marketing sites, landing pages, Next.js builds with SEO foundations.
+- AI Chatbot Development: support bots and assistants with knowledge base setup, lead capture, human handoff.
+- ERP & Operations Systems: inventory flows, order management, role access, reporting dashboards.
+- Custom Software: internal portals, customer platforms, API integrations, admin panels.
+- Startup MVP Development: lean scope, clickable flows, launch build, iteration roadmap.
+- Automation & Cloud Support: deployment automation, CI/CD, performance fixes, monitoring basics.
+
+## Process
+
+1. Diagnose: clarify problem, users, constraints, success metrics.
+2. Design Options: solution paths with speed/cost/complexity tradeoffs.
+3. Build Fast: focused milestones, visible scope.
+4. Launch & Support: deploy, monitor, document, improve.
+
+## Pricing
+
+- Fixed-price roadmap agreed before any code is written.
+- No open-ended billing. Contact for a tailored quote and timeline.
+
+## Geo focus
+
+- UAE: Dubai, Abu Dhabi and the wider Emirates. MENA payment gateways (PayTabs, Telr, Checkout.com), timezone overlap. See ${SITE_URL}/uae.
+- India: Chennai (leadership), Bangalore, Mumbai and India. Razorpay, Cashfree, PayU, UPI integrations. See ${SITE_URL}/india.
 
 ## Contact
 
