@@ -68,7 +68,8 @@ export const faqs: FAQItem[] = [
     },
     {
         question: 'What is the typical cost of custom software development in UAE / India?',
-        answer: 'We provide highly competitive pricing for both markets. While costs depend heavily on the project scope, typical MVP builds start from $X (approx. AED X / INR X). We operate transparently and provide a fixed-price roadmap before writing any code.',
+        answer:
+            'Pricing depends on scope. Every engagement starts with diagnosis and a fixed-price roadmap agreed before any code is written. Contact us with your requirements for a tailored quote and timeline.',
     },
 ];
 
