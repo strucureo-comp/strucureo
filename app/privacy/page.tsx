@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Privacy Policy | Strucureo',
-    description: 'Strucureo privacy policy: data protection, transparency, user rights, and how we handle your information when you use our engineering services in the UAE and India.',
+    description: 'Strucureo privacy policy: how we collect, use and protect your data when you work with our UAE & India engineering studio. Contact support@strucureo.com.',
     alternates: {
         canonical: 'https://www.strucureo.com/privacy',
     },
