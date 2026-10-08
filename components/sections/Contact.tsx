@@ -190,6 +190,26 @@ export const Contact = () => {
         <div className="flex gap-8 text-xs font-mono uppercase tracking-widest pb-2 md:pb-0 text-[#111111]">
           <span className="opacity-40">© {new Date().getFullYear()}</span>
           <Magnetic strength={0.2}>
+            <a href="/services" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+              Services
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.2}>
+            <a href="/uae" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+              UAE
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.2}>
+            <a href="/india" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+              India
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.2}>
+            <a href="/faq" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+              FAQ
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.2}>
             <a href="/privacy" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
               Privacy
             </a>
