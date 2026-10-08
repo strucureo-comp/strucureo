@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Terms of Service | Strucureo',
-    description: 'Strucureo terms of service: legal agreement for custom software, AI chatbots, ERP systems and industry products built by the UAE and India engineering studio.',
+    description: 'Strucureo terms of service for custom software, AI chatbots, ERP and MVPs built by our UAE & India studio. IP, NDA, liability and governing terms.',
     alternates: {
         canonical: 'https://www.strucureo.com/legal',
     },

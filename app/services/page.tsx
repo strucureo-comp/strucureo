@@ -210,8 +210,8 @@ const breadcrumbSchema = breadcrumbList([
 ]);
 
 export const metadata: Metadata = {
-    title: 'Strucureo Build: Custom Software, Delivered Fast',
-    description: 'Strucureo Build is the client software arm of our engineering studio: websites, AI chatbots, ERP systems and MVPs in days.',
+    title: 'Custom Software, AI Chatbots & MVPs in Days | Strucureo',
+    description: 'Websites, AI chatbots, ERP systems & startup MVPs delivered in days for UAE & India. Fixed scope, one contact, post-launch support. Get quote.',
     keywords: [
         'custom software development',
         'AI chatbot development',
@@ -228,8 +228,8 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/services`,
     },
     openGraph: {
-        title: 'Strucureo Build: Custom Software & AI | Strucureo',
-        description: 'Websites, AI chatbots, ERP systems, MVPs, custom software, automation, and cloud support built with a structured engineering process.',
+        title: 'Custom Software, AI Chatbots & MVPs in Days | Strucureo',
+        description: 'Websites, AI chatbots, ERP systems & startup MVPs delivered in days for UAE & India. Fixed scope, one contact, post-launch support.',
         url: `${SITE_URL}/services`,
         siteName: 'Strucureo',
         type: 'website',

@@ -9,10 +9,10 @@ import { Contact } from '@/components/sections/Contact';
 
 export const metadata: Metadata = {
     title: {
-        default: 'Strucureo Engineering Studio: UAE & India',
+        default: 'Strucureo: Custom Software & MVPs in Days | UAE & India',
         template: '%s | Strucureo'
     },
-    description: 'Engineering studio in the UAE and India: Build delivers custom software in days, Labs researches AI agents, Industries ships industry products.',
+    description: 'Strucureo builds websites, AI chatbots, ERP systems & MVPs in days for UAE & India startups. Fixed scope, one contact, support after launch.',
     keywords: [
         'engineering studio UAE',
         'custom software development India',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
         'software development Bangalore'
     ],
     openGraph: {
-        title: 'Strucureo | Engineering Studio: Build, Labs & Industries',
-        description: 'Strucureo helps startups and small businesses build websites, AI chatbots, ERP systems, and custom software delivered in days — plus Labs research and ready-made industry products.',
+        title: 'Strucureo: Custom Software & MVPs in Days | UAE & India',
+        description: 'Websites, AI chatbots, ERP systems & startup MVPs delivered in days for UAE & India startups. Fixed scope, one contact, support after launch.',
         url: 'https://www.strucureo.com',
         siteName: 'Strucureo',
         locale: 'en_US',
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Strucureo | Engineering Studio: Build, Labs & Industries',
-        description: 'Websites, AI Chatbots, ERPs, and custom software delivered in days — plus Labs research and industry products.',
+        title: 'Strucureo: Custom Software & MVPs in Days | UAE & India',
+        description: 'Websites, AI chatbots, ERP & MVPs delivered in days for UAE & India. Fixed scope, one contact, support after launch.',
         creator: '@strucureo',
         images: ['https://www.strucureo.com/opengraph-image.png']
     },
