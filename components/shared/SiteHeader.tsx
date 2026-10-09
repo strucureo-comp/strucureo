@@ -78,6 +78,22 @@ export const SiteHeader = () => {
         />
       </button>
 
+      {/* Mobile backdrop: dims + blurs the page behind the menu so the
+          overlay reads as an overlay, not text floating over content. */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setMenuOpen(false)}
+            className="md:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
+          />
+        )}
+      </AnimatePresence>
+
       {/* Mobile menu panel */}
       <AnimatePresence>
         {menuOpen && (
@@ -86,14 +102,28 @@ export const SiteHeader = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-[#111111]/10 shadow-lg z-20 flex flex-col px-6 py-4 gap-4"
+            className="md:hidden fixed top-0 left-0 right-0 bg-white border-b border-[#111111]/10 shadow-xl z-40 flex flex-col px-6 pt-8 pb-6 gap-1"
           >
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex flex-col text-xs uppercase tracking-widest font-medium">
+                <span>Strucureo</span>
+                <span className="opacity-50">Engineering Studio</span>
+              </div>
+              <button
+                type="button"
+                aria-label="Close menu"
+                onClick={() => setMenuOpen(false)}
+                className="text-2xl leading-none px-2 -mr-2"
+              >
+                ×
+              </button>
+            </div>
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="uppercase tracking-widest py-1 transition-opacity hover:opacity-50"
+                className="uppercase tracking-widest py-2 border-b border-[#111111]/5 transition-opacity hover:opacity-50"
               >
                 {link.label}
               </a>
@@ -104,7 +134,7 @@ export const SiteHeader = () => {
                 playTick();
                 setMenuOpen(false);
               }}
-              className="uppercase tracking-widest py-1 transition-opacity hover:opacity-50"
+              className="uppercase tracking-widest py-2 transition-opacity hover:opacity-50"
             >
               Contact
             </a>
