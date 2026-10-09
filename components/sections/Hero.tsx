@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { staggerContainer, EASE_LUXURY } from '@/lib/animations';
 import { Magnetic } from '@/components/shared/Magnetic';
 import { useSound } from '@/hooks/useSound';
@@ -14,6 +14,7 @@ const Structure3D = dynamic(
 
 export const Hero = () => {
   const { playTick } = useSound();
+  const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = [
     { label: 'Build', href: '/services' },
     { label: 'Labs', href: '/labs' },
@@ -33,7 +34,7 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.5 }}
-        className="flex justify-between items-start text-xs md:text-sm uppercase tracking-widest font-medium opacity-60 z-10"
+        className="flex justify-between items-start text-xs md:text-sm uppercase tracking-widest font-medium opacity-60 z-10 relative"
       >
         <div className="flex flex-col">
           <span>Strucureo</span>
@@ -57,6 +58,50 @@ export const Hero = () => {
             </a>
           </Magnetic>
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((o) => !o)}
+          className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8 z-20"
+        >
+          <span className={`block h-[2px] w-full bg-[#111111] transition-transform duration-300 ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
+          <span className={`block h-[2px] w-full bg-[#111111] transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block h-[2px] w-full bg-[#111111] transition-transform duration-300 ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
+        </button>
+
+        {/* Mobile menu panel */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-[#111111]/10 shadow-lg z-30 flex flex-col px-6 py-4 gap-4"
+            >
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="uppercase tracking-widest py-1 transition-opacity hover:opacity-50"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                onClick={() => { playTick(); setMenuOpen(false); }}
+                className="uppercase tracking-widest py-1 transition-opacity hover:opacity-50"
+              >
+                Contact
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.nav>
 
       <div className="flex-grow flex flex-col justify-center mt-12 md:mt-0 z-10 pb-24 pointer-events-none"> {/* content wrapper */}
