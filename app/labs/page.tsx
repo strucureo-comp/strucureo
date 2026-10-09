@@ -30,7 +30,7 @@ const focusAreas: FocusArea[] = [
         title: 'AI Agents',
         description:
             'Assistants and workflows that read your documents, draft answers, and hand off cleanly to humans when needed.',
-        includes: ['Document Q&A', 'Lead capture', 'Human handoff', 'Clear limits'],
+        includes: ['Document Q&A', 'Lead capture', 'Human handoff'],
         icon: Bot,
     },
     {
@@ -63,7 +63,7 @@ const graduationSteps = [
     {
         title: 'Harden the module',
         description:
-            'What works is hardened into a documented, reusable module with clear limits on what it does and where it should not be used.',
+            'What works is hardened into a documented, reusable module with clear limits.',
     },
     {
         title: 'Graduate to Industries',
