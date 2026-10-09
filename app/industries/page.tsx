@@ -27,24 +27,24 @@ type ProductLine = {
 
 const productLines: ProductLine[] = [
     {
-        title: 'Industry packages',
+        title: 'Ready-made products',
         description:
             'Ready-made products for specific industries, built from proven Labs modules.',
-        includes: ['Scoped configuration', 'Guided setup', 'Team training', 'Support path'],
+        includes: ['Configuration', 'Guided setup', 'Team training', 'Support path'],
         icon: Factory,
     },
     {
-        title: 'Configured deployments',
+        title: 'Configured to your team',
         description:
             'Ready-made products configured to your team, data and workflow, built from proven Labs modules.',
-        includes: ['Scoped configuration', 'Guided setup', 'Team training', 'Support path'],
+        includes: ['Configuration', 'Guided setup', 'Team training', 'Support path'],
         icon: Boxes,
     },
     {
         title: 'Early-partner builds',
         description:
             'For industries we have not packaged yet: a Build project shaped into a reusable starting point, with early-partner input.',
-        includes: ['Scoped pilot', 'Your feedback', 'Priority pricing', 'Roadmap input'],
+        includes: ['Scoped pilot', 'Your feedback', 'Roadmap input'],
         icon: Handshake,
     },
 ];
@@ -86,7 +86,7 @@ const faqItems = [
     {
         question: 'How do I become an early partner?',
         answer:
-            'If your industry is not packaged yet, we can run a scoped Build pilot shaped with your input. Terms, pricing and availability are agreed per pilot before any work starts.',
+            'If your industry is not packaged yet, we can run a scoped Build pilot shaped with your input.',
     },
     {
         question: 'Which industries does Strucureo Industries serve?',
@@ -175,7 +175,7 @@ export default function IndustriesPage() {
             <SplitList
                 eyebrow="Product Lines"
                 title="Starting points"
-                intro="The first packages are being shaped with early partners, so this list grows as products are confirmed."
+                intro="The first packages are being shaped with early partners."
             >
                 {productLines.map((line, index) => (
                     <NumberedRow
@@ -234,7 +234,7 @@ export default function IndustriesPage() {
                         'Direct input into the roadmap',
                         'Guided setup and training',
                         'Support path after launch',
-                        'Early-partner terms agreed per pilot',
+                        'Early-partner terms',
                         'Availability by industry',
                     ].map((standard, index) => (
                         <NumberedRow
