@@ -212,6 +212,11 @@ export const Contact = () => {
             </a>
           </Magnetic>
           <Magnetic strength={0.2}>
+            <a href="/about" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
+              About
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.2}>
             <a href="/privacy" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">
               Privacy
             </a>
