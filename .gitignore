@@ -35,3 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env*
+
+# Autopilot PR-loop scratch (never commit)
+.agent-code.log
+.agent-code.done
