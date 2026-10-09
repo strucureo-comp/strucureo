@@ -37,6 +37,25 @@ export function organizationNode() {
             { '@type': 'Country', name: 'India' },
             { '@type': 'DefinedRegion', name: 'Worldwide' },
         ],
+        // contactPoint: every value here traces to brain/FACTS.md — the email
+        // is F-005 (already in this node), the markets are F-003, and the
+        // contact form is the site's own footer form (visible on every page).
+        // The full phone number is deliberately omitted: only a masked form
+        // is published, and completing it is a client decision (QUEUE_C QC-05).
+        contactPoint: [
+            {
+                '@type': 'ContactPoint',
+                contactType: 'sales',
+                email: 'support@strucureo.com',
+                url: `${SITE_URL}/#contact`,
+                availableLanguage: ['English'],
+                areaServed: [
+                    { '@type': 'Country', name: 'United Arab Emirates' },
+                    { '@type': 'Country', name: 'India' },
+                ],
+            },
+        ],
+        slogan: 'Clarity against complexity',
     };
 }
 

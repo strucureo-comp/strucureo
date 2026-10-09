@@ -5,6 +5,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, Loader2, Linkedin, Github } from 'lucide-react';
 import { EASE_LUXURY } from '@/lib/animations';
 import { sendEmailAction } from '@/app/actions';
+import { trackLead } from '@/lib/leads';
 import { Magnetic } from '@/components/shared/Magnetic';
 import { useSound } from '@/hooks/useSound';
 import { useHaptic } from '@/hooks/useHaptic';
@@ -126,6 +127,7 @@ export const Contact = () => {
               </p>
               <a
                 href="mailto:support@strucureo.com"
+                onClick={() => trackLead('email')}
                 className="text-xl md:text-2xl font-medium block hover:opacity-50 transition-opacity"
               >
                 support@strucureo.com
@@ -254,7 +256,7 @@ export const Contact = () => {
                   <p className="text-lg font-medium">{state.message}</p>
                 </div>
               ) : (
-                <form action={formAction} className="space-y-6">
+                <form action={formAction} onSubmit={() => trackLead('form')} className="space-y-6">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium opacity-60 mb-2">
                       Email Address
