@@ -15,7 +15,7 @@ export function organizationNode() {
             height: 512,
         },
         description:
-            'Strucureo is an engineering studio in the UAE and India. Build delivers custom software in days, Labs researches AI agents and reusable modules, Industries turns proven work into industry products.',
+            'Strucureo is an engineering studio that turns complex business problems into working systems: custom software, automation, AI chatbots, ERP systems and websites for the UAE and India.',
         email: 'support@strucureo.com',
         telephone: '+919344275731',
         foundingDate: '2026-02-26',
@@ -26,11 +26,12 @@ export function organizationNode() {
         ],
         founder: [{ '@id': `${SITE_URL}/#nagaratinam` }],
         knowsAbout: [
-            'custom software development',
+            'custom software',
+            'business process automation',
             'AI chatbots',
             'ERP systems',
             'MVP development',
-            'AI research',
+            'websites',
         ],
         areaServed: [
             { '@type': 'Country', name: 'United Arab Emirates' },

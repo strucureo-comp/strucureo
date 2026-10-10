@@ -56,14 +56,14 @@ const values = [
 ];
 
 export const metadata: Metadata = {
-    title: 'Nagaratinam S | Strucureo Team',
-    description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
+    title: 'About Strucureo: A Software & Systems Engineering Studio',
+    description: 'Strucureo is a software engineering studio. We solve complex problems at the root, let systems do repeatable work, and keep people on new ideas.',
     alternates: {
         canonical: `${SITE_URL}/about`,
     },
     openGraph: {
-        title: 'Nagaratinam S | Strucureo Team',
-        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
+        title: 'About Strucureo: A Software & Systems Engineering Studio',
+        description: 'Strucureo is a software engineering studio. We solve complex problems at the root, let systems do repeatable work, and keep people on new ideas.',
         url: `${SITE_URL}/about`,
         siteName: 'Strucureo',
         type: 'website',
@@ -78,8 +78,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Nagaratinam S | Strucureo Team',
-        description: 'Meet the Strucureo leadership team — Nagaratinam S (MD). An engineering studio building custom software for startups worldwide.',
+        title: 'About Strucureo: A Software & Systems Engineering Studio',
+        description: 'Strucureo is a software engineering studio. We solve complex problems at the root, let systems do repeatable work, and keep people on new ideas.',
     },
 };
 
@@ -100,8 +100,8 @@ export default function AboutPage() {
 
             <PageHero
                 eyebrow="About"
-                title="Strucureo — led by Nagaratinam S"
-                intro="Founded February 26, 2026. A remote engineering studio helping startups and small businesses build custom software, AI tools, and digital products — fast."
+                title="About Strucureo"
+                intro="Strucureo is an engineering studio that turns complex business problems into working systems: custom software, automation, AI chatbots, ERP systems and websites for the UAE and India. Strucureo is a software and systems studio. It is not a structural or civil engineering firm."
                 definition="Strucureo is an engineering studio in the UAE and India, led by Nagaratinam S. It runs three arms — Build, Labs and Industries — for startups and small businesses worldwide."
                 points={[
                     { number: 'Feb 2026', label: 'Founded' },
@@ -175,6 +175,47 @@ export default function AboutPage() {
                             />
                         ))}
                     </div>
+                </div>
+            </Section>
+
+            <Section className="bg-white">
+                <div className="px-6 md:px-12 lg:px-24 py-16 md:py-24 max-w-3xl">
+                    <AnimatedText text="What we believe" className="text-xs uppercase tracking-[0.2em] mb-6 block opacity-50" />
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-10">What we believe</h2>
+                    <div className="space-y-8">
+                        <div>
+                            <h3 className="text-2xl font-bold mb-2">Complex problems are solved at the root.</h3>
+                            <p className="text-lg text-[#6E6E6E] leading-relaxed">Patching symptoms makes the next problem. We find the cause first.</p>
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-bold mb-2">Repeatable work belongs to systems.</h3>
+                            <p className="text-lg text-[#6E6E6E] leading-relaxed">Software, automation and AI agents should carry the steps that repeat.</p>
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-bold mb-2">New ideas come from people.</h3>
+                            <p className="text-lg text-[#6E6E6E] leading-relaxed">Creative leaps and real innovation come from human minds. We build systems so people have more room for them.</p>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
+            <Section className="bg-[#f9f9f9]">
+                <div className="px-6 md:px-12 lg:px-24 py-16 md:py-24 max-w-3xl">
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">Research</h2>
+                    <p className="text-lg text-[#6E6E6E] leading-relaxed mb-4">
+                        Strucureo Labs studies the problems that repeat across client work and tests solutions against real client needs.{' '}
+                        <a href="/labs" className="underline underline-offset-4 hover:opacity-60">Read more about Labs</a>.
+                    </p>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mt-12 mb-6">Where we work</h2>
+                    <p className="text-lg text-[#6E6E6E] leading-relaxed">
+                        Our focus is the UAE (Dubai, Abu Dhabi) and India (Chennai, Bangalore, Mumbai), and we work with clients globally, overlapping both time zones.
+                    </p>
+                    <p className="mt-8 text-lg text-[#6E6E6E]">
+                        See <a href="/approach" className="underline underline-offset-4 hover:opacity-60">how we work</a>, the{' '}
+                        <a href="/community" className="underline underline-offset-4 hover:opacity-60">community</a> we are starting, and our{' '}
+                        <a href="/faq" className="underline underline-offset-4 hover:opacity-60">FAQ</a>.
+                    </p>
+                    <p className="mt-4 text-sm uppercase tracking-widest opacity-40">Updated 2026-10-10</p>
                 </div>
             </Section>
 

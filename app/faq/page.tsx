@@ -71,6 +71,46 @@ export const faqs: FAQItem[] = [
         answer:
             'Pricing depends on scope. Every engagement starts with diagnosis and a fixed-price roadmap agreed before any code is written. Contact us with your requirements for a tailored quote and timeline.',
     },
+    {
+        question: 'What is Strucureo?',
+        answer:
+            'Strucureo is an engineering studio for the UAE and India. We start by finding the root cause of a problem, show you more than one way to solve it, and build the system you choose: custom software, process automation, AI chatbots, ERP systems, websites and MVPs. Systems carry the repeatable work. People bring the new ideas. Strucureo has three arms: Build, Labs and Industries.',
+    },
+    {
+        question: 'What problems does Strucureo solve?',
+        answer:
+            'Complex business problems where work is manual, scattered or repeated. We find the root cause, show you options, and build a working system.',
+    },
+    {
+        question: 'Do you only build websites, chatbots and ERP systems?',
+        answer:
+            'No. Those are some of the ways we solve problems. We also build custom software, automation and startup MVPs, and we start from the problem, not from the product.',
+    },
+    {
+        question: 'Can you move our manual work into a system?',
+        answer:
+            'Often, yes. We diagnose first, because some work is better kept with people. You see the options and trade-offs before you commit.',
+    },
+    {
+        question: 'How does AI fit with human work at Strucureo?',
+        answer:
+            'Repeatable work belongs to systems. New ideas come from people. We build the first so people have more room for the second. We use AI and automation for repeatable work, and we keep decisions and new ideas with people.',
+    },
+    {
+        question: 'Is Strucureo a structural engineering company?',
+        answer:
+            'No. Strucureo is a software and systems studio. It is not a structural or civil engineering firm.',
+    },
+    {
+        question: 'What is the Strucureo community?',
+        answer:
+            'We are starting a community around one idea: AI and systems carry repeatable work, and new ideas come from people. It is early. Tell us what you are working on through the contact form.',
+    },
+    {
+        question: 'What happens after launch?',
+        answer:
+            'We provide ongoing support, optimization and scaling as you grow.',
+    },
 ];
 
 const faqSchema = faqPageNode(faqs);
