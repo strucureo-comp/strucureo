@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useState as _useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Magnetic } from '@/components/shared/Magnetic';
 import { useSound } from '@/hooks/useSound';
@@ -8,6 +9,8 @@ import { useSound } from '@/hooks/useSound';
 export const SiteHeader = () => {
   const { playTick } = useSound();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
   const navLinks = [
     { label: 'Build', href: '/services' },
     { label: 'Labs', href: '/labs' },
@@ -81,7 +84,7 @@ export const SiteHeader = () => {
       {/* Mobile backdrop: dims + blurs the page behind the menu so the
           overlay reads as an overlay, not text floating over content. */}
       <AnimatePresence>
-        {menuOpen && (
+        {menuOpen && mounted && createPortal(
           <motion.div
             key="backdrop"
             initial={{ opacity: 0 }}
@@ -89,20 +92,21 @@ export const SiteHeader = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setMenuOpen(false)}
-            className="md:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
-          />
+            className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[9990]"
+          />,
+          document.body
         )}
       </AnimatePresence>
 
       {/* Mobile menu panel */}
       <AnimatePresence>
-        {menuOpen && (
+        {menuOpen && mounted && createPortal(
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed top-0 left-0 right-0 bg-white border-b border-[#111111]/10 shadow-xl z-40 flex flex-col px-6 pt-8 pb-6 gap-1"
+            className="md:hidden fixed top-0 left-0 right-0 bg-white border-b border-[#111111]/10 shadow-2xl z-[9999] flex flex-col px-6 pt-8 pb-6 gap-1"
           >
             <div className="flex justify-between items-center mb-4">
               <div className="flex flex-col text-xs uppercase tracking-widest font-medium">
@@ -138,7 +142,8 @@ export const SiteHeader = () => {
             >
               Contact
             </a>
-          </motion.div>
+          </motion.div>,
+          document.body
         )}
       </AnimatePresence>
     </motion.nav>
