@@ -46,8 +46,8 @@ const breadcrumbSchema = breadcrumbList([
 const faqSchema = faqPageNode(faqItems);
 
 export const metadata: Metadata = {
-        title: 'Strucureo Build in India: Custom Software & AI',
-    description: 'Strucureo, an engineering studio, builds custom software, AI chatbots, ERP systems and MVPs for Chennai, Bangalore, Mumbai and India — in days.',
+        title: 'Software & Automation Studio in the India | Strucureo',
+    description: 'Custom software, process automation, AI chatbots and ERP for businesses in Chennai, Bangalore and Mumbai. Fixed scope, one dedicated contact, support after launch.',
     keywords: [
         'engineering studio India',
         'software studio Chennai',
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/india`,
     },
     openGraph: {
-    title: 'Strucureo Build in India: Custom Software & AI | Strucureo',
-        description: 'Elite software engineering for businesses across India.',
+    title: 'Software & Automation Studio in the India | Strucureo',
+        description: 'Custom software, process automation, AI chatbots and ERP for businesses in Chennai, Bangalore and Mumbai. Fixed scope, one dedicated contact, support after launch.',
         url: `${SITE_URL}/india`,
         siteName: 'Strucureo',
         type: 'website',
@@ -94,8 +94,8 @@ export default function IndiaPage() {
 
             <PageHero
                 eyebrow="India"
-                title="Elite software engineering for India."
-                intro="We build custom software, AI chatbots, and startup MVPs for forward-thinking businesses in Chennai, Bangalore, and across India — delivered in days, not months."
+                title="Software and automation studio for businesses in India"
+                intro="Strucureo is an engineering studio that builds custom software, process automation, AI chatbots and ERP systems for businesses in Chennai, Bangalore and Mumbai. Every project starts with the root cause of the problem and a fixed-price roadmap."
                 definition="Strucureo is an engineering studio serving India, with leadership in Chennai. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days."
             />
 
