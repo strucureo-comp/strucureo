@@ -77,6 +77,15 @@ const services: Service[] = [
     },
 ];
 
+const serviceAnchors: Record<string, string> = {
+    'Custom Software': 'software',
+    'Automation & Cloud Support': 'software',
+    'AI Chatbot Development': 'chatbots',
+    'ERP & Operations Systems': 'erp',
+    'Website Development': 'websites',
+    'Startup MVP Development': 'mvp',
+};
+
 const processSteps = [
     {
         title: 'Diagnose',
@@ -210,8 +219,8 @@ const breadcrumbSchema = breadcrumbList([
 ]);
 
 export const metadata: Metadata = {
-    title: 'Custom Software, AI Chatbots & MVPs in Days | Strucureo',
-    description: 'Websites, AI chatbots, ERP systems & startup MVPs delivered in days for UAE & India. Fixed scope, one contact, post-launch support. Get quote.',
+    title: 'Custom Software, Automation, AI Chatbots & ERP | Strucureo',
+    description: 'Strucureo Build turns manual work into systems: custom software, process automation, AI chatbots, ERP, websites and MVPs. Fixed scope, one contact.',
     keywords: [
         'custom software development',
         'AI chatbot development',
@@ -228,8 +237,8 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/services`,
     },
     openGraph: {
-        title: 'Custom Software, AI Chatbots & MVPs in Days | Strucureo',
-        description: 'Websites, AI chatbots, ERP systems & startup MVPs delivered in days for UAE & India. Fixed scope, one contact, post-launch support.',
+        title: 'Custom Software, Automation, AI Chatbots & ERP | Strucureo',
+        description: 'Strucureo Build turns manual work into systems: custom software, process automation, AI chatbots, ERP, websites and MVPs.',
         url: `${SITE_URL}/services`,
         siteName: 'Strucureo',
         type: 'website',
@@ -271,11 +280,11 @@ export default function ServicesPage() {
 
             <PageHero
                 eyebrow="Strucureo Build"
-                title="Custom software, delivered in days."
-                intro="We plan, build, launch, and support practical systems for startups and small businesses, from high-converting websites to internal operations platforms."
-                definition="Strucureo Build is the client software arm of Strucureo, an engineering studio in the UAE and India. It delivers websites, AI chatbots, ERP systems and startup MVPs in days."
+                title="Custom software and automation for complex business problems"
+                intro="Strucureo Build designs and builds the software that replaces manual, scattered work: custom software, process automation, AI chatbots, ERP systems, websites and MVPs. Every project starts with a diagnosis and a fixed-price roadmap."
+                definition="Strucureo Build is the client software arm of Strucureo, an engineering studio in the UAE and India. It turns manual, scattered work into working systems."
                 points={[
-                    { number: '01', label: 'Built in days, not months' },
+                    { number: '01', label: 'Days to a few weeks, by scope' },
                     { number: '02', label: 'One dedicated contact' },
                     { number: '03', label: 'Support after launch' },
                 ]}
@@ -289,6 +298,7 @@ export default function ServicesPage() {
                 {services.map((service, index) => (
                     <NumberedRow
                         key={service.title}
+                        id={serviceAnchors[service.title]}
                         index={index}
                         icon={<service.icon className="w-12 h-12 text-[#111111]" />}
                         title={service.title}
