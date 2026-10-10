@@ -18,7 +18,7 @@ export async function sendEmailAction(prevState: SendEmailState, formData: FormD
         const response = await fetch('https://api.driftspike.space/api/send-email', {
             method: 'POST',
             headers: {
-                'x-api-key': 'c90f1760-4b7e-4aed-a6ff-aa218d908cb0',
+                'x-api-key': process.env.MAIL_API_KEY || '',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
