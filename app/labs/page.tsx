@@ -111,8 +111,8 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-    title: 'Strucureo Labs: Research & Prototypes | Strucureo',
-    description: 'Strucureo Labs is the research arm of our engineering studio: AI agents, reusable modules, and prototypes from real client problems.',
+    title: 'Strucureo Labs: Research on Problems That Repeat',
+    description: 'Strucureo Labs studies business problems that repeat across client work and turns them into tested prototypes, AI agents and reusable modules.',
     keywords: [
         'Strucureo Labs',
         'AI agents research',
@@ -124,7 +124,7 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/labs`,
     },
     openGraph: {
-        title: 'Strucureo Labs: Research & Prototypes | Strucureo',
+        title: 'Strucureo Labs: Research on Problems That Repeat',
         description: 'AI agents, reusable modules, and prototypes — how Labs turns client problems into products.',
         url: `${SITE_URL}/labs`,
         siteName: 'Strucureo',
@@ -163,8 +163,8 @@ export default function LabsPage() {
 
             <PageHero
                 eyebrow="Strucureo Labs"
-                title="Where repeated problems become reusable solutions."
-                intro="Labs explores AI agents, reusable modules, and prototypes — then hardens what works so the next build starts faster."
+                title="Strucureo Labs: research on problems that repeat"
+                intro="Strucureo Labs studies the business problems that keep coming back in client work, and turns them into tested prototypes, AI agents and reusable modules. What works returns to Build, so the next client project starts with more than a blank page."
                 definition="Strucureo Labs is the research arm of Strucureo, an engineering studio in the UAE and India. It turns problems that repeat across client work into tested prototypes, AI agents and reusable modules."
                 points={[
                     { number: '01', label: 'Driven by client work' },

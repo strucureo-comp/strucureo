@@ -46,8 +46,8 @@ const breadcrumbSchema = breadcrumbList([
 const faqSchema = faqPageNode(faqItems);
 
 export const metadata: Metadata = {
-        title: 'Strucureo Build in UAE: Custom Software & AI',
-    description: 'Strucureo, an engineering studio, builds custom software, AI chatbots, ERP systems and MVPs for Dubai, Abu Dhabi and the UAE — in days.',
+        title: 'Software & Automation Studio in the UAE | Strucureo',
+    description: 'Custom software, process automation, AI chatbots and ERP for businesses in Dubai and Abu Dhabi. Fixed scope, one dedicated contact, support after launch.',
     keywords: [
         'engineering studio UAE',
         'software studio Dubai',
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/uae`,
     },
     openGraph: {
-    title: 'Strucureo Build in UAE: Custom Software & AI | Strucureo',
-        description: 'Elite software engineering for businesses across the UAE.',
+    title: 'Software & Automation Studio in the UAE | Strucureo',
+        description: 'Custom software, process automation, AI chatbots and ERP for businesses in Dubai and Abu Dhabi. Fixed scope, one dedicated contact, support after launch.',
         url: `${SITE_URL}/uae`,
         siteName: 'Strucureo',
         type: 'website',
@@ -94,8 +94,8 @@ export default function UAEPage() {
 
             <PageHero
                 eyebrow="United Arab Emirates"
-                title="Elite software engineering for the UAE."
-                intro="We build custom software, AI chatbots, and startup MVPs for forward-thinking businesses in Dubai, Abu Dhabi, and across the Emirates — delivered in days, not months."
+                title="Software and automation studio for businesses in the UAE"
+                intro="Strucureo is an engineering studio that builds custom software, process automation, AI chatbots and ERP systems for businesses in Dubai and Abu Dhabi. Every project starts with the root cause of the problem and a fixed-price roadmap."
                 definition="Strucureo is an engineering studio serving businesses across Dubai, Abu Dhabi and the Emirates. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days."
             />
 
