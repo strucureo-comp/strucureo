@@ -114,7 +114,7 @@ export default function UAEPage() {
                     {
                         icon: CreditCard,
                         title: 'MENA Integrations',
-                        desc: 'Deep experience connecting platforms to local payment gateways and corporate systems.',
+                        desc: 'We can integrate local payment gateways and corporate systems into your platform.',
                     },
                 ].map((feature, index) => (
                     <NumberedRow

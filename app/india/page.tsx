@@ -114,7 +114,7 @@ export default function IndiaPage() {
                     {
                         icon: CreditCard,
                         title: 'Local Integrations',
-                        desc: 'Deep experience connecting platforms to local payment gateways like Razorpay, Cashfree, and UPI.',
+                        desc: 'We can integrate local payment gateways like Razorpay, Cashfree and UPI.',
                     },
                 ].map((feature, index) => (
                     <NumberedRow

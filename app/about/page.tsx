@@ -28,7 +28,7 @@ const founders: Founder[] = [
         name: 'Nagaratinam S',
         role: 'Managing Director',
         linkedin: '',
-        bio: 'Nagaratinam S is Managing Director at Strucureo, leading the company\'s strategic direction and client relationships, ensuring every build aligns with business goals and delivers measurable outcomes.',
+        bio: 'Nagaratinam S is Managing Director at Strucureo, leading the company\'s strategic direction and client relationships, ensuring every build aligns with business goals.',
     },
 ];
 
