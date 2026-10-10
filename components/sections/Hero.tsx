@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useState as _useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -78,7 +78,7 @@ export const Hero = () => {
         {/* Mobile backdrop + panel: portaled to document.body so they escape the
             nav's z-10 stacking context and render above the hero content. */}
         <AnimatePresence>
-          {menuOpen && mounted && createPortal(
+          {menuOpen && createPortal(
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -94,7 +94,7 @@ export const Hero = () => {
 
         {/* Mobile menu panel */}
         <AnimatePresence>
-          {menuOpen && mounted && createPortal(
+          {menuOpen && createPortal(
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
