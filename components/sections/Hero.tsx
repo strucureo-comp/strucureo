@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useState as _useState } from 'react';
+import { createPortal } from 'react-dom';
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import { staggerContainer, EASE_LUXURY } from '@/lib/animations';
@@ -15,6 +16,8 @@ const Structure3D = dynamic(
 export const Hero = () => {
   const { playTick } = useSound();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
   const navLinks = [
     { label: 'Build', href: '/services' },
     { label: 'Labs', href: '/labs' },
