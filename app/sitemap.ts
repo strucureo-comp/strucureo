@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const pages = ['', 'services', 'labs', 'industries', 'about', 'faq', 'legal', 'privacy', 'uae', 'india', 'blog'];
+    const pages = ['', 'services', 'labs', 'industries', 'about', 'faq', 'legal', 'privacy', 'uae', 'india', 'blog', 'approach', 'community'];
 
     const routes: MetadataRoute.Sitemap = pages.map((page) => ({
         url: `https://www.strucureo.com${page ? `/${page}` : ''}`,

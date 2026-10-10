@@ -148,10 +148,14 @@ export const Hero = () => {
               }}
               className="block text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] text-[#111111]"
             >
-              <span className="block">Clarity Against</span>
-              <span className="block">Complexity.</span>
-              <span className="sr-only"> Custom software, AI chatbots, ERP systems and startup MVPs delivered in days for UAE and India.</span>
+              <span className="block">Complex problems in.</span>
+              <span className="block">Working systems out.</span>
             </motion.h1>
+
+            {/* Answer-first line (E1), names Strucureo and what it does. F-owner-01 */}
+            <p className="mt-6 text-lg md:text-xl font-light text-[#6E6E6E] max-w-3xl leading-relaxed">
+              Strucureo is an engineering studio that turns complex business problems into working systems: custom software, automation, AI chatbots, ERP systems and websites for the UAE and India.
+            </p>
           </motion.div>
 
           <motion.div
@@ -162,7 +166,7 @@ export const Hero = () => {
           >
             <div className="flex flex-col gap-6">
               <p className="text-xl md:text-2xl font-light text-[#6E6E6E] max-w-2xl leading-relaxed">
-                Strucureo is an engineering studio with three arms: Build for client software delivered in days, Labs for research, and Industries for ready-made industry products.
+                We find the root cause, show you more than one way to solve it, and build the system you choose. Systems carry the repeatable work. People bring the new ideas.
               </p>
               <div className="flex flex-col md:flex-row gap-4 items-start">
                 <Magnetic strength={0.15}>
@@ -171,7 +175,7 @@ export const Hero = () => {
                     onClick={() => playTick()}
                     className="px-8 py-4 bg-[#111111] text-white font-bold tracking-widest text-sm hover:bg-black/80 transition-colors uppercase"
                   >
-                    Free Consultation
+                    Book a free consultation
                   </a>
                 </Magnetic>
               </div>
