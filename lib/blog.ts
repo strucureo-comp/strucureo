@@ -2,6 +2,8 @@ import { containsTodo } from '@/lib/guard';
 import { whyThreeArms } from '@/content/blog/why-three-arms';
 import { deliverInDays } from '@/content/blog/deliver-in-days';
 import { repeatedProblems } from '@/content/blog/repeated-problems';
+import { systemsForWorkPeopleForIdeas } from '@/content/blog/systems-for-work';
+import { fromManualToSystem } from '@/content/blog/from-manual-to-system';
 
 export type PostCategory = 'Build' | 'Labs' | 'Industries' | 'Company';
 
@@ -33,7 +35,7 @@ export type Post = {
     draft: boolean;
 };
 
-const allPosts: Post[] = [whyThreeArms, deliverInDays, repeatedProblems];
+const allPosts: Post[] = [whyThreeArms, deliverInDays, repeatedProblems, systemsForWorkPeopleForIdeas, fromManualToSystem];
 
 /**
  * Build-time safety net: a published post must never contain a
