@@ -6,15 +6,16 @@ import { Uniqueness } from '@/components/sections/Uniqueness';
 import { RemoteOps } from '@/components/sections/RemoteOps';
 import { VisualIntro } from '@/components/sections/VisualIntro';
 import { Contact } from '@/components/sections/Contact';
+import { ManualToSystem, SystemsForWork, WhatWeBuild, CommunityStrip } from '@/components/sections/Campaign';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { faqPageNode, breadcrumbList } from '@/lib/jsonld';
 
 export const metadata: Metadata = {
     title: {
-        default: 'Strucureo: Custom Software & MVPs in Days | UAE & India',
+        default: 'Strucureo: Custom Software & Automation | UAE & India',
         template: '%s | Strucureo'
     },
-    description: 'Strucureo builds websites, AI chatbots, ERP systems & MVPs in days for UAE & India startups. Fixed scope, one contact, support after launch.',
+    description: 'Engineering studio for the UAE and India. We find the root cause, then build the system: custom software, automation, AI chatbots, ERP and websites.',
     keywords: [
         'engineering studio UAE',
         'custom software development India',
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
         'software development Bangalore'
     ],
     openGraph: {
-        title: 'Strucureo: Custom Software & MVPs in Days | UAE & India',
-        description: 'Websites, AI chatbots, ERP systems & startup MVPs delivered in days for UAE & India startups. Fixed scope, one contact, support after launch.',
+        title: 'Strucureo: Custom Software & Automation | UAE & India',
+        description: 'Engineering studio for the UAE and India. We find the root cause, then build the system: custom software, automation, AI chatbots, ERP and websites.',
         url: 'https://www.strucureo.com',
         siteName: 'Strucureo',
         locale: 'en_US',
@@ -43,8 +44,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Strucureo: Custom Software & MVPs in Days | UAE & India',
-        description: 'Websites, AI chatbots, ERP & MVPs delivered in days for UAE & India. Fixed scope, one contact, support after launch.',
+        title: 'Strucureo: Custom Software & Automation | UAE & India',
+        description: 'We find the root cause, then build the system: custom software, automation, AI chatbots, ERP and websites for the UAE and India.',
         creator: '@strucureo',
         images: ['https://www.strucureo.com/opengraph-image.png']
     },
@@ -100,8 +101,11 @@ export default function Home() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <Hero />
+            <ManualToSystem />
             <Sectors />
+            <SystemsForWork />
             <SectorFlow />
+            <WhatWeBuild />
             <Uniqueness />
             <RemoteOps />
             <VisualIntro />
@@ -119,6 +123,7 @@ export default function Home() {
                     </p>
                 </div>
             </section>
+            <CommunityStrip />
             <Contact />
         </main>
     );
