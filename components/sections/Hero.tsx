@@ -76,9 +76,10 @@ export const Hero = () => {
         </button>
 
         {/* Mobile backdrop + panel: portaled to document.body so they escape the
-            nav's z-10 stacking context and render above the hero content. */}
-        <AnimatePresence>
-          {menuOpen && createPortal(
+            nav's z-10 stacking context and render above the hero content.
+            AnimatePresence goes INSIDE the portal so it can track the motion.div. */}
+        {menuOpen && createPortal(
+          <AnimatePresence>
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -87,14 +88,13 @@ export const Hero = () => {
               transition={{ duration: 0.2 }}
               onClick={() => setMenuOpen(false)}
               className="md:hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[9990]"
-            />,
-            document.body
-          )}
-        </AnimatePresence>
+            />
+          </AnimatePresence>,
+          document.body
+        )}
 
-        {/* Mobile menu panel */}
-        <AnimatePresence>
-          {menuOpen && createPortal(
+        {menuOpen && createPortal(
+          <AnimatePresence>
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -133,10 +133,10 @@ export const Hero = () => {
               >
                 Contact
               </a>
-            </motion.div>,
-            document.body
-          )}
-        </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>,
+          document.body
+        )}
       </motion.nav>
 
       <div className="flex-grow flex flex-col justify-center mt-12 md:mt-0 z-10 pb-24 pointer-events-none"> {/* content wrapper */}
