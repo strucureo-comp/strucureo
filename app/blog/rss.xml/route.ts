@@ -2,7 +2,7 @@ import { getAllPosts } from '@/lib/blog';
 
 const SITE_URL = 'https://www.strucureo.com';
 const SITE_TITLE = 'Strucureo | Engineering Studio: Build, Labs & Industry Products in UAE & India';
-const SITE_DESCRIPTION = 'Strucureo is an engineering studio in the UAE and India. Build delivers custom software, AI chatbots, ERP systems and startup MVPs in days. Labs researches AI agents and reusable modules. Industries turns proven work into industry products. Serving clients globally.';
+const SITE_DESCRIPTION = 'Strucureo is an engineering studio for the UAE and India. Build delivers custom software, AI chatbots, ERP systems and startup MVPs in days to a few weeks, depending on scope. Labs researches AI agents and reusable modules. Industries turns proven work into industry products. Serving clients globally.';
 
 function escapeXml(value: string): string {
     return value

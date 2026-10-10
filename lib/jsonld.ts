@@ -86,7 +86,7 @@ export function armNodes() {
             id: 'build',
             name: 'Strucureo Build',
             description:
-                'Strucureo Build is the client software arm of Strucureo. It delivers websites, AI chatbots, ERP systems and startup MVPs in days.',
+                'Strucureo Build is the client software arm of Strucureo. It delivers websites, AI chatbots, ERP systems and startup MVPs in days to a few weeks, depending on scope.',
         },
         {
             id: 'labs',

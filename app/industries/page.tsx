@@ -111,8 +111,8 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-    title: 'Strucureo Industries: Ready-Made Products',
-    description: 'Strucureo Industries, the product arm of our engineering studio, packages proven Labs research into ready-made industry products.',
+    title: 'Strucureo Industries: Products in the Making',
+    description: 'Strucureo Industries is shaping its first industry products with early partners, built from proven Labs work. Configured to your team.',
     keywords: [
         'Strucureo Industries',
         'industry software products',
@@ -162,9 +162,9 @@ export default function IndustriesPage() {
 
             <PageHero
                 eyebrow="Strucureo Industries"
-                title="Software made for your industry, ready to use."
+                title="Industry products, shaped with early partners."
                 intro="Strucureo Industries packages work that has already proven itself into ready-made products for specific industries. Packaged from proven Labs work — configured to your team instead of built from scratch."
-                definition="Strucureo Industries is the product arm of Strucureo, an engineering studio in the UAE and India. It packages proven Labs work into ready-made products for specific industries."
+                definition="Strucureo Industries is the product arm of Strucureo, an engineering studio for the UAE and India. It packages proven Labs work into ready-made products for specific industries."
                 points={[
                     { number: '01', label: 'Proven in Labs first' },
                     { number: '02', label: 'Configured to your team' },

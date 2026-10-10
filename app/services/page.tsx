@@ -95,10 +95,10 @@ const processSteps = [
     {
         title: 'Design Options',
         description:
-            'You receive practical solution paths with tradeoffs around speed, cost, complexity, and long-term scale.',
+            'You receive practical solution paths with the trade-offs, and we agree a fixed-price roadmap before any code is written.',
     },
     {
-        title: 'Build Fast',
+        title: 'Build',
         description:
             'We ship in focused milestones, keep scope visible, and avoid unnecessary engineering ceremony.',
     },
@@ -122,12 +122,12 @@ const faqItems = [
     {
         question: 'What does Strucureo Build offer?',
         answer:
-            'Strucureo Build delivers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation. We deliver focused software for startups and small businesses in days, not months.',
+            'Strucureo Build delivers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation. We deliver focused software for startups and small businesses in days to a few weeks, depending on scope.',
     },
     {
         question: 'How fast can Strucureo build a website or software product?',
         answer:
-            'Strucureo specializes in rapid development. Most websites and MVPs are delivered in days to a few weeks, depending on scope. We follow a structured 4-step process: Diagnose, Design Options, Build Fast, and Launch & Support.',
+            'Most websites and MVPs are delivered in days to a few weeks, depending on scope. We follow a structured process: Diagnose, Design Options, Build, and Launch & Support.',
     },
     {
         question: 'Who is the founder of Strucureo?',
@@ -137,7 +137,7 @@ const faqItems = [
     {
         question: 'Does Strucureo work with international clients?',
         answer:
-            'Yes. Strucureo serves clients globally, with a focus on the United States, United Arab Emirates, Germany, Russia, and India. We operate as a remote engineering studio and can work across time zones.',
+            'Yes. Strucureo works with clients for the UAE and India, and with clients worldwide, overlapping both time zones. We operate as a remote engineering studio.',
     },
     {
         question: 'What technologies does Strucureo use?',
@@ -155,7 +155,7 @@ const faqItems = [
     },
     {
         question: 'Can Strucureo build software for businesses in India with local payment gateway integration (UPI, Razorpay, etc.)?',
-        answer: 'Yes. We frequently integrate domestic payment gateways like Razorpay, Cashfree, and PayU, alongside direct UPI integrations and standard gateways like Stripe to ensure your platform meets local consumer expectations.',
+        answer: 'Yes. We can integrate domestic payment gateways like Razorpay, Cashfree and PayU, alongside UPI and standard gateways like Stripe.',
     },
     {
         question: 'What is the typical cost of custom software development in UAE / India?',
@@ -282,7 +282,7 @@ export default function ServicesPage() {
                 eyebrow="Strucureo Build"
                 title="Custom software and automation for complex business problems"
                 intro="Strucureo Build designs and builds the software that replaces manual, scattered work: custom software, process automation, AI chatbots, ERP systems, websites and MVPs. Every project starts with a diagnosis and a fixed-price roadmap."
-                definition="Strucureo Build is the client software arm of Strucureo, an engineering studio in the UAE and India. It turns manual, scattered work into working systems."
+                definition="Strucureo Build is the client software arm of Strucureo, an engineering studio for the UAE and India. It turns manual, scattered work into working systems."
                 points={[
                     { number: '01', label: 'Days to a few weeks, by scope' },
                     { number: '02', label: 'One dedicated contact' },

@@ -2,11 +2,11 @@ const SITE_URL = 'https://www.strucureo.com';
 
 const BODY = `# Strucureo
 
-> Strucureo is an engineering studio in the UAE and India. Build delivers custom software in days, Labs researches AI agents and reusable modules, Industries turns proven work into industry products. Serving clients globally.
+> Strucureo is an engineering studio for the UAE and India. Build delivers custom software in days to a few weeks, depending on scope, Labs researches AI agents and reusable modules, Industries turns proven work into industry products. Serving clients globally.
 
 ## Arms
 
-- Strucureo Build (${SITE_URL}/services): custom software for clients — websites, AI chatbots, ERP systems and startup MVPs — delivered in days.
+- Strucureo Build (${SITE_URL}/services): custom software for clients — websites, AI chatbots, ERP systems and startup MVPs — delivered in days to a few weeks, depending on scope.
 - Strucureo Labs (${SITE_URL}/labs): research and prototypes that turn repeated client problems into tested, reusable solutions.
 - Strucureo Industries (${SITE_URL}/industries): ready-made products for specific industries, built from proven Labs work.
 
@@ -46,7 +46,7 @@ const BODY = `# Strucureo
 
 ## FAQ (short answers)
 
-- What does Strucureo build? Websites, AI chatbots, ERP systems, startup MVPs, custom software and automation, delivered in days.
+- What does Strucureo build? Websites, AI chatbots, ERP systems, startup MVPs, custom software and automation, delivered in days to a few weeks, depending on scope.
 - How fast? Most websites and MVPs in days to a few weeks depending on scope.
 - Where? Globally, with focus on UAE (Dubai, Abu Dhabi) and India (Chennai, Bangalore, Mumbai). Timezone overlap for both.
 - Cost? Scope-dependent with a fixed-price roadmap before code. Contact for quote.

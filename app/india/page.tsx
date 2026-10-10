@@ -14,7 +14,7 @@ const SITE_URL = 'https://www.strucureo.com';
 const faqItems = [
     {
         question: 'Does Strucureo work with startups based in India?',
-        answer: 'Yes. With core leadership located in Chennai, we understand the local business environment intimately. We partner with Indian startups, SMEs, and enterprises to build highly scalable software and operational systems.'
+        answer: 'Yes. We serve businesses in Chennai, Bangalore and Mumbai, and work with clients across India. We build custom software, automation and operational systems fitted to how your business runs.'
     },
     {
         question: 'What is the typical cost of custom software development in India?',
@@ -22,7 +22,7 @@ const faqItems = [
     },
     {
         question: 'Can you integrate local payment gateways like Razorpay or UPI?',
-        answer: 'Yes. We frequently integrate domestic payment gateways like Razorpay, Cashfree, and PayU, alongside direct UPI integrations and standard gateways like Stripe to ensure your platform meets local consumer expectations.'
+        answer: 'Yes. We can integrate domestic payment gateways like Razorpay, Cashfree and PayU, alongside UPI and standard gateways like Stripe.'
     },
     {
         question: 'How fast can you build and launch a product?',
@@ -30,11 +30,11 @@ const faqItems = [
     },
     {
         question: 'What does Strucureo Build deliver in India?',
-        answer: 'Websites, AI chatbots, ERP systems and startup MVPs, delivered in days with one dedicated contact. India specifics are covered where they count — leadership in Chennai, domestic gateways like Razorpay, Cashfree, PayU and UPI, and transparent fixed-price roadmaps.'
+        answer: 'Websites, AI chatbots, ERP systems and startup MVPs, delivered in days to a few weeks, depending on scope, with one dedicated contact. India specifics are covered where they count — serving Chennai, Bangalore and Mumbai, domestic gateways like Razorpay, Cashfree, PayU and UPI, and transparent fixed-price roadmaps.'
     },
     {
         question: 'Do you only work with companies in Chennai?',
-        answer: 'No. We partner with startups, SMEs and enterprises across Chennai, Bangalore, Mumbai and India, all through the same remote process and shared portal. Write to support@strucureo.com if you need an in-person meeting and we will confirm availability.'
+        answer: 'We work with startups and small businesses across Chennai, Bangalore, Mumbai and India, through the same remote process. Write to support@strucureo.com if you need to meet and we will confirm availability.'
     }
 ];
 
@@ -46,7 +46,7 @@ const breadcrumbSchema = breadcrumbList([
 const faqSchema = faqPageNode(faqItems);
 
 export const metadata: Metadata = {
-        title: 'Software & Automation Studio in the India | Strucureo',
+        title: 'Software & Automation Studio in India | Strucureo',
     description: 'Custom software, process automation, AI chatbots and ERP for businesses in Chennai, Bangalore and Mumbai. Fixed scope, one dedicated contact, support after launch.',
     keywords: [
         'engineering studio India',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/india`,
     },
     openGraph: {
-    title: 'Software & Automation Studio in the India | Strucureo',
+    title: 'Software & Automation Studio in India | Strucureo',
         description: 'Custom software, process automation, AI chatbots and ERP for businesses in Chennai, Bangalore and Mumbai. Fixed scope, one dedicated contact, support after launch.',
         url: `${SITE_URL}/india`,
         siteName: 'Strucureo',
@@ -96,7 +96,7 @@ export default function IndiaPage() {
                 eyebrow="India"
                 title="Software and automation studio for businesses in India"
                 intro="Strucureo is an engineering studio that builds custom software, process automation, AI chatbots and ERP systems for businesses in Chennai, Bangalore and Mumbai. Every project starts with the root cause of the problem and a fixed-price roadmap."
-                definition="Strucureo is an engineering studio serving India, with leadership in Chennai. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days."
+                definition="Strucureo is an engineering studio serving businesses in Chennai, Bangalore and Mumbai. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days to a few weeks, depending on scope."
             />
 
             <Section>

@@ -22,15 +22,15 @@ const faqItems = [
     },
     {
         question: 'Can you integrate local payment gateways like PayTabs or Telr?',
-        answer: 'Absolutely. We specialize in robust API integrations and have deep experience connecting platforms to MENA-specific payment processors like PayTabs, Telr, Checkout.com, and Stripe.'
+        answer: 'Yes. We can integrate payment processors used in the region, including PayTabs, Telr, Checkout.com and Stripe, fitted to your platform.'
     },
     {
         question: 'How fast can you build and launch a product?',
-        answer: 'We prioritize speed without sacrificing quality. Most websites and operational MVPs are delivered in days to a few weeks, making us the ideal technical partner for fast-moving businesses in the UAE.'
+        answer: 'We prioritize speed without sacrificing quality. Most websites and operational MVPs are delivered in days to a few weeks, depending on scope.'
     },
     {
         question: 'What does Strucureo Build deliver in the UAE?',
-        answer: 'The same Build offering as everywhere: websites, AI chatbots, ERP systems and startup MVPs, delivered in days with one dedicated contact. UAE specifics are handled where they matter — timezone overlap, MENA payment gateways like PayTabs, Telr and Checkout.com, and transparent fixed-price roadmaps.'
+        answer: 'The same Build offering as everywhere: websites, AI chatbots, ERP systems and startup MVPs, delivered in days to a few weeks, depending on scope with one dedicated contact. UAE specifics are handled where they matter — timezone overlap, MENA payment gateways like PayTabs, Telr and Checkout.com, and transparent fixed-price roadmaps.'
     },
     {
         question: 'Do you only work with companies in Dubai?',
@@ -96,7 +96,7 @@ export default function UAEPage() {
                 eyebrow="United Arab Emirates"
                 title="Software and automation studio for businesses in the UAE"
                 intro="Strucureo is an engineering studio that builds custom software, process automation, AI chatbots and ERP systems for businesses in Dubai and Abu Dhabi. Every project starts with the root cause of the problem and a fixed-price roadmap."
-                definition="Strucureo is an engineering studio serving businesses across Dubai, Abu Dhabi and the Emirates. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days."
+                definition="Strucureo is an engineering studio serving businesses across Dubai, Abu Dhabi and the Emirates. Through Strucureo Build it delivers custom software, AI chatbots, ERP systems and MVPs in days to a few weeks, depending on scope."
             />
 
             <Section>
@@ -104,7 +104,7 @@ export default function UAEPage() {
                     {
                         icon: Building2,
                         title: 'Local Expertise',
-                        desc: 'Understanding the unique business landscape and compliance requirements of the UAE market.',
+                        desc: 'Working with the business landscape of the UAE market.',
                     },
                     {
                         icon: Globe,
