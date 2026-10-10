@@ -69,7 +69,7 @@ export default function Home() {
     const homeFaqs = [
         {
             question: 'What does Strucureo build?',
-            answer: 'Websites, AI chatbots, ERP systems, startup MVPs, custom software and automation — delivered in days with a fixed scope, one dedicated contact, and support after launch.',
+            answer: 'Websites, AI chatbots, ERP systems, startup MVPs, custom software and automation — delivered in days to a few weeks, depending on scope, with a fixed scope, one dedicated contact, and support after launch.',
         },
         {
             question: 'How fast can Strucureo deliver?',

@@ -43,7 +43,7 @@ export const Uniqueness = () => {
     },
     {
       title: 'Fast Delivery',
-      desc: 'Delivered in days, not months. We use modern stacks and pre-built modules to accelerate development.',
+      desc: 'Delivered in days to a few weeks, depending on scope. We use modern stacks and pre-built modules to accelerate development.',
       icon: Zap
     },
     {

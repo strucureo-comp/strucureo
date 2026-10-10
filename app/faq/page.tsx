@@ -21,12 +21,12 @@ export const faqs: FAQItem[] = [
     {
         question: 'What does Strucureo Build offer?',
         answer:
-            'Strucureo Build delivers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation. We deliver focused software for startups and small businesses in days, not months.',
+            'Strucureo Build delivers custom software development, AI chatbot development, web development, ERP system development, startup MVP builds, and cloud automation. We deliver focused software for startups and small businesses in days to a few weeks, depending on scope.',
     },
     {
         question: 'How fast can Strucureo build a website or software product?',
         answer:
-            'Strucureo specializes in rapid development. Most websites and MVPs are delivered in days to a few weeks, depending on scope. We follow a structured 4-step process: Diagnose, Design Options, Build Fast, and Launch & Support.',
+            'Most websites and MVPs are delivered in days to a few weeks, depending on scope. We follow a structured process: Diagnose, Design Options, Build, and Launch & Support.',
     },
     {
         question: 'Who is the founder of Strucureo?',
@@ -36,17 +36,12 @@ export const faqs: FAQItem[] = [
     {
         question: 'Does Strucureo work with international clients?',
         answer:
-            'Yes. Strucureo serves clients globally, with a focus on the United States, United Arab Emirates, Germany, Russia, and India. We operate as a remote engineering studio and can work across time zones.',
+            'Yes. Strucureo works with clients for the UAE and India, and with clients worldwide, overlapping both time zones. We operate as a remote engineering studio.',
     },
     {
         question: 'What technologies does Strucureo use?',
         answer:
             'Strucureo builds with modern technologies including Next.js, React, TypeScript, Tailwind CSS, Three.js for 3D experiences, Supabase for backend services, and various AI/ML tools for automation and chatbot development.',
-    },
-    {
-        question: 'How much does custom software development cost with Strucureo?',
-        answer:
-            'Pricing depends on project scope and complexity. Strucureo offers focused, cost-effective builds for startups and small businesses. Contact us with your requirements for a tailored quote and timeline.',
     },
     {
         question: 'What is the Strucureo development process?',
@@ -64,7 +59,7 @@ export const faqs: FAQItem[] = [
     },
     {
         question: 'Can Strucureo build software for businesses in India with local payment gateway integration (UPI, Razorpay, etc.)?',
-        answer: 'Yes. We frequently integrate domestic payment gateways like Razorpay, Cashfree, and PayU, alongside direct UPI integrations and standard gateways like Stripe to ensure your platform meets local consumer expectations.',
+        answer: 'Yes. We can integrate domestic payment gateways like Razorpay, Cashfree and PayU, alongside UPI and standard gateways like Stripe.',
     },
     {
         question: 'What is the typical cost of custom software development in UAE / India?',
@@ -121,13 +116,13 @@ const breadcrumbSchema = breadcrumbList([
 ]);
 
 export const metadata: Metadata = {
-    title: 'FAQ | Strucureo',
+    title: 'Strucureo FAQ: Services, Process, Timelines and Pricing',
     description: 'Frequently asked questions about working with Strucureo, an engineering studio: process, pricing, timelines and team.',
     alternates: {
         canonical: `${SITE_URL}/faq`,
     },
     openGraph: {
-        title: 'FAQ | Strucureo',
+        title: 'Strucureo FAQ: Services, Process, Timelines and Pricing',
         description: 'Frequently asked questions about working with Strucureo, an engineering studio: our process, pricing, and team.',
         url: `${SITE_URL}/faq`,
         siteName: 'Strucureo',
@@ -143,7 +138,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'FAQ | Strucureo',
+        title: 'Strucureo FAQ: Services, Process, Timelines and Pricing',
         description: 'Frequently asked questions about working with Strucureo, an engineering studio: our process, pricing, and team.',
     },
 };
@@ -171,7 +166,7 @@ export default function FAQPage() {
                 eyebrow="FAQ"
                 title="Questions and answers."
                 intro="Everything you need to know about working with Strucureo — our process, pricing, and team."
-                definition="These are answers about working with Strucureo, an engineering studio in the UAE and India. They cover process, pricing, timelines and the team behind Build, Labs and Industries."
+                definition="These are answers about working with Strucureo, an engineering studio for the UAE and India. They cover process, pricing, timelines and the team behind Build, Labs and Industries."
             />
 
             <Section>

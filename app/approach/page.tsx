@@ -6,7 +6,7 @@ import { Section } from '@/components/shared/Section';
 
 export const metadata: Metadata = {
     title: 'From Manual Work to a System: How Strucureo Works',
-    description: 'How Strucureo moves a business from manual, scattered work to a working system: diagnose, compare options, agree a fixed-price roadmap, build, support.',
+    description: 'How Strucureo moves a business from manual, scattered work to a working system: diagnose, design options and agree a fixed-price roadmap, build, support.',
     alternates: { canonical: 'https://www.strucureo.com/approach' },
     openGraph: {
         title: 'From Manual Work to a System: How Strucureo Works',
@@ -25,22 +25,17 @@ const steps = [
     },
     {
         n: '02',
-        title: 'Options',
-        body: 'We show you more than one way to solve the problem, each with its trade-offs. You choose with the facts in front of you, not after the work has started.',
+        title: 'Design Options',
+        body: 'We show you more than one way to solve the problem, each with its trade-offs, and we agree a fixed-price roadmap before any code is written. You choose with the facts in front of you, not after the work has started.',
     },
     {
         n: '03',
-        title: 'Roadmap',
-        body: 'We agree a fixed-price roadmap before any code is written. You know the shape, the cost and the milestones up front.',
-    },
-    {
-        n: '04',
         title: 'Build',
         body: 'We build in focused milestones, so you always know where things stand. Delivery is days to a few weeks, depending on scope.',
     },
     {
-        n: '05',
-        title: 'Support',
+        n: '04',
+        title: 'Launch & Support',
         body: 'We support, optimize and scale after launch. Real users find what testing missed, so the weeks after launch are part of the project.',
     },
 ];

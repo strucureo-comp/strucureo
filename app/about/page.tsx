@@ -46,7 +46,7 @@ const values = [
     {
         title: 'Speed Without Sacrifice',
         description:
-            'We deliver in days, not months — without cutting corners. Fast does not mean fragile.',
+            'We deliver in days to a few weeks, depending on scope — without cutting corners. Fast does not mean fragile.',
     },
     {
         title: 'Long-Term Partnership',
@@ -102,10 +102,10 @@ export default function AboutPage() {
                 eyebrow="About"
                 title="About Strucureo"
                 intro="Strucureo is an engineering studio that turns complex business problems into working systems: custom software, automation, AI chatbots, ERP systems and websites for the UAE and India. Strucureo is a software and systems studio. It is not a structural or civil engineering firm."
-                definition="Strucureo is an engineering studio in the UAE and India, led by Nagaratinam S. It runs three arms — Build, Labs and Industries — for startups and small businesses worldwide."
+                definition="Strucureo is an engineering studio for the UAE and India, led by Nagaratinam S. It runs three arms — Build, Labs and Industries — for startups and small businesses worldwide."
                 points={[
                     { number: 'Feb 2026', label: 'Founded' },
-                    { number: 'Global', label: 'Markets' },
+                    { number: 'UAE & India', label: 'Focus, clients worldwide' },
                 ]}
             />
 

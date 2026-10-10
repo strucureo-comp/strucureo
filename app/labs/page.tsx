@@ -165,7 +165,7 @@ export default function LabsPage() {
                 eyebrow="Strucureo Labs"
                 title="Strucureo Labs: research on problems that repeat"
                 intro="Strucureo Labs studies the business problems that keep coming back in client work, and turns them into tested prototypes, AI agents and reusable modules. What works returns to Build, so the next client project starts with more than a blank page."
-                definition="Strucureo Labs is the research arm of Strucureo, an engineering studio in the UAE and India. It turns problems that repeat across client work into tested prototypes, AI agents and reusable modules."
+                definition="Strucureo Labs is the research arm of Strucureo, an engineering studio for the UAE and India. It turns problems that repeat across client work into tested prototypes, AI agents and reusable modules."
                 points={[
                     { number: '01', label: 'Driven by client work' },
                     { number: '02', label: 'Tested with real users' },
