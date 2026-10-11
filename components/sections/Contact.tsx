@@ -51,7 +51,7 @@ export const Contact = () => {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
               transition={{ duration: 1.5, ease: EASE_LUXURY }}
             >
-              <p className="text-xs uppercase tracking-[0.2em] opacity-40 mb-8">The Next Step</p>
+              <p className="text-xs uppercase tracking-[0.2em] opacity-60 mb-8">The Next Step</p>
               <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] -ml-1 text-[#111111]">
                 Ready to <br />
                 <span className="text-[#111111]/20">Engineer it?</span>
@@ -81,7 +81,7 @@ export const Contact = () => {
           </div>
 
           <div className="mt-24 lg:mt-32">
-            <p className="text-xs uppercase tracking-[0.2em] opacity-40 mb-12">Recent Feedback</p>
+            <p className="text-xs uppercase tracking-[0.2em] opacity-60 mb-12">Recent Feedback</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {[
                 {
@@ -105,7 +105,7 @@ export const Contact = () => {
                   <p className="text-lg leading-relaxed text-[#6E6E6E] mb-4 italic">"{testimonial.quote}"</p>
                   <div>
                     <p className="text-sm font-bold">{testimonial.author}</p>
-                    <p className="text-[10px] uppercase tracking-widest opacity-40">{testimonial.context}</p>
+                    <p className="text-[10px] uppercase tracking-widest opacity-60">{testimonial.context}</p>
                   </div>
                 </motion.div>
               ))}
@@ -218,7 +218,7 @@ export const Contact = () => {
           </span>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-mono uppercase tracking-widest pb-2 md:pb-0 text-[#111111] justify-start md:justify-end">
-          <span className="opacity-40">© {new Date().getFullYear()}</span>
+          <span className="opacity-60">© {new Date().getFullYear()}</span>
           <a href="/services" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">Services</a>
           <a href="/labs" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">Labs</a>
           <a href="/industries" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">Industries</a>
