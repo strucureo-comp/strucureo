@@ -10,7 +10,7 @@ import { useSound } from '@/hooks/useSound';
 
 const Structure3D = dynamic(
     () => import('@/components/shared/Structure3D').then((module) => module.Structure3D),
-    { ssr: false }
+    { ssr: false, loading: () => null }
 );
 
 export const Hero = () => {
@@ -144,12 +144,11 @@ export const Hero = () => {
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-0 md:space-y-4">
             <motion.h1
               variants={{
-                hidden: { opacity: 0, y: 100, letterSpacing: '-0.05em' },
+                hidden: { opacity: 0.01, y: 24 },
                 visible: {
                   opacity: 1,
                   y: 0,
-                  letterSpacing: '-0.03em',
-                  transition: { duration: 1.8, ease: EASE_LUXURY }
+                  transition: { duration: 0.5, ease: 'easeOut' }
                 }
               }}
               className="block text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] text-[#111111]"
