@@ -5,39 +5,67 @@ interface SendEmailState {
     message: string;
 }
 
+const MAIL_API = 'https://api.driftspike.space/api/send-email';
+
+async function sendMail(to: string, subject: string, html: string): Promise<boolean> {
+    const res = await fetch(MAIL_API, {
+        method: 'POST',
+        headers: {
+            'x-api-key': process.env.MAIL_API_KEY || '',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ to, subject, html }),
+    });
+    if (!res.ok) {
+        console.error('Email API Error:', res.status, await res.text());
+    }
+    return res.ok;
+}
+
 export async function sendEmailAction(prevState: SendEmailState, formData: FormData): Promise<SendEmailState> {
     const email = formData.get('email') as string;
-    const subject = formData.get('subject') as string;
+    const name = (formData.get('name') as string) || 'Not provided';
     const message = formData.get('message') as string;
 
-    if (!email || !subject || !message) {
+    if (!email || !message) {
         return { success: false, message: 'All fields are required.' };
     }
 
     try {
-        const response = await fetch('https://api.driftspike.space/api/send-email', {
-            method: 'POST',
-            headers: {
-                'x-api-key': process.env.MAIL_API_KEY || '',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                to: 'strucureo@gmail.com', // Fixed recipient as requested
-                subject: `[Contact Form] ${subject}`,
-                html: `
-          <h1>New Message from Strucureo Contact Form</h1>
-          <p><strong>From:</strong> ${email}</p>
-          <p><strong>Subject:</strong> ${subject}</p>
-          <hr />
-          <p>${message.replace(/\n/g, '<br>')}</p>
-        `,
-            }),
-        });
+        // 1. Notify the studio. This is the lead of record — if it fails, the
+        //    whole submission fails so we never lose a real lead.
+        const ownerOk = await sendMail(
+            'strucureo@gmail.com',
+            `[Contact Form] ${name}`,
+            `
+        <h1>New Message from Strucureo Contact Form</h1>
+        <p><strong>From:</strong> ${name} &lt;${email}&gt;</p>
+        <hr />
+        <p>${message.replace(/\n/g, '<br>')}</p>
+      `,
+        );
 
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('Email API Error:', response.status, errorText);
+        if (!ownerOk) {
             return { success: false, message: 'Failed to send email. Please try again later.' };
+        }
+
+        // 2. Instant auto-reply to the visitor: confirms receipt, sets the
+        //    response-time expectation (F-022) and offers WhatsApp (F-023).
+        //    A failure here must NOT fail the submission — the lead is already
+        //    captured — so it is fire-and-forget with a logged error.
+        try {
+            await sendMail(
+                email,
+                'We received your message — Strucureo',
+                `
+        <p>Hi ${name},</p>
+        <p>Thanks for reaching out. We have your message and will reply within 4 hours.</p>
+        <p>If it is urgent, message us on WhatsApp: <a href="https://wa.me/919344275731">+91 93442 75731</a>.</p>
+        <p>— Strucureo<br/>Clarity against complexity.</p>
+      `,
+            );
+        } catch (autoReplyErr) {
+            console.error('Auto-reply failed (lead still captured):', autoReplyErr);
         }
 
         return { success: true, message: 'Message sent successfully!' };

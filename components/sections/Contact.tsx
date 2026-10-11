@@ -138,7 +138,35 @@ export const Contact = () => {
               <p className="text-xs uppercase tracking-widest opacity-40 mb-2 group-hover:opacity-100 transition-opacity">
                 Phone
               </p>
-              <p className="text-xl md:text-2xl font-medium">+919344275731</p>
+              <a
+                href="tel:+919344275731"
+                onClick={() => trackLead('phone')}
+                className="text-xl md:text-2xl font-medium block hover:opacity-50 transition-opacity"
+              >
+                +91 93442 75731
+              </a>
+            </div>
+
+            <div className="group cursor-pointer">
+              <p className="text-xs uppercase tracking-widest opacity-40 mb-2 group-hover:opacity-100 transition-opacity">
+                WhatsApp
+              </p>
+              <a
+                href="https://wa.me/919344275731"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackLead('whatsapp')}
+                className="text-xl md:text-2xl font-medium block hover:opacity-50 transition-opacity"
+              >
+                Message us on WhatsApp
+              </a>
+            </div>
+
+            <div className="group">
+              <p className="text-xs uppercase tracking-widest opacity-40 mb-2">Response time</p>
+              <p className="text-lg text-[#6E6E6E] leading-relaxed">
+                We reply within 4 hours.
+              </p>
             </div>
 
             <div className="flex gap-6">
@@ -232,11 +260,34 @@ export const Contact = () => {
               </div>
 
               {state.success ? (
-                <div className="bg-green-50 text-green-900 p-4 rounded-lg flex items-center justify-center min-h-[200px]">
-                  <p className="text-lg font-medium">{state.message}</p>
+                <div className="bg-green-50 text-green-900 p-6 rounded-lg flex flex-col items-center justify-center min-h-[240px] text-center gap-3">
+                  <p className="text-lg font-medium">Message sent.</p>
+                  <p className="text-sm">We reply within 4 hours. Check your inbox for a confirmation.</p>
+                  <a
+                    href="https://wa.me/919344275731"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackLead('whatsapp')}
+                    className="mt-2 px-6 py-3 bg-[#111111] text-white font-bold tracking-widest text-xs uppercase hover:bg-black/80 transition-colors"
+                  >
+                    Or message us on WhatsApp
+                  </a>
                 </div>
               ) : (
                 <form action={formAction} onSubmit={() => trackLead('form')} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium opacity-60 mb-2">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className="w-full bg-black/5 border-0 rounded-none p-4 focus:ring-1 focus:ring-black outline-none transition-all"
+                      placeholder="Jane Doe"
+                    />
+                  </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium opacity-60 mb-2">
                       Email Address
@@ -251,21 +302,8 @@ export const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium opacity-60 mb-2">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      required
-                      className="w-full bg-black/5 border-0 rounded-none p-4 focus:ring-1 focus:ring-black outline-none transition-all"
-                      placeholder="Project Inquiry"
-                    />
-                  </div>
-                  <div>
                     <label htmlFor="message" className="block text-sm font-medium opacity-60 mb-2">
-                      Message
+                      What do you need built?
                     </label>
                     <textarea
                       id="message"
@@ -273,9 +311,11 @@ export const Contact = () => {
                       required
                       rows={4}
                       className="w-full bg-black/5 border-0 rounded-none p-4 focus:ring-1 focus:ring-black outline-none transition-all resize-none"
-                      placeholder="Tell us about your engineering needs..."
+                      placeholder="Tell us about your project..."
                     />
                   </div>
+
+                  <p className="text-sm opacity-50">We reply within 4 hours.</p>
 
                   {state.message && !state.success && (
                     <p className="text-red-500 text-sm">{state.message}</p>
