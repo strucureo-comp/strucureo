@@ -122,7 +122,7 @@ export const Contact = () => {
             className="space-y-12 lg:pl-12 lg:border-l border-[#111111]/10"
           >
             <div className="group cursor-pointer">
-              <p className="text-xs uppercase tracking-widest opacity-40 mb-2 group-hover:opacity-100 transition-opacity">
+              <p className="text-xs uppercase tracking-widest opacity-60 mb-2 group-hover:opacity-100 transition-opacity">
                 Email
               </p>
               <a
@@ -135,7 +135,7 @@ export const Contact = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <p className="text-xs uppercase tracking-widest opacity-40 mb-2 group-hover:opacity-100 transition-opacity">
+              <p className="text-xs uppercase tracking-widest opacity-60 mb-2 group-hover:opacity-100 transition-opacity">
                 Phone
               </p>
               <a
@@ -148,7 +148,7 @@ export const Contact = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <p className="text-xs uppercase tracking-widest opacity-40 mb-2 group-hover:opacity-100 transition-opacity">
+              <p className="text-xs uppercase tracking-widest opacity-60 mb-2 group-hover:opacity-100 transition-opacity">
                 WhatsApp
               </p>
               <a
@@ -163,7 +163,7 @@ export const Contact = () => {
             </div>
 
             <div className="group">
-              <p className="text-xs uppercase tracking-widest opacity-40 mb-2">Response time</p>
+              <p className="text-xs uppercase tracking-widest opacity-60 mb-2">Response time</p>
               <p className="text-lg text-[#6E6E6E] leading-relaxed">
                 We reply within 4 hours.
               </p>
@@ -175,6 +175,7 @@ export const Contact = () => {
                   href="https://www.linkedin.com/company/strucureo/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Strucureo on LinkedIn"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   className="p-2 border border-[#111111]/10 rounded-full hover:bg-black hover:text-white transition-colors"
                 >
@@ -186,6 +187,7 @@ export const Contact = () => {
                   href="https://github.com/strucureo-comp"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Strucureo on GitHub"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   className="p-2 border border-[#111111]/10 rounded-full hover:bg-black hover:text-white transition-colors"
                 >
@@ -195,7 +197,7 @@ export const Contact = () => {
             </div>
 
             <div className="group pt-8">
-              <p className="text-xs uppercase tracking-widest opacity-40 mb-2">Studio</p>
+              <p className="text-xs uppercase tracking-widest opacity-60 mb-2">Studio</p>
               <p className="text-lg text-[#6E6E6E] leading-relaxed">
                 Clarity against complexity.
               </p>
