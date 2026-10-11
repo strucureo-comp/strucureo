@@ -5,7 +5,7 @@ interface SendEmailState {
     message: string;
 }
 
-const MAIL_API = 'https://api.driftspike.space/api/send-email';
+const MAIL_API = `${process.env.MAIL_BASE_URL || 'https://api.driftspike.space'}/api/send-email`;
 
 async function sendMail(to: string, subject: string, html: string): Promise<boolean> {
     const res = await fetch(MAIL_API, {
