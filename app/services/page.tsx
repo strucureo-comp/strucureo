@@ -282,11 +282,12 @@ export default function ServicesPage() {
                 eyebrow="Strucureo Build"
                 title="Custom software and automation for complex business problems"
                 intro="Strucureo Build designs and builds the software that replaces manual, scattered work: custom software, process automation, AI chatbots, ERP systems, websites and MVPs. Every project starts with a diagnosis and a fixed-price roadmap."
-                definition="Strucureo Build is the client software arm of Strucureo, an engineering studio for the UAE and India. It turns manual, scattered work into working systems."
+                definition="Strucureo Build is the client software arm of Strucureo, an engineering studio for the UAE and India. It turns manual, scattered work into working systems. Projects start from 15,000 INR (about AED 570 or USD 180), depending on scope."
                 points={[
                     { number: '01', label: 'Days to a few weeks, by scope' },
-                    { number: '02', label: 'One dedicated contact' },
-                    { number: '03', label: 'Support after launch' },
+                    { number: '02', label: 'From 15,000 INR, by scope' },
+                    { number: '03', label: 'One dedicated contact' },
+                    { number: '04', label: 'Support after launch' },
                 ]}
             />
 

@@ -15,7 +15,7 @@ export function organizationNode() {
             height: 512,
         },
         description:
-            'Strucureo is an engineering studio that turns complex business problems into working systems: custom software, automation, AI chatbots, ERP systems and websites for the UAE and India.',
+            'Strucureo — the name from "structured" plus "creative" — is an engineering studio that turns complex business problems into working systems: custom software, automation, AI chatbots, ERP systems and websites for the UAE and India. Projects start from 15,000 INR.',
         email: 'support@strucureo.com',
         telephone: '+919344275731',
         foundingDate: '2026-02-26',
