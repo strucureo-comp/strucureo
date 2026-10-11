@@ -47,9 +47,8 @@ export const Hero = () => {
       {show3D && <Structure3D />}
 
       <motion.nav
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
         className="flex justify-between items-start text-xs md:text-sm uppercase tracking-widest font-medium opacity-60 z-10 relative"
       >
         <div className="flex flex-col">
@@ -177,9 +176,8 @@ export const Hero = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, delay: 0.8, ease: EASE_LUXURY }}
             className="mt-8 md:mt-12 flex flex-col md:flex-row items-start md:items-center gap-8"
           >
             <div className="flex flex-col gap-6">
