@@ -4,6 +4,8 @@ const BODY = `# Strucureo
 
 > Strucureo is an engineering studio for the UAE and India. Build delivers custom software in days to a few weeks, depending on scope, Labs researches AI agents and reusable modules, Industries turns proven work into industry products. Serving clients globally.
 
+A fuller version of this document is available at ${SITE_URL}/llms-full.txt.
+
 ## Arms
 
 - Strucureo Build (${SITE_URL}/services): custom software for clients — websites, AI chatbots, ERP systems and startup MVPs — delivered in days to a few weeks, depending on scope.
