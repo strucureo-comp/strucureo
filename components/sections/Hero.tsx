@@ -2,35 +2,17 @@
 
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
-import { staggerContainer, EASE_LUXURY } from '@/lib/animations';
+import { staggerContainer } from '@/lib/animations';
 import { Magnetic } from '@/components/shared/Magnetic';
 import { useSound } from '@/hooks/useSound';
-
-const Structure3D = dynamic(
-    () => import('@/components/shared/Structure3D').then((module) => module.Structure3D),
-    { ssr: false, loading: () => null }
-);
+import { Structure3D } from '@/components/shared/Structure3D';
 
 export const Hero = () => {
   const { playTick } = useSound();
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [show3D, setShow3D] = useState(false);
   useEffect(() => { setMounted(true); }, []);
-  // Defer the decorative 3D canvas until the browser is idle: it is the
-  // largest painted element, so letting it load on mount makes IT the LCP
-  // element (~4.3s). Starting it after first paint keeps the H1 as LCP.
-  useEffect(() => {
-    const start = () => setShow3D(true);
-    if ('requestIdleCallback' in window) {
-      const id = window.requestIdleCallback(start, { timeout: 2500 });
-      return () => window.cancelIdleCallback(id);
-    }
-    const t = setTimeout(start, 1200);
-    return () => clearTimeout(t);
-  }, []);
   const navLinks = [
     { label: 'Build', href: '/services' },
     { label: 'Labs', href: '/labs' },
@@ -44,7 +26,7 @@ export const Hero = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-24 py-8 md:py-12 bg-[#ffffff] text-[#111111] relative overflow-hidden">
-      {show3D && <Structure3D />}
+      <Structure3D />
 
       <motion.nav
         initial={{ opacity: 1 }}
