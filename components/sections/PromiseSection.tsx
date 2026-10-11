@@ -22,7 +22,7 @@ export const PromiseSection = () => {
 
       <div ref={ref} className="py-12 relative z-10">
         <div className="mb-24">
-          <p className="text-xs uppercase tracking-[0.2em] opacity-50 mb-16">Our Promise</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-[#555555] mb-16">Our Promise</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-16">
             {['Speed', 'Quality', 'Performance', 'Security'].map((word, i) => (
               <motion.div

@@ -91,7 +91,7 @@ export const VisualIntro = () => {
     <Section className="min-h-[50vh] md:min-h-[80vh] flex flex-col justify-center">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
         <div className="lg:col-span-4">
-          <AnimatedText text="Who We Work With" className="text-xs uppercase tracking-[0.2em] mb-4 block opacity-50" />
+          <AnimatedText text="Who We Work With" className="text-xs uppercase tracking-[0.2em] mb-4 block text-[#555555]" />
         </div>
         <div className="lg:col-span-8">
           <BlueprintItem

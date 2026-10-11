@@ -30,7 +30,7 @@ export const Culture = () => {
 
   return (
     <Section className="min-h-[50vh]">
-      <AnimatedText text="Engineering Culture" className="text-xs uppercase tracking-[0.2em] mb-8 md:mb-12 block opacity-50" />
+      <AnimatedText text="Engineering Culture" className="text-xs uppercase tracking-[0.2em] mb-8 md:mb-12 block text-[#555555]" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         {items.map((item, i) => {
           const Icon = item.icon;

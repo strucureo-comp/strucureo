@@ -95,7 +95,7 @@ export const Capabilities = () => {
           />
           <AnimatedText
             text="Websites. AI. Custom Software."
-            className="mt-8 text-sm uppercase tracking-widest opacity-40 max-w-xs"
+            className="mt-8 text-sm uppercase tracking-widest text-[#555555] max-w-xs"
             delay={0.2}
           />
         </div>
@@ -138,7 +138,7 @@ export const Capabilities = () => {
                       {/* Visual footer for the card */}
                       <div className="pt-6 border-t border-[#111111]/5 flex items-center gap-2">
                         <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-[10px] uppercase font-mono tracking-widest opacity-40">Ready to Deploy</span>
+                        <span className="text-[10px] uppercase font-mono tracking-widest text-[#555555]">Ready to Deploy</span>
                       </div>
                     </div>
                   </TiltCard>
