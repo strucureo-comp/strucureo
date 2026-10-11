@@ -64,12 +64,12 @@ export const faqs: FAQItem[] = [
     {
         question: 'What is the typical cost of custom software development in UAE / India?',
         answer:
-            'Pricing depends on scope. Every engagement starts with diagnosis and a fixed-price roadmap agreed before any code is written. Contact us with your requirements for a tailored quote and timeline.',
+            'Projects start from 15,000 INR (about AED 570 or USD 180), depending on scope. Every engagement starts with diagnosis and a fixed-price roadmap agreed before any code is written, so you know the cost before we build. Contact us with your requirements for a tailored quote and timeline.',
     },
     {
         question: 'What is Strucureo?',
         answer:
-            'Strucureo is an engineering studio for the UAE and India. We start by finding the root cause of a problem, show you more than one way to solve it, and build the system you choose: custom software, process automation, AI chatbots, ERP systems, websites and MVPs. Systems carry the repeatable work. People bring the new ideas. Strucureo has three arms: Build, Labs and Industries.',
+            'Strucureo is an engineering studio for the UAE and India. The name comes from "structured" plus "creative": we bring structure to complex problems and creativity to how we solve them. We start by finding the root cause of a problem, show you more than one way to solve it, and build the system you choose: custom software, process automation, AI chatbots, ERP systems, websites and MVPs. Systems carry the repeatable work. People bring the new ideas. Strucureo has three arms: Build, Labs and Industries.',
     },
     {
         question: 'What problems does Strucureo solve?',

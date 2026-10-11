@@ -81,7 +81,7 @@ export default function Home() {
         },
         {
             question: 'How much does a project cost?',
-            answer: 'Pricing depends on scope. Every engagement starts with diagnosis and a fixed-price roadmap agreed before any code is written. Contact us for a tailored quote and timeline.',
+            answer: 'Projects start from 15,000 INR (about AED 570 or USD 180), depending on scope. Every engagement starts with diagnosis and a fixed-price roadmap agreed before any code is written. Contact us for a tailored quote and timeline.',
         },
         {
             question: 'How do we start?',
