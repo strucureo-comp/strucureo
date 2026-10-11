@@ -37,7 +37,7 @@ export const Method = () => {
 
   return (
     <Section className="overflow-hidden">
-      <AnimatedText text="Our Structured Development Process" className="text-xs uppercase tracking-[0.2em] mb-16 block opacity-50 text-center" />
+      <AnimatedText text="Our Structured Development Process" className="text-xs uppercase tracking-[0.2em] mb-16 block text-[#555555] text-center" />
 
       <div className="max-w-7xl mx-auto relative px-4">
         {/* Mobile Vertical Line */}

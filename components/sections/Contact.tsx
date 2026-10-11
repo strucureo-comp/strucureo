@@ -51,7 +51,7 @@ export const Contact = () => {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
               transition={{ duration: 1.5, ease: EASE_LUXURY }}
             >
-              <p className="text-xs uppercase tracking-[0.2em] opacity-60 mb-8">The Next Step</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#555555] mb-8">The Next Step</p>
               <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] -ml-1 text-[#111111]">
                 Ready to <br />
                 <span className="text-[#111111]/20">Engineer it?</span>
@@ -81,7 +81,7 @@ export const Contact = () => {
           </div>
 
           <div className="mt-24 lg:mt-32">
-            <p className="text-xs uppercase tracking-[0.2em] opacity-60 mb-12">Recent Feedback</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#555555] mb-12">Recent Feedback</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {[
                 {
@@ -105,7 +105,7 @@ export const Contact = () => {
                   <p className="text-lg leading-relaxed text-[#6E6E6E] mb-4 italic">"{testimonial.quote}"</p>
                   <div>
                     <p className="text-sm font-bold">{testimonial.author}</p>
-                    <p className="text-[10px] uppercase tracking-widest opacity-60">{testimonial.context}</p>
+                    <p className="text-[10px] uppercase tracking-widest text-[#555555]">{testimonial.context}</p>
                   </div>
                 </motion.div>
               ))}
@@ -122,7 +122,7 @@ export const Contact = () => {
             className="space-y-12 lg:pl-12 lg:border-l border-[#111111]/10"
           >
             <div className="group cursor-pointer">
-              <p className="text-xs uppercase tracking-widest opacity-60 mb-2 group-hover:opacity-100 transition-opacity">
+              <p className="text-xs uppercase tracking-widest text-[#555555] mb-2">
                 Email
               </p>
               <a
@@ -135,7 +135,7 @@ export const Contact = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <p className="text-xs uppercase tracking-widest opacity-60 mb-2 group-hover:opacity-100 transition-opacity">
+              <p className="text-xs uppercase tracking-widest text-[#555555] mb-2">
                 Phone
               </p>
               <a
@@ -148,7 +148,7 @@ export const Contact = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <p className="text-xs uppercase tracking-widest opacity-60 mb-2 group-hover:opacity-100 transition-opacity">
+              <p className="text-xs uppercase tracking-widest text-[#555555] mb-2">
                 WhatsApp
               </p>
               <a
@@ -163,7 +163,7 @@ export const Contact = () => {
             </div>
 
             <div className="group">
-              <p className="text-xs uppercase tracking-widest opacity-60 mb-2">Response time</p>
+              <p className="text-xs uppercase tracking-widest text-[#555555] mb-2">Response time</p>
               <p className="text-lg text-[#6E6E6E] leading-relaxed">
                 We reply within 4 hours.
               </p>
@@ -197,7 +197,7 @@ export const Contact = () => {
             </div>
 
             <div className="group pt-8">
-              <p className="text-xs uppercase tracking-widest opacity-60 mb-2">Studio</p>
+              <p className="text-xs uppercase tracking-widest text-[#555555] mb-2">Studio</p>
               <p className="text-lg text-[#6E6E6E] leading-relaxed">
                 Clarity against complexity.
               </p>
@@ -218,7 +218,7 @@ export const Contact = () => {
           </span>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-mono uppercase tracking-widest pb-2 md:pb-0 text-[#111111] justify-start md:justify-end">
-          <span className="opacity-60">© {new Date().getFullYear()}</span>
+          <span className="text-[#555555]">© {new Date().getFullYear()}</span>
           <a href="/services" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">Services</a>
           <a href="/labs" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">Labs</a>
           <a href="/industries" className="font-bold border-b border-[#111111] pb-0.5 hover:opacity-50 transition-opacity">Industries</a>
@@ -278,7 +278,7 @@ export const Contact = () => {
               ) : (
                 <form action={formAction} onSubmit={() => trackLead('form')} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium opacity-60 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-[#555555] mb-2">
                       Your Name
                     </label>
                     <input
@@ -291,7 +291,7 @@ export const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium opacity-60 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-[#555555] mb-2">
                       Email Address
                     </label>
                     <input
@@ -304,7 +304,7 @@ export const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium opacity-60 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-[#555555] mb-2">
                       What do you need built?
                     </label>
                     <textarea

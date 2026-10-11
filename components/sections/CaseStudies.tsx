@@ -39,7 +39,7 @@ export const CaseStudies = () => {
             <div className="mb-16 md:mb-24">
                 <AnimatedText
                     text="Proven Impact"
-                    className="text-xs uppercase tracking-[0.2em] opacity-40 mb-8 block"
+                    className="text-xs uppercase tracking-[0.2em] text-[#555555] mb-8 block"
                 />
                 <AnimatedText
                     text="Engineering that moves the needle."
@@ -58,7 +58,7 @@ export const CaseStudies = () => {
                         className="group relative bg-white border border-[#111111]/10 p-8 flex flex-col justify-between min-h-[400px] hover:border-[#111111]/30 transition-colors"
                     >
                         <div>
-                            <span className="text-xs font-mono uppercase tracking-widest opacity-50 mb-6 block">{study.category}</span>
+                            <span className="text-xs font-mono uppercase tracking-widest text-[#555555] mb-6 block">{study.category}</span>
                             <h3 className="text-2xl font-bold mb-4 group-hover:underline underline-offset-4 decoration-1">{study.title}</h3>
                             <p className="text-[#6E6E6E] mb-8 leading-relaxed text-sm">
                                 {study.desc}
@@ -88,7 +88,7 @@ export const CaseStudies = () => {
                             <div className="flex items-baseline gap-2 mb-2">
                                 <span className="text-4xl lg:text-5xl font-bold tracking-tight">{study.metric}</span>
                             </div>
-                            <span className="text-xs font-mono uppercase tracking-widest opacity-50">{study.metricLabel}</span>
+                            <span className="text-xs font-mono uppercase tracking-widest text-[#555555]">{study.metricLabel}</span>
                         </div>
 
                         <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">

@@ -10,14 +10,14 @@ export const ManualToSystem = () => (
     <div className="px-6 md:px-12 lg:px-24 py-16 md:py-24">
       <AnimatedText
         text="From manual work to a working system"
-        className="text-xs uppercase tracking-[0.2em] mb-6 block opacity-50"
+        className="text-xs uppercase tracking-[0.2em] mb-6 block text-[#555555]"
       />
       <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-12">
         From manual work to a working system
       </h2>
       <div className="grid gap-8 md:grid-cols-3">
         <div className="border-t border-[#111111]/10 pt-6">
-          <span className="font-mono text-xs uppercase tracking-widest opacity-40">01</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#555555]">01</span>
           <h3 className="text-2xl font-bold mt-3 mb-3">Find the root cause</h3>
           <p className="text-[#6E6E6E] leading-relaxed">
             Before we build anything, we work out what is actually going wrong. A
@@ -25,7 +25,7 @@ export const ManualToSystem = () => (
           </p>
         </div>
         <div className="border-t border-[#111111]/10 pt-6">
-          <span className="font-mono text-xs uppercase tracking-widest opacity-40">02</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#555555]">02</span>
           <h3 className="text-2xl font-bold mt-3 mb-3">Compare the options</h3>
           <p className="text-[#6E6E6E] leading-relaxed">
             You get more than one way to solve it, with the trade-offs, so you
@@ -33,7 +33,7 @@ export const ManualToSystem = () => (
           </p>
         </div>
         <div className="border-t border-[#111111]/10 pt-6">
-          <span className="font-mono text-xs uppercase tracking-widest opacity-40">03</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#555555]">03</span>
           <h3 className="text-2xl font-bold mt-3 mb-3">Build the system</h3>
           <p className="text-[#6E6E6E] leading-relaxed">
             We build in focused milestones against a fixed-price roadmap agreed

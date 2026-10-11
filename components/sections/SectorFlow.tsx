@@ -51,7 +51,7 @@ export const SectorFlow = () => {
               key={step.title}
               className="grid gap-6 border-b border-[#111111]/10 py-10 md:grid-cols-[80px_1fr]"
             >
-              <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-30">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#555555]">
                 0{index + 1}
               </span>
               <div>

@@ -111,7 +111,7 @@ export default function Home() {
             <VisualIntro />
             <section className="border-t border-[#111111]/10 px-6 py-20 md:px-12 lg:px-24">
                 <div className="mx-auto max-w-3xl">
-                    <p className="mb-4 text-xs uppercase tracking-[0.2em] opacity-40">
+                    <p className="mb-4 text-xs uppercase tracking-[0.2em] text-[#555555]">
                         FAQ
                     </p>
                     <h2 className="mb-8 text-4xl font-bold tracking-tighter md:text-6xl">

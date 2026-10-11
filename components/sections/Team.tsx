@@ -12,7 +12,7 @@ export const Team = () => {
           <AnimatedText text="The Engineering Team" className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-8" />
           <AnimatedText
             text="No silos. No shortcuts. No compromises."
-            className="text-sm uppercase tracking-widest opacity-40 mb-12 block"
+            className="text-sm uppercase tracking-widest text-[#555555] mb-12 block"
             delay={0.2}
           />
 

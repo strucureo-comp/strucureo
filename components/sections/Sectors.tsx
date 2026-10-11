@@ -53,7 +53,7 @@ export const Sectors = () => {
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
         <div className="lg:w-1/3">
           <div className="lg:sticky lg:top-32">
-            <AnimatedText text="Our three sectors" className="text-xs uppercase tracking-[0.2em] mb-8 block opacity-50" />
+            <AnimatedText text="Our three sectors" className="text-xs uppercase tracking-[0.2em] mb-8 block text-[#555555]" />
             <h2 className="text-4xl md:text-6xl font-bold leading-[0.9] tracking-tighter mb-8">
               Three arms, <br />
               <span className="text-[#111111]/20">one studio.</span>

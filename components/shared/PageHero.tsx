@@ -20,7 +20,7 @@ export const PageHero = ({ eyebrow, title, intro, definition, points }: PageHero
     <Section>
       <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-8">
-          <AnimatedText text={eyebrow} className="text-xs uppercase tracking-[0.2em] mb-6 block opacity-50" />
+          <AnimatedText text={eyebrow} className="text-xs uppercase tracking-[0.2em] mb-6 block text-[#555555]" />
           <h1
             className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9]"
             style={{ letterSpacing: '-0.03em' }}
@@ -46,7 +46,7 @@ export const PageHero = ({ eyebrow, title, intro, definition, points }: PageHero
               key={point.number}
               className="grid gap-6 border-b border-[#111111]/10 py-10 md:grid-cols-[80px_1fr]"
             >
-              <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-30">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#555555]">
                 {point.number}
               </span>
               <h2 className="text-2xl font-bold">{point.label}</h2>
